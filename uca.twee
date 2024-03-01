@@ -484,7 +484,7 @@ $(document.head).find('#style-ui-bar').remove();
 
 :: scrabble [nobr purple]
 <<include "footer">>
-
+[[Start]]
 <main>
 <<button "Help">>
     <<timed 0.5s>>
