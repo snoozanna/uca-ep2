@@ -114,6 +114,7 @@ $(document.head).find('#style-ui-bar').remove();
 [[photosynthesis]]
 [[letter]]
 [[rotatelogogreen]]
+[[scrabble]]
 
 </main>  
 
@@ -481,6 +482,41 @@ $(document.head).find('#style-ui-bar').remove();
 <</if>><</button>>
 </div>
 
+:: scrabble [nobr purple]
+<<include "footer">>
+
+<main>
+<<button "Help">>
+    <<timed 0.5s>>
+      <<addclass ".scrabble-container" "fadeOutSlow">>
+      <<addclass ".scrabble-container" "hide">>
+    <</timed>>
+     <<timed 1s>>
+    <<removeclass ".scrabble-container2" "hide">>
+      <<addclass ".scrabble-container" "fadeIn">>
+    <</timed>>
+  <</button>>
+  <div class="scrabble-container">
+          <div class="tile" data-letter="C"></div>
+          <div class="tile" data-letter="L"></div>
+           <div class="tile" data-letter="E"></div>
+           <div class="tile" data-letter="A"></div>
+          <div class="tile" data-letter="M"></div>
+          <div class="tile" data-letter="I"></div>
+          <div class="tile" data-letter="T"></div>   
+  </div>
+  /* <div class="scrabble-container scrabble-container2 hide">
+          <div class="tile" data-letter="C"></div>
+          <div class="tile" data-letter="L"></div>
+           <div class="tile" data-letter="I"></div>
+           <div class="tile" data-letter="E"></div>
+          <div class="tile" data-letter="A"></div>
+          <div class="tile" data-letter="M"></div>
+          <div class="tile" data-letter="T"></div>   
+  </div> */
+ 
+  
+</main>
 :: loading [nobr]
 
 

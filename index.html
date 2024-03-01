@@ -182,6 +182,7 @@ $(document.head).find('#style-ui-bar').remove();
 [[photosynthesis]]
 [[letter]]
 [[rotatelogogreen]]
+[[scrabble]]
 
 &lt;/main&gt;</tw-passagedata><tw-passagedata pid="3" name="header" tags="nobr" position="350,100" size="100,100">&lt;header&gt;
 &lt;/header&gt;</tw-passagedata><tw-passagedata pid="4" name="footer" tags="nobr" position="475,100" size="100,100">&lt;footer&gt;
@@ -490,7 +491,40 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;Thats not right.&lt;&lt;/replace&gt;&gt;
 &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="loading" tags="nobr" position="850,225" size="100,100">&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="annesays" tags="nobr" position="975,225" size="100,100">&lt;main class=&quot;annesays&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="scrabble" tags="nobr purple" position="850,225" size="100,100">&lt;&lt;include &quot;footer&quot;&gt;&gt;
+
+&lt;main&gt;
+&lt;&lt;button &quot;Help&quot;&gt;&gt;
+    &lt;&lt;timed 0.5s&gt;&gt;
+      &lt;&lt;addclass &quot;.scrabble-container&quot; &quot;fadeOutSlow&quot;&gt;&gt;
+      &lt;&lt;addclass &quot;.scrabble-container&quot; &quot;hide&quot;&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;
+     &lt;&lt;timed 1s&gt;&gt;
+    &lt;&lt;removeclass &quot;.scrabble-container2&quot; &quot;hide&quot;&gt;&gt;
+      &lt;&lt;addclass &quot;.scrabble-container&quot; &quot;fadeIn&quot;&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;
+  &lt;&lt;/button&gt;&gt;
+  &lt;div class=&quot;scrabble-container&quot;&gt;
+          &lt;div class=&quot;tile&quot; data-letter=&quot;C&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;tile&quot; data-letter=&quot;L&quot;&gt;&lt;/div&gt;
+           &lt;div class=&quot;tile&quot; data-letter=&quot;E&quot;&gt;&lt;/div&gt;
+           &lt;div class=&quot;tile&quot; data-letter=&quot;A&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;tile&quot; data-letter=&quot;M&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;tile&quot; data-letter=&quot;I&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;tile&quot; data-letter=&quot;T&quot;&gt;&lt;/div&gt;   
+  &lt;/div&gt;
+  /* &lt;div class=&quot;scrabble-container scrabble-container2 hide&quot;&gt;
+          &lt;div class=&quot;tile&quot; data-letter=&quot;C&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;tile&quot; data-letter=&quot;L&quot;&gt;&lt;/div&gt;
+           &lt;div class=&quot;tile&quot; data-letter=&quot;I&quot;&gt;&lt;/div&gt;
+           &lt;div class=&quot;tile&quot; data-letter=&quot;E&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;tile&quot; data-letter=&quot;A&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;tile&quot; data-letter=&quot;M&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;tile&quot; data-letter=&quot;T&quot;&gt;&lt;/div&gt;   
+  &lt;/div&gt; */
+ 
+  
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="18" name="loading" tags="nobr" position="975,225" size="100,100">&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="annesays" tags="nobr" position="1100,225" size="100,100">&lt;main class=&quot;annesays&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;&lt;h1&gt;&lt;span&gt;Anne&lt;/span&gt; &lt;span&gt;Says&lt;/span&gt;&lt;/h1&gt;&lt;/div&gt;
 
 &lt;div class=&quot;play-btn-container&quot;&gt;
@@ -498,8 +532,8 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;/div&gt;
 &lt;/main&gt;
 
-/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="19" name="funcircle" tags="" position="1100,225" size="100,100">&lt;div class=&quot;play-btn-container box&quot;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="photosynthesis" tags="nobr" position="1225,225" size="100,100">&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="letter" tags="nobr" position="100,350" size="100,100">&lt;main class=&quot;letter&quot;&gt;
+/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="20" name="funcircle" tags="" position="1225,225" size="100,100">&lt;div class=&quot;play-btn-container box&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="photosynthesis" tags="nobr" position="100,350" size="100,100">&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="letter" tags="nobr" position="225,350" size="100,100">&lt;main class=&quot;letter&quot;&gt;
 
 &lt;div class=&quot;letter-wrapper&quot;&gt;
   &lt;div class=&quot;letterpaper&quot; alt=&quot;&quot;&gt;
