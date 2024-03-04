@@ -106,6 +106,7 @@ $(document.head).find('#style-ui-bar').remove();
    
 
 [[portalVideo]]
+[[portalAnneSays]]
 [[portalText]]
 [[portalButton]]
 [[tree]]
@@ -115,6 +116,7 @@ $(document.head).find('#style-ui-bar').remove();
 [[letter]]
 [[rotatelogogreen]]
 [[scrabble]]
+[[login]]
 
 </main>  
 
@@ -135,6 +137,15 @@ $(document.head).find('#style-ui-bar').remove();
 </div>
    [[Start]]
 </footer>  
+
+:: portalfooter [nobr]
+<div class="uca-logo">
+   <img src="assets/img/logobutton.png" alt="logo"/>
+   </div>
+   <div class="uca-logo-text">
+   <img src="assets/img/logotitle.png" alt="logo"/>
+   </div>
+   [[Start]]
 
 
 :: footer2 [nobr]
@@ -206,6 +217,21 @@ $(document.head).find('#style-ui-bar').remove();
      <</if>>
 </footer>
 
+:: footerannesays [nobr]
+<footer>
+<div class="logo-wrapper">
+  <div class="uca-logo">
+     <img src="assets/img/logobutton.png" alt="logo"/>
+     </div>
+     <div class="uca-logo-text">
+     <img src="assets/img/logotitle.png" alt="logo"/>
+  </div>
+</div>
+   [[Start]]
+   <div id="nextMount"></div>
+</footer>  
+
+
 :: footerchat [nobr]
  <section class="portal-footer">
  [[Start]]
@@ -223,46 +249,1960 @@ $(document.head).find('#style-ui-bar').remove();
   </div>
   </section>
 
+:: login [nobr]
+<<set $prevpass to "login">>
+<<set $pass to "login">>
+<<set $nextpass to "ucalab">>
+<main>
+  login as before with buzzer, then diverting to UCA Lab
+  <<button "Next">>
+    <<goto $nextpass>>
+  <</button>>
+</main>
+
+
+:: ucalab [nobr]
+<<set $prevpass to "login">>
+<<set $pass to "ucalab">>
+<<set $nextpass to "portalvid1">>
+<main>
+UCA Box Recovery Service
+Please enter the Box Serial Code. 
+
+<<include "codeword1">>
+</main>
+
+:: portalvid1 [purple nobr]
+<<set $prevpass to "ucalab">>
+<<set $pass to "portalvid1">>
+<<set $nextpass to "annesays">>
+<main class="main portal grid-container">
+  <section class="hero" id="hero">
+
+       <iframe width='800px' height='450px'
+      src='https://player.vimeo.com/video/531960916?autoplay=1&byline=0&portrait=0'></iframe>
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"></div>
+  <div class="chat-input">
+  <<include "codeword2">>
+  </div>
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+
+<<timed 2s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>  So, I don’t know what is in the box, but we’ll work through it together. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 5s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>It looks like there are four signals we need to work out.  </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 7s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>If you send me the codes, I can punch them into our system and help us understand what to do to work out the mysterious signals and what they are saying. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 10s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Open the box when you are ready – the first compartment’s code is XXXX. If you find anything in the compartment send it through to me and I will run it through the UCA Computer here at the UCA Lab. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+
+<<timed 12s>>
+  <<replace "#hero">>
+    <<include "buttonProgress">>
+  <</replace>>
+<</timed>>
+
+:: portalAnneSays1 [purple nobr]
+<<set $prevpass to "portalvid1">>
+<<set $pass to "portalAnneSays1">>
+<<set $nextpass to "portalAnneSays2">>
+<main class="main portal grid-container">
+  <section class="hero">
+ <div class="annesays" id="annesays">
+<div class="title"><h1><span>Anne</span> <span>Says</span></h1></div>
+
+
+</div>
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"> </div>
+  <div class="chat-input">
+  /* <<include "codeword">> */
+  </div>
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+<<timed 2s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Wow - are you seeing this - a game is loading! </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 4s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>I love games.  </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 6s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>A game called ‘Anne Says’. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 8s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Why would my name be in the game?  </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 10s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Open the resources in the compartment. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 12s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>When ready for Challenge 1 click play. </p>
+      </div>
+    </div>
+  <</append>>
+  <<append "#annesays">>
+    <div class="play-btn-container" id="play-btn-container">
+     [img[Forward|assets/img/play.png][portalAnneSays2]]
+     </div>
+    <</append>>
+<</timed>>
+
+/* <<include "footer">> */
+
+:: portalAnneSays2 [purple nobr]
+<<set $prevpass to "portalAnneSays1">>
+<<set $pass to "portalAnneSays2">>
+<<set $nextpass to "portalAnneSays3">>
+<main class="main portal grid-container">
+  <section class="hero">
+ <div class="annesays" id="annesays">
+<div class="titleWrapper">
+  <div class="title">
+  <h1><span>Anne</span> <span>Says</span></h1>
+  <h2>Round 1</h2>
+  <h2>Solo</h2>
+  </div>
+</div>
+
+
+</div>
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"> </div>
+  <div class="chat-input">
+  /* <<include "codeword">> */
+  </div>
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+<<timed 2s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>You need to follow my instructions - but only when I saw Anne Says. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 4s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>If you get it right then you stay standing up - if you get it wrong you must sit down.  </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 6s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Teacher, if you spot anyone do the wrong moves then they must sit down. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 8s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Oh I love a competition - we’re going to find out who is the best - the golden weetabix. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 10s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Teacher, click next until you are down to your winners.</p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 12s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>When ready click play.</p>
+      </div>
+    </div>
+  <</append>>
+  <<append "#annesays">>
+    <div class="play-btn-container" id="play-btn-container">
+     [img[Forward|assets/img/play.png][portalAnneSays3]]
+     </div>
+    <</append>>
+<</timed>>
+
+/* <<include "footer">> */
+
+
+
+:: portalAnneSays3 [purple nobr]
+<<set $prevpass to "portalAnneSays2">>
+<<set $pass to "portalAnneSays3">>
+<<set $nextpass to "portalAnneSays4">>
+<<set $list to ['Branches','Roots','Leaves', 'Trunk']>>
+<<set $counter to 0>>
+<main class="annesays t8n"  id="annesays">
+     <div id="titleWrapper" class="titleWrapper">
+        <div class="title" id="title">
+            <h1><span id="randomitem">ANNE SAYS</span></h1>
+      </div>
+     </div>
+
+  
+</main>
+<<include "footerannesays">>
+<<timed 2s>>
+  <<addclass "#annesays" "darker">>
+  <<replace "#nextMount">>
+   <<button "GO!">>
+       <<set $counter to $counter + 1>>
+      <<timed 0.5s>>
+          <<replace "#titleWrapper">><</replace>>
+        <<set $randomitem to $list.random()>>
+        <<timed 1.5s>>
+        <<replace "#titleWrapper">>
+            <div class="title" id="title">
+          <h1><span id="randomitem">$randomitem</span></h1>
+    </div>
+        <</replace>>
+        <</timed>>
+        <<replace "#nextMount">>
+        <<button "NEXT">>
+             <<if $counter gte 20>>
+                <<timed 0.1s>>
+                <<replace "#titleWrapper">><</replace>>
+                  <</timed>>
+                    <<timed 0.4s>>
+                <<goto $nextpass>>
+              <</timed>>
+           <<else>>
+                <<set $counter to $counter + 1>>
+                <<replace "#titleWrapper">><</replace>>
+              <<timed 0.5s>>
+                <<set $randomitem to $list.random()>>
+              <<replace "#titleWrapper">>
+                <div class="title" id="title">
+                  <h1><span id="randomitem">$randomitem </span></h1> </div>
+            <</replace>>
+              <</timed>>
+            <</if>>
+         <</button>>
+         <</replace>>
+      <</timed>>
+    <</button>>
+  <</replace>>
+<</timed>>
+ 
+
+
+
+:: portalAnneSays4 [purple nobr]
+<<set $prevpass to "portalAnneSays3">>
+<<set $pass to "portalAnneSays4">>
+<<set $nextpass to "portalAnneSaysVid5">>
+<main class="main portal grid-container">
+  <section class="hero" id="hero">
+      <div class="annesays" id="annesays">
+          <div class="titleWrapper">
+            <div class="title">
+            <h1><span>Anne</span> <span>Says</span></h1>
+            <h2>Round 2</h2>
+            <h2>Team</h2>
+            </div>
+          </div>
+      </div>
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"> </div>
+  <div class="chat-input">
+  /* <<include "codeword">> */
+  </div>
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+<<timed 2s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>On the screen are going to be 4 moves </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 4s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>You need to put to learn all 4 moves in the sequence </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 6s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>You’ll only have 45 seconds to learn the moves. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 8s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Then Anne will come on the screen and you’ll have to do it with her. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 10s>>
+<<replace "#messagesContainer">><</replace>>
+<</timed>>
+
+
+<<timed 12s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Oh - a team game - ok we all need to learn the moves together to win.</p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 14s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Click BEGIN when you are ready to start learning. </p>
+      </div>
+    </div>
+  <</append>>
+
+<</timed>>
+
+<<timed 15s>>
+ <<append "#messagesContainer">>
+     <<button "BEGIN">>
+      <<timed 1s>>
+      <<goto $nextpass>>
+        <</timed>>
+      <</button>>
+    <</append>>
+<</timed>>
+
+/* <<include "footer">> */
+
+
+:: portalAnneSaysVid5 [purple nobr]
+<<set $prevpass to "portalAnneSays4">>
+<<set $pass to "portalAnneSaysVid5">>
+<<set $nextpass to "portalTree6">>
+<main class="main portal grid-container">
+  <section class="hero" id="hero">
+      <iframe width='800px' height='450px'
+      src='https://player.vimeo.com/video/531960916?autoplay=1&byline=0&portrait=0'></iframe>
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"> </div>
+  <div class="chat-input">
+  /* <<include "codeword">> */
+  </div>
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+<<timed 2s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Ok - here we go.  </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 4s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Everyone ready. We’ll do it 3 times together.  </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 6s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>3-2-1 </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 8s>>
+
+  <<replace "#hero">>
+
+     <div class="annesays" id="annesays">
+          <div class="titleWrapper" id="titleWrapper">
+            <div class="title">
+            <h1><span>Anne</span> <span>Says</span></h1>
+            </div>
+          </div>
+      </div>
+    <</replace>>
+  <</timed>>
+
+
+<<timed 10s>>
+<<replace "#messagesContainer">><</replace>>
+<</timed>>
+
+
+<<timed 12s>>
+  <<replace "#titleWrapper">>
+      <div class="title">
+        <h1><span>ROOTS</span></h1>
+     </div>
+  <</replace>>
+<</timed>>
+
+<<timed 14s>>
+  <<replace "#titleWrapper">>
+      <div class="title">
+        <h1><span>TRUNK</span></h1>
+     </div>
+  <</replace>>
+<</timed>>
+
+<<timed 16s>>
+  <<replace "#titleWrapper">>
+      <div class="title">
+        <h1><span>BRANCHES</span></h1>
+     </div>
+  <</replace>>
+<</timed>>
+
+<<timed 18s>>
+  <<replace "#titleWrapper">>
+      <div class="title">
+        <h1><span>LEAVES</span></h1>
+     </div>
+  <</replace>>
+<</timed>>
+
+<<timed 20s>>
+
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Odd - there’s a question coming through. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 22s>>
+
+  <<replace "#titleWrapper">>
+      <div class="title">
+        <h2><span>How does it feel to win together compared to winning individually? </span></h2>
+     </div>
+  <</replace>>
+<</timed>>
+
+<<timed 24s>>
+
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>You discuss with the teacher and I’ll load the next part. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+
+
+<<timed 26s>>
+ <<append "#messagesContainer">>
+     <<button "NEXT">>
+      <<timed 1s>>
+      <<goto $nextpass>>
+        <</timed>>
+      <</button>>
+    <</append>>
+<</timed>>
+
+/* <<include "footer">> */
+
+
+:: portalTree6 [purple nobr]
+<<set $prevpass to "portalAnneSaysVid5">>
+<<set $pass to "portalTree6">>
+<<set $nextpass to "portalVid7">>
+<<set $treeprogress to ["test"]>>
+<main class="main portal grid-container">
+
+  <section class="hero tree-grid-container" id="hero">
+
+     <div class="tree-one"><<include "treePw1">></div>
+    <div class="tree-two"><<include "treePw2">></div>
+    <div class="tree-three"><<include "treePw3">></div>
+    <div class="tree-four"><<include "treePw4">></div>
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"> </div>
+  <div class="chat-input">
+  /* <<include "codeword">> */
+  </div>
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+<<timed 2s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Right, it seems I need you to enter the parts of the tree and it will decode the first signal we are looking for!  </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+
+/* <<include "footer">> */
+
+
+
+:: checktreeprogress
+<<if $treeprogress.includesAll("LEAVES", "BRANCHES", "TRUNK", "ROOTS")>>
+  <<timed 5s>>
+  <<goto $nextpass>>
+  <</timed>>
+<</if>>
+
+
+:: portalVid7 [purple nobr]
+<<set $prevpass to "portalTree6">>
+<<set $pass to "portalVid7">>
+<<set $nextpass to "portalVid8">>
+<main class="main portal grid-container">
+  <section class="hero" id="hero">
+
+       <iframe width='800px' height='450px'
+      src='https://player.vimeo.com/video/531960916?autoplay=1&byline=0&portrait=0'></iframe>
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"></div>
+  /* <div class="chat-input">
+  <<include "codeword2">>
+  </div> */
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+<<timed 5s>>
+  <<replace "#hero">>
+    <<include "buttonProgress">>
+  <</replace>>
+<</timed>>
+
+
+<<timed 7s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>It says the next compartment has 2 parts.  </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 9s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Open the compartment using XXXX and take out part A.   </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 12s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Part A has quiz papers! </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 15s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>I love quizzes. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 17s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>I love a competition!  </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+
+<<timed 19s>>
+  <<replace "#messagesContainer">>
+ 
+  <</replace>>
+<</timed>>
+
+<<timed 21s>>
+   <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Teacher, can you hand these out so everyone can play in groups?  </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 23s>>
+   <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>When ready click next.</p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 25s>>
+ <<append "#messagesContainer">>
+     <<button "NEXT">>
+      <<timed 1s>>
+      <<goto $nextpass>>
+        <</timed>>
+      <</button>>
+    <</append>>
+<</timed>>
+
+:: portalVid8 [purple nobr]
+<<set $prevpass to "portalVid7">>
+<<set $pass to "portalVid8">>
+<<set $nextpass to "portalQuiz9">>
+<main class="main portal grid-container">
+  <section class="hero" id="hero">
+
+       <iframe width='800px' height='450px'
+      src='https://player.vimeo.com/video/531960916?autoplay=1&byline=0&portrait=0'></iframe>
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"></div>
+  /* <div class="chat-input">
+  <<include "codeword2">>
+  </div> */
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+<<timed 7s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>There is a video from the Nobel Peace Centre – it seems to be about Wangari Maathai – I’m sure I’ve heard of her before </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 9s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Get your quizzes ready. When you are ready for the video to begin click begin.   </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+
+<<timed 12s>>
+  <<replace "#messagesContainer">>
+ 
+  <</replace>>
+<</timed>>
+
+<<timed 15s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Did you get all the answers or do you need to replay it?  </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+
+<<timed 17s>>
+ <<append "#messagesContainer">>
+     <<button "ANSWERS">>
+      <<timed 1s>>
+      <<goto $nextpass>>
+        <</timed>>
+      <</button>>
+       <<button "REPLAY">>
+      <<timed 1s>>
+      <<goto $pass>>
+        <</timed>>
+      <</button>>
+    <</append>>
+<</timed>>
+
+
+:: portalQuiz9 [purple nobr]
+<<set $prevpass to "portalVid8">>
+<<set $pass to "portalQuiz9">>
+<<set $nextpass to "portalQuiz9b">>
+<main class="main portal grid-container">
+  <section class="hero" id="hero">
+
+    
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"></div>
+  /* <div class="chat-input">
+  <<include "codeword2">>
+  </div> */
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+<<timed 2s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Ok, let’s go through them together.  </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 4s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Teacher, pick whichever is the most popular answer and I’ll see if it’s correct.  </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+
+<<timed 1s>>
+  <<replace "#hero">>
+    <div class="quiz">
+    <h3> Wangari Maathai was the first woman to become a professor in which country? </h3>
+<div class="quiz-options">
+  <div class="option" id="opt1">
+    <<button "P. Japan">> 
+      <<timed 0.5s>>
+      <<replace "#hint">>Incorrect. Try again<</replace>>
+      <</timed>>
+       <<timed 3s>>
+      <<replace "#opt1">><</replace>>
+        <<replace "#hint">><</replace>>
+      <</timed>>
+      <</button>>
+  </div>
+   <div class="option" id="opt2">
+  <<button "A. US">> 
+      <<timed 0.5s>>
+      <<replace "#hint">>Incorrect. Try again<</replace>>
+      <</timed>>
+       <<timed 3s>>
+      <<replace "#opt2">><</replace>>
+        <<replace "#hint">><</replace>>
+      <</timed>>
+   <</button>>
+   </div>
+    <div class="option" id="opt3">
+  <<button "L. India">> 
+     <<timed 0.5s>>
+      <<replace "#hint">>Incorrect. Try again<</replace>>
+      <</timed>>
+       <<timed 3s>>
+      <<replace "#opt3">><</replace>>
+        <<replace "#hint">><</replace>>
+      <</timed>>
+  <</button>>
+  </div>
+   <div class="option" id="opt4">
+   <<button "C. Kenya">> 
+     <<timed 0.5s>>
+      <<replace "#hint">>Correct!<</replace>>
+      <</timed>>
+       <<timed 3s>>
+      <<goto $nextpass>>
+      <</timed>>
+   <</button>>
+   </div>
+</div>
+<br/><br/>
+<h3 id="hint"></h3>
+    </div>
+  <</replace>>
+<</timed>>
+
+
+
+:: portalQuiz9b [purple nobr]
+<<set $prevpass to "portalQuiz9">>
+<<set $pass to "portalQuiz9b">>
+<<set $nextpass to "portalQuiz9c">>
+<main class="main portal grid-container">
+  <section class="hero" id="hero">
+
+    
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"></div>
+  /* <div class="chat-input">
+  <<include "codeword2">>
+  </div> */
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+
+
+<<timed 1s>>
+  <<replace "#hero">>
+    <div class="quiz">
+    <h3> When the trees were being cut down for commercial planting, what was being affected?</h3>
+<div class="quiz-options">
+  <div class="option" id="opt1">
+    <<button "P. Loss of Biodiversity">> 
+      <<timed 0.5s>>
+      <<replace "#hint">>Incorrect. Try again<</replace>>
+      <</timed>>
+       <<timed 3s>>
+      <<replace "#opt1">><</replace>>
+        <<replace "#hint">><</replace>>
+      <</timed>>
+      <</button>>
+  </div>
+   <div class="option" id="opt2">
+  <<button "G. Poverty">> 
+      <<timed 0.5s>>
+      <<replace "#hint">>Incorrect. Try again<</replace>>
+      <</timed>>
+       <<timed 3s>>
+      <<replace "#opt2">><</replace>>
+        <<replace "#hint">><</replace>>
+      <</timed>>
+   <</button>>
+   </div>
+    <div class="option" id="opt3">
+  <<button "E. Drought">> 
+     <<timed 0.5s>>
+      <<replace "#hint">>Incorrect. Try again<</replace>>
+      <</timed>>
+       <<timed 3s>>
+      <<replace "#opt3">><</replace>>
+        <<replace "#hint">><</replace>>
+      <</timed>>
+  <</button>>
+  </div>
+   <div class="option" id="opt4">
+   <<button "L. All of them">> 
+     <<timed 0.5s>>
+      <<replace "#hint">>Correct!<</replace>>
+      <</timed>>
+       <<timed 3s>>
+      <<goto $nextpass>>
+      <</timed>>
+   <</button>>
+   </div>
+</div>
+<br/><br/>
+<h3 id="hint"></h3>
+    </div>
+  <</replace>>
+<</timed>>
+
+
+:: portalQuiz9c [purple nobr]
+<<set $prevpass to "portalQuiz9b">>
+<<set $pass to "portalQuiz9c">>
+<<set $nextpass to "portalQuiz9d">>
+<main class="main portal grid-container">
+  <section class="hero" id="hero">
+
+    
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"></div>
+  /* <div class="chat-input">
+  <<include "codeword2">>
+  </div> */
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+
+
+<<timed 1s>>
+  <<replace "#hero">>
+    <div class="quiz">
+    <h3>In 1977 she started what movement?</h3>
+<div class="quiz-options">
+  <div class="option" id="opt1">
+    <<button "N. The Blue Belt Movement">> 
+      <<timed 0.5s>>
+      <<replace "#hint">>Incorrect. Try again<</replace>>
+      <</timed>>
+       <<timed 3s>>
+      <<replace "#opt1">><</replace>>
+        <<replace "#hint">><</replace>>
+      <</timed>>
+      <</button>>
+  </div>
+   <div class="option" id="opt2">
+  <<button " B. The Red Belt Movement">> 
+      <<timed 0.5s>>
+      <<replace "#hint">>Incorrect. Try again<</replace>>
+      <</timed>>
+       <<timed 3s>>
+      <<replace "#opt2">><</replace>>
+        <<replace "#hint">><</replace>>
+      <</timed>>
+   <</button>>
+   </div>
+  
+   <div class="option" id="opt4">
+   <<button "E. The Green Belt Movement">> 
+     <<timed 0.5s>>
+      <<replace "#hint">>Correct!<</replace>>
+      <</timed>>
+       <<timed 3s>>
+      <<goto $nextpass>>
+      <</timed>>
+   <</button>>
+   </div>
+</div>
+<br/><br/>
+<h3 id="hint"></h3>
+    </div>
+  <</replace>>
+<</timed>>
+
+:: portalQuiz9d [purple nobr]
+<<set $prevpass to "portalQuiz9c">>
+<<set $pass to "portalQuiz9d">>
+<<set $nextpass to "portalQuiz9e">>
+<main class="main portal grid-container">
+  <section class="hero" id="hero">
+
+    
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"></div>
+  /* <div class="chat-input">
+  <<include "codeword2">>
+  </div> */
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+
+
+<<timed 1s>>
+  <<replace "#hero">>
+    <div class="quiz">
+    <h3>By 2004, how many trees had the Green Belt Movement planted? </h3>
+<div class="quiz-options">
+  <div class="option" id="opt1">
+    <<button "30,000,000 trees.">> 
+
+      <<timed 0.5s>>
+      <<replace "#hint">>Correct!<</replace>>
+      <</timed>>
+       <<timed 3s>>
+      <<goto $nextpass>>
+      <</timed>>
+     
+      <</button>>
+  </div>
+   <div class="option" id="opt2">
+  <<button "B. 30,000 trees ">> 
+      <<timed 0.5s>>
+      <<replace "#hint">>Incorrect. Try again<</replace>>
+      <</timed>>
+       <<timed 3s>>
+      <<replace "#opt2">><</replace>>
+        <<replace "#hint">><</replace>>
+      <</timed>>
+   <</button>>
+   </div>
+  
+   <div class="option" id="opt4">
+   <<button "C. 3,000 trees">> 
+      <<timed 0.5s>>
+      <<replace "#hint">>Incorrect. Try again<</replace>>
+      <</timed>>
+       <<timed 3s>>
+      <<replace "#opt4">><</replace>>
+        <<replace "#hint">><</replace>>
+      <</timed>>
+   <</button>>
+   </div>
+</div>
+<br/><br/>
+<h3 id="hint"></h3>
+    </div>
+  <</replace>>
+<</timed>>
+
+
+:: portalQuiz9e [purple nobr]
+<<set $prevpass to "portalQuiz9d">>
+<<set $pass to "portalQuiz9e">>
+<<set $nextpass to "portalQuiz9f">>
+<main class="main portal grid-container">
+  <section class="hero" id="hero">
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"></div>
+  /* <div class="chat-input">
+  <<include "codeword2">>
+  </div> */
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+
+
+<<timed 1s>>
+  <<replace "#hero">>
+    <div class="quiz">
+    <h3>What was being sold to private companies that prompted Wangari Maathai to oppose the government? </h3>
+<div class="quiz-options">
+  <div class="option" id="opt1">
+    <<button "M. Forests">> 
+      <<timed 0.5s>>
+      <<replace "#hint">>Correct!<</replace>>
+      <</timed>>
+       <<timed 3s>>
+      <<goto $nextpass>>
+      <</timed>>
+     
+      <</button>>
+  </div>
+   <div class="option" id="opt2">
+  <<button "B. Water">> 
+      <<timed 0.5s>>
+      <<replace "#hint">>Incorrect. Try again<</replace>>
+      <</timed>>
+       <<timed 3s>>
+      <<replace "#opt2">><</replace>>
+        <<replace "#hint">><</replace>>
+      <</timed>>
+   <</button>>
+   </div>
+  
+   <div class="option" id="opt4">
+   <<button "K. Pickles">> 
+      <<timed 0.5s>>
+      <<replace "#hint">>Incorrect. Try again<</replace>>
+      <</timed>>
+       <<timed 3s>>
+      <<replace "#opt4">><</replace>>
+        <<replace "#hint">><</replace>>
+      <</timed>>
+   <</button>>
+   </div>
+</div>
+<br/><br/>
+<h3 id="hint"></h3>
+    </div>
+  <</replace>>
+<</timed>>
+
+:: portalQuiz9f [purple nobr]
+<<set $prevpass to "portalQuiz9e">>
+<<set $pass to "portalQuiz9f">>
+<<set $nextpass to "portalQuiz9g">>
+<main class="main portal grid-container">
+  <section class="hero" id="hero">
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"></div>
+  /* <div class="chat-input">
+  <<include "codeword2">>
+  </div> */
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+
+
+<<timed 1s>>
+  <<replace "#hero">>
+    <div class="quiz">
+    <h3>How did her peace work start?</h3>
+<div class="quiz-options">
+  <div class="option" id="opt1">
+    <<button "O. On Tik Tok">> 
+     <<timed 0.5s>>
+      <<replace "#hint">>Incorrect. Try again<</replace>>
+      <</timed>>
+       <<timed 3s>>
+      <<replace "#opt2">><</replace>>
+        <<replace "#hint">><</replace>>
+      <</timed>>
+      <</button>>
+  </div>
+   <div class="option" id="opt2">
+  <<button "I. Planting One Tree ">> 
+    <<timed 0.5s>>
+      <<replace "#hint">>Correct!<</replace>>
+      <</timed>>
+       <<timed 3s>>
+      <<goto $nextpass>>
+      <</timed>>
+     
+   <</button>>
+   </div>
+  
+   <div class="option" id="opt4">
+   <<button "W. With all her Money. ">> 
+      <<timed 0.5s>>
+      <<replace "#hint">>Incorrect. Try again<</replace>>
+      <</timed>>
+       <<timed 3s>>
+      <<replace "#opt4">><</replace>>
+        <<replace "#hint">><</replace>>
+      <</timed>>
+   <</button>>
+   </div>
+</div>
+<br/><br/>
+<h3 id="hint"></h3>
+    </div>
+  <</replace>>
+<</timed>>
+
+
+:: portalQuiz9g [purple nobr]
+<<set $prevpass to "portalQuiz9f">>
+<<set $pass to "portalQuiz9g">>
+<<set $nextpass to "portalClimateScrabble">>
+<main class="main portal grid-container">
+  <section class="hero" id="hero">
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"></div>
+  /* <div class="chat-input">
+  <<include "codeword2">>
+  </div> */
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+
+
+<<timed 1s>>
+  <<replace "#hero">>
+    <div class="quiz">
+    <h3>What was Wangari’s method for change? </h3>
+<div class="quiz-options">
+  <div class="option" id="opt1">
+    <<button "T. Start little and do the best you can">> 
+       <<timed 0.5s>>
+      <<replace "#hint">>Correct!<</replace>>
+      <</timed>>
+       <<timed 3s>>
+      <<goto $nextpass>>
+      <</timed>>
+      <</button>>
+  </div>
+   <div class="option" id="opt2">
+  <<button "H. You can do it">> 
+   <<timed 0.5s>>
+      <<replace "#hint">>Incorrect. Try again<</replace>>
+      <</timed>>
+       <<timed 3s>>
+      <<replace "#opt2">><</replace>>
+        <<replace "#hint">><</replace>>
+      <</timed>>
+   <</button>>
+   </div>
+  
+   <div class="option" id="opt4">
+   <<button "Y. Go big or go home">> 
+      <<timed 0.5s>>
+      <<replace "#hint">>Incorrect. Try again<</replace>>
+      <</timed>>
+       <<timed 3s>>
+      <<replace "#opt4">><</replace>>
+        <<replace "#hint">><</replace>>
+      <</timed>>
+   <</button>>
+   </div>
+</div>
+<br/><br/>
+<h3 id="hint"></h3>
+    </div>
+  <</replace>>
+<</timed>>
+
+:: portalClimateScrabble [purple nobr]
+<<set $prevpass to "portalQuiz9g">>
+<<set $pass to "portalClimateScrabble">>
+<<set $nextpass to "portalvid10">>
+<main class="main portal grid-container">
+  <section class="hero" id="hero">
+
+  
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"></div>
+  <div class="chat-input">
+  <div id="helperText"></div>
+  <<include "codeword3">>
+  </div>
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+<<timed 2s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>The answers have made a scrambled word </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 4s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>We need to work out what the word is to move on. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+
+<<timed 8s>>
+  <<replace "#hero">>
+ 
+ 
+
+    <div class="scrabble-container">
+     <div id="pos1"> <div class="tile" data-letter="C"></div></div>
+    <div id="pos2"> <div class="tile" data-letter="L"></div></div>
+    <div id="pos3"><div class="tile" data-letter="E"></div></div>
+    <div id="pos4"><div class="tile" data-letter="A"></div></div>
+      <div id="pos5"><div class="tile" data-letter="M"></div></div>
+      <div id="pos6"><div class="tile" data-letter="I"></div></div>
+     <div id="pos7"><div class="tile" data-letter="T"></div> </div>      
+  </div>
+
+
+  <</replace>>
+<</timed>>
+
+<<timed 10s>>
+  <<replace "#helperText">><span>Enter the correct word:</span><</replace>>
+<<append "#messagesContainer">>
+
+  <<button "HELP">>
+    <<timed 0.5s>>
+      <<replace "#pos3">><</replace>>
+    <</timed>>
+    <<timed 1s>>
+      <<replace "#pos6">><</replace>>
+   <</timed>>
+     <<timed 1.5s>>
+ <<replace "#pos3">><div class="tile" data-letter="I"></div><</replace>>
+    <</timed>>
+    <<timed 2s>>
+  <<replace "#pos5">><</replace>>
+    <</timed>>
+     <<timed 2.5s>>
+  <<replace "#pos5">>  <<replace "#pos6">><div class="tile" data-letter="M"></div><</replace>><</replace>>
+    <</timed>>
+     <<timed 3s>>
+    <<replace "#pos4">><</replace>>
+    <</timed>>
+    <<timed 3.5s>>
+    <<replace "#pos4">><div class="tile" data-letter="E"></div><</replace>>
+    <</timed>>
+     <<timed 4s>>
+    <<replace "#pos5">><div class="tile" data-letter="A"></div><</replace>>
+    <</timed>>
+  <</button>>
+  <</append>>
+<</timed>>
+
+
+:: portalvid10 [purple nobr]
+<<set $prevpass to "portalClimateScrabble">>
+<<set $pass to "portalvid10">>
+<<set $nextpass to "portal11">>
+<main class="main portal grid-container">
+  <section class="hero" id="hero">
+
+       <iframe width='800px' height='450px'
+      src='https://player.vimeo.com/video/531960916?autoplay=1&byline=0&portrait=0'></iframe>
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"></div>
+  <div class="chat-input">
+  <<include "codeword4">>
+  </div>
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+
+<<timed 2s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p> Open Part 2 in the compartment </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+
+:: portalvid10b [purple nobr]
+<<set $prevpass to "portalClimateScrabble">>
+<<set $pass to "portalvid10">>
+<<set $nextpass to "portal11">>
+<main class="main portal grid-container">
+  <section class="hero" id="hero">
+ <<include "buttonProgress">>
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"></div>
+  <div class="chat-input">
+  <<include "codeword4">>
+  </div>
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+
+<<timed 2s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Ok – I’ve decoded the next signal - it says CORR.  </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 4s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>We have MY & CORR at the moment.  </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 6s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>2 down. 2 to go. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 10s>>
+  <<goto $nextpass>>
+
+  <</timed>>
+
+
+:: portal11 [purple nobr]
+<<set $prevpass to "portalvid10">>
+<<set $pass to "portal11">>
+<<set $nextpass to "portal12">>
+<main class="main portal grid-container">
+  <section class="hero" id="hero">
+
+         <<include "buttonProgress">>
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"></div>
+  <div class="chat-input">
+  <<include "codeword5">>
+  </div>
+  </section>
+  <section class="portal-footer video">
+  <<include "portalfooter">>
+  </section>
+</main>
+
+
+<<timed 2s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p> You can hold here if you need a break. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 5s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>When you are ready to move on, enter the word PHOTOSYNTHESIS.  </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+
+:: portal12 [purple nobr]
+<<set $prevpass to "portal11">>
+<<set $pass to "portal12">>
+<<set $nextpass to "">>
+<main class="main portal grid-container">
+  <section class="hero" id="hero">
+
+
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"></div>
+  <div class="chat-input">
+  <<include "codeword4">>
+  </div>
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+
+<<timed 2s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Photosynthesis</p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 5s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Photo – Syn – the – sis.   </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 7s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>That’s a difficult word to type – let alone say! </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 9s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Photosynthesis </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+
+<<timed 12s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>I knew I’d get there. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 14s>>
+  <<replace "#messagesContainer">>
+    
+  <</replace>>
+<</timed>>
+
+<<timed 16s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Photosynthesis is how Green Plants make their own food and get their energy.  </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 18s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>We all need to eat food – I love Weetabix as you know – but even Weetabix wouldn’t be here without plants. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 20s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Almost all life on Earth depends upon this process. Photosynthesis </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 22s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>You’ve unlocked a formula – teacher, I imagine you know more about photosynthesis than I do – perhaps you can work with the class to put these words in the right order? And then maybe that will unlock whatever is in the compartment. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
 
 :: portalVideo [purple nobr]
 
 <main class="main portal grid-container">
-  <section class="video">
+  <section class="hero">
         /* <iframe allow="autoplay" width='800px' height='450px'
       src='https://player.vimeo.com/video/531960916?autoplay=1&byline=0&portrait=0'></iframe> */
        <iframe width='800px' height='450px'
       src='https://player.vimeo.com/video/531960916?autoplay=1&byline=0&portrait=0'></iframe>
   </section>
   <section class="chat">
-  <div class="message">
-    <div class="avatar">
-      <img src="assets/img/user.png" alt="avatar"/>
+  <div class="messages-container">
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container">
+        <span class="sender">Judy</span>
+        <p>Welcome. Thanks for coming.</p>
+        <p>Welcome. Thanks for coming.</p>
+        <p>Welcome. Thanks for coming.</p>
+      </div>
     </div>
-    <div class="message-container">
-      <span class="sender">Judy</span>
-      <p>Welcome. Thanks for coming.</p>
-      <p>Welcome. Thanks for coming.</p>
-      <p>Welcome. Thanks for coming.</p>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container">
+        <span class="sender">Judy</span>
+        <p>Welcome. Thanks for coming.</p>
+      </div>
     </div>
   </div>
-  <div class="message">
-    <div class="avatar">
-      <img src="assets/img/user.png" alt="avatar"/>
-    </div>
-    <div class="message-container">
-      <span class="sender">Judy</span>
-      <p>Welcome. Thanks for coming.</p>
-    </div>
+  <div class="chat-input">
+  <<include "codeword">>
   </div>
   </section>
   <section class="portal-footer video">
-  <div class="uca-logo">
-   <img src="assets/img/logobutton.png" alt="logo"/>
-   </div>
-   <div class="uca-logo-text">
-   <img src="assets/img/logotitle.png" alt="logo"/>
-   </div>
-   [[Start]]
+    <<include "portalfooter">>
   </section>
 </main>
 
@@ -302,9 +2242,56 @@ $(document.head).find('#style-ui-bar').remove();
 
 [[rotatelogogreen]]
 
-:: portalButton [nobr]
 
-<main class="main button-grid-container">
+:: portalAnneSays [purple nobr]
+
+<main class="main portal grid-container">
+  <section class="hero">
+ <div class="annesays">
+<div class="title"><h1><span>Anne</span> <span>Says</span></h1></div>
+
+<div class="play-btn-container">
+ [img[Forward|assets/img/play.png][Start]]
+</div>
+</div>
+  </section>
+  <section class="chat">
+  <div class="messages-container">
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container">
+        <span class="sender">Judy</span>
+        <p>Welcome. Thanks for coming.</p>
+        <p>Welcome. Thanks for coming.</p>
+        <p>Welcome. Thanks for coming.</p>
+      </div>
+    </div>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container">
+        <span class="sender">Judy</span>
+        <p>Welcome. Thanks for coming.</p>
+      </div>
+    </div>
+  </div>
+  <div class="chat-input">
+  <<include "codeword">>
+  </div>
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+/* <<include "footer">> */
+
+:: buttonProgress [nobr]
+
+<div class="main button-grid-container">
   <div class="portal-button-container">
     <img src="assets/img/logobutton.png"/>
     </div>
@@ -320,11 +2307,196 @@ $(document.head).find('#style-ui-bar').remove();
     <div class="portal-task-item four">
     <img src="assets/img/play.png"/>
     </div>
-</main>
+</div>
 
 
 
-<<include "footer">>
+
+
+:: codeword1 [nobr]
+<div id="coderesult"></div>
+ <div id="resultbutton">
+/% CODEWORD INPUT %/
+<div class="code-input">
+<<textbox "$code" "">>
+<<button "Send">>
+</div>
+ /% PASSWORD CODE %/
+<<set $code to $code.toUpperCase()>>
+/% CODEWORD CORRECT %/
+<<if $code isnot "">> 
+  <<if $code is "ANNE" or $code is "ANNE ">>
+    <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
+    <<timed 3s>><<goto $nextpass>><</timed>>
+   
+<</if>>
+<</if>>
+/% CODEWORD INCORRECT %/
+<<if $code isnot "">>
+  <<if $code is not "ANNE" and $code is not "ANNE ">>
+  <<replace "#coderesult">><div class="confirmation" id="confirmation">That's not right...</div><</replace>>
+  <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+  <</if>>
+  <</if>>
+<</button>>
+</div>
+
+</div>
+
+:: codeword2 [nobr]
+<div id="coderesult"></div>
+ <div id="resultbutton">
+/% CODEWORD INPUT %/
+<div class="code-input">
+<<textbox "$code" "">>
+<<button "Send">>
+</div>
+ /% PASSWORD CODE %/
+<<set $code to $code.toUpperCase()>>
+/% CODEWORD CORRECT %/
+<<if $code isnot "">> 
+  <<if $code is "TREES" or $code is "TREES ">>
+    <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
+    <<timed 3s>><<goto $nextpass>><</timed>>
+   
+<</if>>
+<</if>>
+/% CODEWORD INCORRECT %/
+<<if $code isnot "">>
+  <<if $code is not "TREES" and $code is not "TREES ">>
+  <<replace "#coderesult">><div class="confirmation" id="confirmation">That's not right...</div><</replace>>
+  <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+  <</if>>
+  <</if>>
+<</button>>
+</div>
+
+</div>
+
+:: codeword3 [nobr]
+<div id="coderesult"></div>
+ <div id="resultbutton">
+/% CODEWORD INPUT %/
+<div class="code-input">
+<<textbox "$code" "">>
+<<button "Send">>
+</div>
+ /% PASSWORD CODE %/
+<<set $code to $code.toUpperCase()>>
+/% CODEWORD CORRECT %/
+<<if $code isnot "">> 
+  <<if $code is "CLIMATE" or $code is "CLIMATE ">>
+    <<replace "#helperText">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
+    <<timed 3s>><<goto $nextpass>><</timed>>
+   
+<</if>>
+<</if>>
+/% CODEWORD INCORRECT %/
+<<if $code isnot "">>
+  <<if $code is not "CLIMATE" and $code is not "CLIMATE ">>
+  <<replace "#helperText">><div class="confirmation" id="confirmation">That's not right...</div><</replace>>
+  <<timed 1.5s>><<replace "#helperText">><span>Enter the correct word:</span><</replace>><</timed>>
+  <</if>>
+  <</if>>
+<</button>>
+</div>
+
+</div>
+
+:: codeword4 [nobr]
+<div id="coderesult"></div>
+ <div id="resultbutton">
+/% CODEWORD INPUT %/
+<div class="code-input">
+<<textbox "$code" "">>
+<<button "Send">>
+</div>
+ /% PASSWORD CODE %/
+<<set $code to $code.toUpperCase()>>
+/% CODEWORD CORRECT %/
+<<if $code isnot "">> 
+  <<if $code is "PLANTED" or $code is "PLANTED ">>
+    <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
+    <<timed 3s>>
+    <<goto $nextpass>>
+    <</timed>>
+   
+<</if>>
+<</if>>
+/% CODEWORD INCORRECT %/
+<<if $code isnot "">>
+  <<if $code is not "PLANTED" and $code is not "PLANTED ">>
+  <<replace "#coderesult">><div class="confirmation" id="confirmation">That's not right...</div><</replace>>
+  <<timed 1.5s>><<replace "#coderesult">><span>Enter the correct word:</span><</replace>><</timed>>
+  <</if>>
+  <</if>>
+<</button>>
+</div>
+
+</div>
+
+:: codeword5 [nobr]
+<div id="coderesult"></div>
+ <div id="resultbutton">
+/% CODEWORD INPUT %/
+<div class="code-input">
+<<textbox "$code" "">>
+<<button "Send">>
+</div>
+ /% PASSWORD CODE %/
+<<set $code to $code.toUpperCase()>>
+/% CODEWORD CORRECT %/
+<<if $code isnot "">> 
+  <<if $code is "PHOTOSYNTHESIS" or $code is "PHOTOSYNTHESIS ">>
+    <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
+    <<timed 3s>>
+     <<goto $nextpass>>
+    <</timed>>
+   
+<</if>>
+<</if>>
+/% CODEWORD INCORRECT %/
+<<if $code isnot "">>
+  <<if $code is not "PHOTOSYNTHESIS" and $code is not "PHOTOSYNTHESIS ">>
+  <<replace "#coderesult">><div class="confirmation" id="confirmation">That's not right...</div><</replace>>
+  <<timed 1.5s>><<replace "#coderesult">><span>Enter the correct word:</span><</replace>><</timed>>
+  <</if>>
+  <</if>>
+<</button>>
+</div>
+
+</div>
+
+:: codeword [nobr]
+<div id="coderesult"></div>
+ <div id="resultbutton">
+/% CODEWORD INPUT %/
+<div class="code-input">
+<<textbox "$code" "">>
+<<button "Send">>
+</div>
+ /% PASSWORD CODE %/
+<<set $code to $code.toUpperCase()>>
+/% CODEWORD CORRECT %/
+<<if $code isnot "">> 
+  <<if $code is "CODEWORD" or $code is "CODEWORD ">>
+    <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
+    <<timed 3s>><<goto $nextpass>><</timed>>
+   
+<</if>>
+<</if>>
+/% CODEWORD INCORRECT %/
+<<if $code isnot "">>
+  <<if $code is not "CODEWORD" and $code is not "CODEWORD ">>
+  <<replace "#coderesult">><div class="confirmation" id="confirmation">That's not right...</div><</replace>>
+  <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+  <</if>>
+  <</if>>
+<</button>>
+</div>
+
+</div>
+
 
 
 :: rotatelogo[nobr]
@@ -356,6 +2528,7 @@ $(document.head).find('#style-ui-bar').remove();
 :: tree [nobr]
 
 <main class="main tree-grid-container">
+
   /* <div class="full-img-container">
     <img src="assets/img/tree.png"/>
     </div> */
@@ -369,117 +2542,155 @@ $(document.head).find('#style-ui-bar').remove();
 
 <<include "footer">>
 
-:: treePw1
 
-<div id="coderesult"></div>
- /% CODEWORD FEEDBACK %/
-   <div id="resultbutton">
+
+:: treePw1 [nobr]
+
+<div class="treecoderesult" id="coderesult1"></div>
+ <div id="resultbutton" class="resultbutton1">
 /% CODEWORD INPUT %/
-<div class="css-input code-input">
-<<textbox "$password" "">></div>
+<div class="code-input">
+<<textbox "$code" "">>
 <<button "Enter">>
 </div>
-</main>
  /% PASSWORD CODE %/
-<<set $password to $password.toUpperCase()>>
-      
+<<set $code to $code.toUpperCase()>>
 /% CODEWORD CORRECT %/
-<<if $password isnot "" and $password is "ROOTS">>
-<<replace "#coderesult">>CORRECT<</replace>>
-<<timed 3s>>
-
-<</timed>>
+<<if $code isnot "">> 
+  <<if $code is "LEAVES" or $code is "LEAVES ">>
+    <<replace "#coderesult1">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
+     <<run $treeprogress.push("LEAVES")>>
+    <<timed 3s>>
+         <<replace ".resultbutton1">><h2 style="color:white; font-weight:800">Leaves</h2><</replace>>
+           <<replace "#coderesult1">><</replace>>
+    <</timed>>
+    <<timed 5s>>
+      <<include "checktreeprogress">>
+      <</timed>>
+   
+<</if>>
 <</if>>
 /% CODEWORD INCORRECT %/
-<<if $password isnot "" and $password is not "ROOTS">>
-<<replace "#coderesult">>Thats not right.<</replace>>
-<<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
-<</if>><</button>>
+<<if $code isnot "">>
+  <<if $code is not "LEAVES" and $code is not "LEAVES ">>
+  <<replace "#coderesult1">><div class="confirmation" id="confirmation">That's not right...</div><</replace>>
+  <<timed 1.5s>><<replace "#coderesult1">><</replace>><</timed>>
+  <</if>>
+  <</if>>
+<</button>>
 </div>
 
-:: treePw2
+</div>
 
-<div id="coderesult"></div>
- /% CODEWORD FEEDBACK %/
-   <div id="resultbutton">
+:: treePw2 [nobr]
+
+<div class="treecoderesult" id="coderesult2"></div>
+ <div id="resultbutton" class="resultbutton2">
 /% CODEWORD INPUT %/
-<div class="css-input code-input">
-<<textbox "$password" "">></div>
+<div class="code-input">
+<<textbox "$code" "">>
 <<button "Enter">>
 </div>
-</main>
  /% PASSWORD CODE %/
-<<set $password to $password.toUpperCase()>>
-      
+<<set $code to $code.toUpperCase()>>
 /% CODEWORD CORRECT %/
-<<if $password isnot "" and $password is "TRUNK">>
-<<replace "#coderesult">>CORRECT<</replace>>
-<<timed 3s>>
-
-<</timed>>
+<<if $code isnot "">> 
+  <<if $code is "BRANCHES" or $code is "BRANCHES ">>
+    <<replace "#coderesult2">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
+    <<run $treeprogress.push("BRANCHES")>>
+    <<timed 3s>>
+         <<replace ".resultbutton2">><h2 style="color:white; font-weight:800">Branches</h2><</replace>>
+           <<replace "#coderesult2">><</replace>>
+    <</timed>>
+     <<timed 5s>>
+      <<include "checktreeprogress">>
+      <</timed>>
+<</if>>
 <</if>>
 /% CODEWORD INCORRECT %/
-<<if $password isnot "" and $password is not "TRUNK">>
-<<replace "#coderesult">>Thats not right.<</replace>>
-<<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
-<</if>><</button>>
+<<if $code isnot "">>
+  <<if $code is not "BRANCHES" and $code is not "BRANCHES ">>
+  <<replace "#coderesult2">><div class="confirmation" id="confirmation">That's not right...</div><</replace>>
+  <<timed 1.5s>><<replace "#coderesult2">><</replace>><</timed>>
+  <</if>>
+  <</if>>
+<</button>>
 </div>
 
-:: treePw3
+</div>
 
-<div id="coderesult"></div>
- /% CODEWORD FEEDBACK %/
-   <div id="resultbutton">
+:: treePw3 [nobr]
+
+<div class="treecoderesult" id="coderesult3"></div>
+ <div id="resultbutton"  class="resultbutton3">
 /% CODEWORD INPUT %/
-<div class="css-input code-input">
-<<textbox "$password" "">></div>
+<div class="code-input">
+<<textbox "$code" "">>
 <<button "Enter">>
 </div>
-</main>
  /% PASSWORD CODE %/
-<<set $password to $password.toUpperCase()>>
-      
+<<set $code to $code.toUpperCase()>>
 /% CODEWORD CORRECT %/
-<<if $password isnot "" and $password is "BRANCHES">>
-<<replace "#coderesult">>CORRECT<</replace>>
-<<timed 3s>>
-
-<</timed>>
+<<if $code isnot "">> 
+  <<if $code is "ROOTS" or $code is "ROOTS ">>
+    <<replace "#coderesult3">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
+     <<run $treeprogress.push("ROOTS")>>
+     <<timed 3s>>
+         <<replace ".resultbutton3">><h2 style="color:white; font-weight:800">Roots</h2><</replace>>
+           <<replace "#coderesult3">><</replace>>
+    <</timed>>
+     <<timed 5s>>
+      <<include "checktreeprogress">>
+      <</timed>>
+<</if>>
 <</if>>
 /% CODEWORD INCORRECT %/
-<<if $password isnot "" and $password is not "BRANCHES">>
-<<replace "#coderesult">>Thats not right.<</replace>>
-<<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
-<</if>><</button>>
+<<if $code isnot "">>
+  <<if $code is not "ROOTS" and $code is not "ROOTS ">>
+  <<replace "#coderesult3">><div class="confirmation" id="confirmation">That's not right...</div><</replace>>
+  <<timed 1.5s>><<replace "#coderesult3">><</replace>><</timed>>
+  <</if>>
+  <</if>>
+<</button>>
 </div>
 
+</div>
 
-:: treePw4
+:: treePw4 [nobr]
 
-<div id="coderesult"></div>
- /% CODEWORD FEEDBACK %/
-   <div id="resultbutton">
+<div class="treecoderesult" id="coderesult4"></div>
+ <div id="resultbutton" class="resultbutton4">
 /% CODEWORD INPUT %/
-<div class="css-input code-input">
-<<textbox "$password" "">></div>
+<div class="code-input">
+<<textbox "$code" "">>
 <<button "Enter">>
 </div>
-</main>
  /% PASSWORD CODE %/
-<<set $password to $password.toUpperCase()>>
-      
+<<set $code to $code.toUpperCase()>>
 /% CODEWORD CORRECT %/
-<<if $password isnot "" and $password is "LEAVES">>
-<<replace "#coderesult">>CORRECT<</replace>>
-<<timed 3s>>
-
-<</timed>>
+<<if $code isnot "">> 
+  <<if $code is "TRUNK" or $code is "TRUNK ">>
+    <<replace "#coderesult4">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
+   <<run $treeprogress.push("TRUNK")>>
+     <<timed 3s>>
+         <<replace ".resultbutton4">><h2 style="color:white; font-weight:800">Trunk $treeprogress</h2><</replace>>
+           <<replace "#coderesult4">><</replace>>
+    <</timed>>
+     <<timed 5s>>
+      <<include "checktreeprogress">>
+      <</timed>>
+<</if>>
 <</if>>
 /% CODEWORD INCORRECT %/
-<<if $password isnot "" and $password is not "LEAVES">>
-<<replace "#coderesult">>Thats not right.<</replace>>
-<<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
-<</if>><</button>>
+<<if $code isnot "">>
+  <<if $code is not "TRUNK" and $code is not "TRUNK ">>
+  <<replace "#coderesult4">><div class="confirmation" id="confirmation">That's not right...</div><</replace>>
+  <<timed 1.5s>><<replace "#coderesult4">><</replace>><</timed>>
+  <</if>>
+  <</if>>
+<</button>>
+</div>
+
 </div>
 
 :: scrabble [nobr purple]
@@ -526,10 +2737,10 @@ $(document.head).find('#style-ui-bar').remove();
 <main class="annesays">
 <div class="title"><h1><span>Anne</span> <span>Says</span></h1></div>
 
-<div class="play-btn-container">
- [img[Forward|assets/img/play.png][Start]]
-</div>
+
 </main>
+
+<<timed 5s>><<goto "portalAnneSays1">><</timed>>
 
 /* <<include "footer">> */
 

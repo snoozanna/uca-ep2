@@ -33,17 +33,18 @@ button,
 .inline-btn-wrapper > a {
   background-color: var(--pink);
   color: var(--offwhite);
-  border: var(--offwhite) 1px solid;
+  border: var(--offwhite) 2px solid;
   border-radius: 3px;
   font-family: var(--font-headings);
   text-transform: uppercase;
   padding: 5px;
+  font-weight: 800;
   box-shadow: var(--blackish) 4px 4px;
 }
 
 button:hover {
   background-color: var(--lightorange);
-  border: var(--offwhite) 1px solid;
+  border: var(--offwhite) 2px solid;
   color: var(--blackish);
 }
 
@@ -170,13 +171,14 @@ main {
   padding: var(--padding);
 }
 
-section.video {
+section.hero {
   /* background-color: aquamarine; */
   min-width: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   grid-area: video;
+  height: 100%;
 }
 
 .grid-container {
@@ -202,6 +204,10 @@ section.video {
 }
 
 .grid-container > .chat {
+  overflow: scroll;
+  height: 80vh;
+  width: min-content;
+  min-width: 100%;
 }
 
 .grid-container > .portal-footer {
@@ -209,9 +215,51 @@ section.video {
   grid-area: footer;
 }
 
+/* chat input  */
+section.chat > .chat-input {
+}
+
+section.chat > .chat-input > #resultbutton > .code-input > input,
+#resultbutton > .code-input > input {
+  background-color: rgb(203, 198, 198);
+  color: black;
+  font-weight: 800;
+  border: none;
+  border-radius: 1rem;
+  margin-inline-end: 2rem;
+}
+
+section.chat > .chat-input > #resultbutton > .code-input > input:hover,
+#resultbutton > .code-input > input:hover {
+  background-color: var(--pink);
+
+  border: 2px solid white;
+}
+
+section.chat > .chat-input > #resultbutton > .code-input,
+#resultbutton > .code-input {
+  display: flex;
+}
+
+section.chat > .chat-input > #coderesult,
+#coderesult {
+  font-weight: 800;
+}
+
+#helperText > span {
+  font-weight: 900;
+}
+
+#coderesult1,
+#coderesult2,
+#coderesult3,
+#coderesult4 {
+  color: white;
+}
+
 /* VIDEO  */
 
-.grid-container > .video > iframe {
+.grid-container > .hero > iframe {
   width: 100%;
   height: 100%;
 }
@@ -224,9 +272,10 @@ section.chat {
   padding: var(--padding);
   background-color: #f5deb34f;
   border-radius: 1rem;
+  justify-content: space-between;
 }
 
-section.chat > .message {
+section.chat > .messages-container > .message {
   display: flex;
   gap: 1rem;
   background-color: rgb(203, 198, 198);
@@ -237,23 +286,23 @@ section.chat > .message {
   width: fit-content;
 }
 
-section.chat > .message > .avatar {
+section.chat > .messages-container > .message > .avatar {
   max-width: 40px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
 
-section.chat > .message > .message-container {
+section.chat > .messages-container > .message > .message-container {
   display: flex;
   flex-direction: column;
 }
 
-section.chat > .message > .message-container > .sender {
+section.chat > .messages-container > .message > .message-container > .sender {
   font-size: 1.2rem;
 }
 
-section.chat > .message > .message-container > p {
+section.chat > .messages-container > .message > .message-container > p {
   margin-block-end: 0;
 }
 
@@ -267,7 +316,7 @@ section.portal-footer {
   margin: 0rem -2rem -2rem -2rem;
 }
 
-section.portal-footer.video {
+section.portal-footer.hero {
   justify-content: flex-start;
 }
 footer > .logo-wrapper {
@@ -329,19 +378,25 @@ section.chatlogo {
 
 /* TREE  */
 
+section.hero.tree-grid-container {
+  display: grid;
+}
+
 .tree-grid-container {
   background-image: url("/assets/img/tree.png"); /* Replace with your image file path */
   background-size: contain; /* Cover the entire viewport */
-  background-size: 80vh;
+
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   display: grid;
   grid-template-areas:
-    "tree-one . tree-two"
-    "tree-three . tree-four"
+    "tree-one . ."
+    ". . tree-two"
+    ". . tree-four"
+    "tree-three . ."
     ". . .";
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: 1fr 1fr 0.5fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 0.5fr;
   height: 100vh;
   gap: 2rem;
 }
@@ -562,12 +617,22 @@ main.letter {
 }
 
 /* ANNE SAYS  */
+
 main.annesays {
+  height: 90vh;
+}
+
+section.hero > .annesays {
+  max-height: 80vh;
+}
+
+main.annesays,
+.annesays {
   background-image: url("/assets/img/neon-bg.jpeg"); /* Replace with your image file path */
   background-size: cover; /* Cover the entire viewport */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
-  height: 100vh;
+
   display: grid;
   grid-template-areas:
     ". logo1 ."
@@ -575,12 +640,32 @@ main.annesays {
     ". . play";
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  height: 100vh;
+
   gap: 2rem;
 }
 
-main.annesays > .title {
+main.annesays.darker::before,
+.annesays.darker::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+main.annesays > .title,
+.annesays > .title,
+main.annesays > .titleWrapper,
+.annesays > .titleWrapper {
   grid-area: title;
+}
+
+main.annesays > .title,
+.annesays > .title,
+main.annesays > .titleWrapper > .title,
+.annesays > .titleWrapper > .title {
   text-align: center;
   background: rgb(62, 49, 222);
   background: linear-gradient(
@@ -591,9 +676,15 @@ main.annesays > .title {
   padding: 3rem;
   transform: skew(-6deg);
   box-shadow: 10px 10px 5px 0px #05f6ff;
+  height: fit-content;
 }
 
-main.annesays > .title > h1 > span {
+main.annesays > .title > h1 > span,
+.annesays > .title > h1 > span,
+.annesays > .title > h2,
+main.annesays > .titleWrapper > .title > h1 > span,
+.annesays > .titleWrapper > .title > h1 > span,
+.annesays > .titleWrapper > .title > h2 {
   display: flex;
   flex-direction: column;
   font-family: "Goldman", sans-serif;
@@ -608,6 +699,12 @@ main.annesays > .title > h1 > span {
   font-variant: small-caps;
   text-transform: uppercase;
   line-height: 10rem;
+}
+
+.annesays > .titleWrapper > .title > h2 {
+  font-size: 6rem;
+  margin-block-end: 0;
+  line-height: 6rem;
 }
 
 .play-btn-container {
@@ -776,14 +873,39 @@ main.annesays > .title > h1 > span {
   transform: translate(50%, 50%);
 }
 
+/* QUIZ  */
+.quiz {
+  width: 100%;
+}
+.quiz > h3 {
+  color: white;
+  font-weight: 800;
+  font-size: 3rem;
+  letter-spacing: 0.3rem;
+}
+
+.quiz > .quiz-options {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.quiz > .quiz-options > .option > button {
+  background-color: #6d3443;
+}
+
+.quiz > .quiz-options > .option > button:hover {
+  background-color: #cde96f;
+}
+
+/* ANIMATION  */
+
 @keyframes rotate {
   100% {
     transform: rotate(360deg);
     filter: hue-rotate(360deg);
   }
 }
-
-/* ANIMATION  */
 
 @-webkit-keyframes zoomIn {
   0% {
