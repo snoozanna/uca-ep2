@@ -7,6 +7,8 @@
   --offwhite: #f6eee3;
   --orange: rgb(255, 85, 0);
   --lightorange: orange;
+  --browny: #6d3443;
+  --greeny: #cde96f;
   --main-bg-color: rgb(14, 9, 14);
   --font-headings: "JetBrains Mono", monospace;
   --font-body: "Poppins", sans-serif;
@@ -422,6 +424,55 @@ section.hero.tree-grid-container {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* PHOTOSYN  */
+
+section.hero.photo-grid-container {
+  display: grid;
+}
+
+.photo-grid-container {
+  background-image: url("/assets/img/photosyn.png"); /* Replace with your image file path */
+  background-size: contain; /* Cover the entire viewport */
+
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  display: grid;
+  grid-template-areas:
+    ". . ."
+    "photo-one . photo-four"
+    "photo-three  . photo-five"
+    "photo-two . ."
+    ". . .";
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 1.5fr 1fr 1fr 0.5fr;
+  height: 100vh;
+  gap: 2rem;
+}
+
+.photo-one {
+  grid-area: photo-one;
+}
+
+.photo-two {
+  grid-area: photo-two;
+}
+
+.photo-three {
+  grid-area: photo-three;
+}
+
+.photo-four {
+  grid-area: photo-four;
+}
+
+.photo-five {
+  grid-area: photo-five;
+}
+
+section.hero.photo-grid-container > div > #resultbutton > .code-input > input {
+  min-width: inherit;
 }
 
 /* BUTTON PORTAL */
@@ -891,11 +942,11 @@ main.annesays > .titleWrapper > .title > h1 > span,
 }
 
 .quiz > .quiz-options > .option > button {
-  background-color: #6d3443;
+  background-color: var(--browny);
 }
 
 .quiz > .quiz-options > .option > button:hover {
-  background-color: #cde96f;
+  background-color: var(--greeny);
 }
 
 /* ANIMATION  */

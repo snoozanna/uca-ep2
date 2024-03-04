@@ -2014,11 +2014,16 @@ Please enter the Box Serial Code.
 :: portal12 [purple nobr]
 <<set $prevpass to "portal11">>
 <<set $pass to "portal12">>
-<<set $nextpass to "">>
+<<set $nextpass to "portal13">>
+<<set $photoprogress to []>>
 <main class="main portal grid-container">
-  <section class="hero" id="hero">
+<section class="hero photo-grid-container" id="hero">
 
-
+     <div class="photo-one"><<include "photoPw1">></div>
+    <div class="photo-two"><<include "photoPw2">></div>
+    <div class="photo-three"><<include "photoPw3">></div>
+    <div class="photo-four"><<include "photoPw4">></div>
+    <div class="photo-five"><<include "photoPw5">></div>
   </section>
   <section class="chat">
   <div class="messages-container" id="messagesContainer"></div>
@@ -2164,6 +2169,370 @@ Please enter the Box Serial Code.
     </div>
   <</append>>
 <</timed>>
+
+
+:: portal13 [purple nobr]
+<<set $prevpass to "portal12">>
+<<set $pass to "portal13">>
+<<set $nextpass to "portalVid14">>
+
+<main class="main portal grid-container">
+<section class="hero " id="hero">
+
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"></div>
+  <div class="chat-input">
+  <<include "codeword6">>
+  </div>
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+
+<<timed 2s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Yes – that seems to have given us a code to get into the next compartment - it is XXX. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 5s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>It has the resources and the exercise instructions card below.</p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+:: portalVid14 [purple nobr]
+<<set $prevpass to "portal13">>
+<<set $pass to "portalVid14">>
+<<set $nextpass to "portalVid15">>
+<main class="main portal grid-container">
+  <section class="hero" id="hero">
+
+       <iframe width='800px' height='450px'
+      src='https://player.vimeo.com/video/531960916?autoplay=1&byline=0&portrait=0'></iframe>
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"></div>
+  <div class="chat-input" id="chatInput">
+
+  </div>
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+<<timed 5s>>
+  <<replace "#hero">>
+    <<include "buttonProgress">>
+  <</replace>>
+ <<replace "#chatInput">>
+     <<include "codeword7">>
+  <</replace>>
+<</timed>>
+
+:: portalVid15 [purple nobr]
+<<set $prevpass to "portalVid14">>
+<<set $pass to "portalVid15">>
+<<set $nextpass to "portalExercise16">>
+<main class="main portal grid-container">
+  <section class="hero" id="hero">
+/* ANNE VIDEO 5: PHOTOSYNTHESIS */
+       <iframe width='800px' height='450px'
+      src='https://player.vimeo.com/video/531960916?autoplay=1&byline=0&portrait=0'></iframe>
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"></div>
+  <div class="chat-input" id="chatInput">
+
+  </div>
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+<<timed 10s>>
+  <<replace "#hero">>
+    <<include "buttonProgress">>
+  <</replace>>
+ <<replace "#chatInput">>
+     <<include "codeword7">>
+  <</replace>>
+<</timed>>
+
+:: portalExercise16 [purple nobr]
+<<set $prevpass to "portalVid15">>
+<<set $pass to "portalExercise16">>
+<<set $nextpass to "portalVid17">>
+<main class="main portal grid-container">
+  <section class="hero" id="hero">
+/* ANNE VIDEO 6: FELIX */
+       <iframe width='800px' height='450px'
+      src='https://player.vimeo.com/video/531960916?autoplay=1&byline=0&portrait=0'></iframe>
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"></div>
+  <div class="chat-input" id="chatInput">
+
+  </div>
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+<<timed 8s>>
+  <<replace "#hero">><</replace>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>This is a letter writing exercise  </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 10s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>It’s time to show our power </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 12s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+         <span class="sender">Anne</span>
+        <p>Each of you must write a letter</p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 14s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+         <span class="sender">Anne</span>
+        <p>A letter to one person you think could help us plant more trees.</p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 16s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+         <span class="sender">Anne</span>
+        <p>As a group you need to decide who to write to</p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 18s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+         <span class="sender">Anne</span>
+        <p>Who has the power to plant more trees in your community? </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 20s>>
+  <<replace "#messagesContainer">><</replace>>
+  <</timed>>
+
+
+<<timed 22s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+         <span class="sender">Anne</span>
+        <p>Here is a template.  </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 23s>>
+  <<replace "#hero">>
+    <<include "letter">>
+  <</replace>>
+  <</timed>>
+
+
+<<timed 24s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+         <span class="sender">Anne</span>
+        <p>Once done, put them in the UCA envelope and we will send them for you.   </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 26s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+         <span class="sender">Anne</span>
+        <p>Then, enter the word LETTERS into the online platform.  </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 28s>>
+  <<replace "#chatInput">>
+    <<include "codeword8">>
+    <</replace>>
+  <</timed>>
+
+:: portalVid17 [purple nobr]
+<<set $prevpass to "portalExercise16">>
+<<set $pass to "portalVid17">>
+<<set $nextpass to "portalVid18">>
+<main class="main portal grid-container">
+  <section class="hero" id="hero">
+/* ANNE VIDEO 7*/
+       <iframe width='800px' height='450px'
+      src='https://player.vimeo.com/video/531960916?autoplay=1&byline=0&portrait=0'></iframe>
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"></div>
+  <div class="chat-input" id="chatInput">
+    <<include "codeword9">>
+  </div>
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+<<timed 10s>>
+  <<replace "#hero">>
+    <<include "buttonProgress">>
+  <</replace>>
+<</timed>>
+
+<<timed 12s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+         <span class="sender">Anne</span>
+        <p>Just like the secret hiding underground, there is a secret hiding under the box. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 14s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+         <span class="sender">Anne</span>
+        <p>The code is XXX</p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+
+
+
+:: portalVid18 [purple nobr]
+<<set $prevpass to "portalVid17">>
+<<set $pass to "portalVid18">>
+<<set $nextpass to "">>
+<main class="main portal grid-container">
+  <section class="hero" id="hero">
+/* ANNE VIDEO 8: MYCORRHIZAL*/
+       <iframe width='800px' height='450px'
+      src='https://player.vimeo.com/video/531960916?autoplay=1&byline=0&portrait=0'></iframe>
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"></div>
+  <div class="chat-input" id="chatInput">
+
+  </div>
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+
+
+:: checkphotoprogress
+<<if $photoprogress.includesAll("SUN","WATER","CARBON DIOXIDE", "OXYGEN","SUGAR")>>
+  <<timed 5s>>
+  <<goto $nextpass>>
+  <</timed>>
+<</if>>
 
 :: portalVideo [purple nobr]
 
@@ -2467,6 +2836,137 @@ Please enter the Box Serial Code.
 
 </div>
 
+:: codeword6 [nobr]
+<div id="coderesult"></div>
+ <div id="resultbutton">
+/% CODEWORD INPUT %/
+<div class="code-input">
+<<textbox "$code" "">>
+<<button "Send">>
+</div>
+ /% PASSWORD CODE %/
+<<set $code to $code.toUpperCase()>>
+/% CODEWORD CORRECT %/
+<<if $code isnot "">> 
+  <<if $code is "LEAVES" or $code is "LEAVES ">>
+    <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
+    <<timed 3s>>
+     <<goto $nextpass>>
+    <</timed>>
+   
+<</if>>
+<</if>>
+/% CODEWORD INCORRECT %/
+<<if $code isnot "">>
+  <<if $code is not "LEAVES" and $code is not "LEAVES ">>
+  <<replace "#coderesult">><div class="confirmation" id="confirmation">That's not right...</div><</replace>>
+  <<timed 1.5s>><<replace "#coderesult">><span>Enter the correct word:</span><</replace>><</timed>>
+  <</if>>
+  <</if>>
+<</button>>
+</div>
+
+</div>
+
+:: codeword7 [nobr]
+<div id="coderesult"></div>
+ <div id="resultbutton">
+/% CODEWORD INPUT %/
+<div class="code-input">
+<<textbox "$code" "">>
+<<button "Send">>
+</div>
+ /% PASSWORD CODE %/
+<<set $code to $code.toUpperCase()>>
+/% CODEWORD CORRECT %/
+<<if $code isnot "">> 
+  <<if $code is "FELIX" or $code is "FELIX ">>
+    <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
+    <<timed 3s>>
+     <<goto $nextpass>>
+    <</timed>>
+   
+<</if>>
+<</if>>
+/% CODEWORD INCORRECT %/
+<<if $code isnot "">>
+  <<if $code is not "FELIX" and $code is not "FELIX ">>
+  <<replace "#coderesult">><div class="confirmation" id="confirmation">That's not right...</div><</replace>>
+  <<timed 1.5s>><<replace "#coderesult">><span>Enter the correct word:</span><</replace>><</timed>>
+  <</if>>
+  <</if>>
+<</button>>
+</div>
+
+</div>
+
+
+:: codeword8 [nobr]
+<div id="coderesult"></div>
+ <div id="resultbutton">
+/% CODEWORD INPUT %/
+<div class="code-input">
+<<textbox "$code" "">>
+<<button "Send">>
+</div>
+ /% PASSWORD CODE %/
+<<set $code to $code.toUpperCase()>>
+/% CODEWORD CORRECT %/
+<<if $code isnot "">> 
+  <<if $code is "LETTERS" or $code is "LETTERS ">>
+    <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
+    <<timed 3s>>
+     <<goto $nextpass>>
+    <</timed>>
+   
+<</if>>
+<</if>>
+/% CODEWORD INCORRECT %/
+<<if $code isnot "">>
+  <<if $code is not "LETTERS" and $code is not "LETTERS ">>
+  <<replace "#coderesult">><div class="confirmation" id="confirmation">That's not right...</div><</replace>>
+  <<timed 1.5s>><<replace "#coderesult">><span>Enter the correct word:</span><</replace>><</timed>>
+  <</if>>
+  <</if>>
+<</button>>
+</div>
+
+</div>
+
+
+:: codeword9 [nobr]
+<div id="coderesult"></div>
+ <div id="resultbutton">
+/% CODEWORD INPUT %/
+<div class="code-input">
+<<textbox "$code" "">>
+<<button "Send">>
+</div>
+ /% PASSWORD CODE %/
+<<set $code to $code.toUpperCase()>>
+/% CODEWORD CORRECT %/
+<<if $code isnot "">> 
+  <<if $code is "MYCORRHIZAL" or $code is "MYCORRHIZAL ">>
+    <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
+    <<timed 3s>>
+     <<goto $nextpass>>
+    <</timed>>
+   
+<</if>>
+<</if>>
+/% CODEWORD INCORRECT %/
+<<if $code isnot "">>
+  <<if $code is not "MYCORRHIZAL" and $code is not "MYCORRHIZAL ">>
+  <<replace "#coderesult">><div class="confirmation" id="confirmation">That's not right...</div><</replace>>
+  <<timed 1.5s>><<replace "#coderesult">><span>Enter the correct word:</span><</replace>><</timed>>
+  <</if>>
+  <</if>>
+<</button>>
+</div>
+
+</div>
+
+
 :: codeword [nobr]
 <div id="coderesult"></div>
  <div id="resultbutton">
@@ -2673,7 +3173,7 @@ Please enter the Box Serial Code.
     <<replace "#coderesult4">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
    <<run $treeprogress.push("TRUNK")>>
      <<timed 3s>>
-         <<replace ".resultbutton4">><h2 style="color:white; font-weight:800">Trunk $treeprogress</h2><</replace>>
+         <<replace ".resultbutton4">><h2 style="color:white; font-weight:800">Trunk</h2><</replace>>
            <<replace "#coderesult4">><</replace>>
     <</timed>>
      <<timed 5s>>
@@ -2692,6 +3192,220 @@ Please enter the Box Serial Code.
 </div>
 
 </div>
+
+
+:: photoPw1 [nobr]
+
+<div class="treecoderesult" id="coderesult1"></div>
+ <div id="resultbutton" class="resultbutton1">
+/% CODEWORD INPUT %/
+<div class="code-input">
+<<textbox "$code" "">>
+<<button "Enter">>
+</div>
+ /% PASSWORD CODE %/
+<<set $code to $code.toUpperCase()>>
+/% CODEWORD CORRECT %/
+<<if $code isnot "">> 
+  <<if $code is "SUN" or $code is "SUN ">>
+    <<replace "#coderesult1">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
+     <<run $photoprogress.push("SUN")>>
+    <<timed 3s>>
+         <<replace ".resultbutton1">><h2 style="color: white;
+    font-weight: 800;
+    background: var(--browny);
+    width: fit-content;
+    padding: 0.5rem;
+    border-radius: 0.8rem;">Sun</h2><</replace>>
+           <<replace "#coderesult1">><</replace>>
+    <</timed>>
+    <<timed 5s>>
+      <<include "checkphotoprogress">>
+      <</timed>>
+   
+<</if>>
+<</if>>
+/% CODEWORD INCORRECT %/
+<<if $code isnot "">>
+  <<if $code is not "SUN" and $code is not "SUN ">>
+  <<replace "#coderesult1">><div class="confirmation" id="confirmation">That's not right...</div><</replace>>
+  <<timed 1.5s>><<replace "#coderesult1">><</replace>><</timed>>
+  <</if>>
+  <</if>>
+<</button>>
+</div>
+
+</div>
+
+:: photoPw2 [nobr]
+
+<div class="treecoderesult" id="coderesult2"></div>
+ <div id="resultbutton" class="resultbutton2">
+/% CODEWORD INPUT %/
+<div class="code-input">
+<<textbox "$code" "">>
+<<button "Enter">>
+</div>
+ /% PASSWORD CODE %/
+<<set $code to $code.toUpperCase()>>
+/% CODEWORD CORRECT %/
+<<if $code isnot "">> 
+  <<if $code is "WATER" or $code is "WATER ">>
+    <<replace "#coderesult2">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
+    <<run $photoprogress.push("WATER")>>
+    <<timed 3s>>
+         <<replace ".resultbutton2">><h2 style="color: white;
+    font-weight: 800;
+    background: var(--browny);
+    width: fit-content;
+    padding: 0.5rem;
+    border-radius: 0.8rem;">Water</h2><</replace>>
+           <<replace "#coderesult2">><</replace>>
+    <</timed>>
+     <<timed 5s>>
+      <<include "checkphotoprogress">>
+      <</timed>>
+<</if>>
+<</if>>
+/% CODEWORD INCORRECT %/
+<<if $code isnot "">>
+  <<if $code is not "WATER" and $code is not "WATER ">>
+  <<replace "#coderesult2">><div class="confirmation" id="confirmation">That's not right...</div><</replace>>
+  <<timed 1.5s>><<replace "#coderesult2">><</replace>><</timed>>
+  <</if>>
+  <</if>>
+<</button>>
+</div>
+
+</div>
+
+:: photoPw3 [nobr]
+
+<div class="treecoderesult" id="coderesult3"></div>
+ <div id="resultbutton"  class="resultbutton3">
+/% CODEWORD INPUT %/
+<div class="code-input">
+<<textbox "$code" "">>
+<<button "Enter">>
+</div>
+ /% PASSWORD CODE %/
+<<set $code to $code.toUpperCase()>>
+/% CODEWORD CORRECT %/
+<<if $code isnot "">> 
+  <<if $code is "CARBON DIOXIDE" or $code is "CARBON DIOXIDE ">>
+    <<replace "#coderesult3">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
+     <<run $photoprogress.push("CARBON DIOXIDE")>>
+     <<timed 3s>>
+         <<replace ".resultbutton3">><h2 style="color: white;
+    font-weight: 800;
+    background: var(--browny);
+    width: fit-content;
+    padding: 0.5rem;
+    border-radius: 0.8rem;">Carbon Dioxide</h2><</replace>>
+           <<replace "#coderesult3">><</replace>>
+    <</timed>>
+     <<timed 5s>>
+      <<include "checkphotoprogress">>
+      <</timed>>
+<</if>>
+<</if>>
+/% CODEWORD INCORRECT %/
+<<if $code isnot "">>
+  <<if $code is not "CARBON DIOXIDE" and $code is not "CARBON DIOXIDE ">>
+  <<replace "#coderesult3">><div class="confirmation" id="confirmation">That's not right...</div><</replace>>
+  <<timed 1.5s>><<replace "#coderesult3">><</replace>><</timed>>
+  <</if>>
+  <</if>>
+<</button>>
+</div>
+
+</div>
+
+:: photoPw4 [nobr]
+
+<div class="treecoderesult" id="coderesult4"></div>
+ <div id="resultbutton" class="resultbutton4">
+/% CODEWORD INPUT %/
+<div class="code-input">
+<<textbox "$code" "">>
+<<button "Enter">>
+</div>
+ /% PASSWORD CODE %/
+<<set $code to $code.toUpperCase()>>
+/% CODEWORD CORRECT %/
+<<if $code isnot "">> 
+  <<if $code is "OXYGEN" or $code is "OXYGEN ">>
+    <<replace "#coderesult4">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
+   <<run $photoprogress.push("OXYGEN")>>
+     <<timed 3s>>
+         <<replace ".resultbutton4">><h2 style="color: white;
+    font-weight: 800;
+    background: var(--browny);
+    color: white;
+    width: fit-content;
+    padding: 0.5rem;
+    border-radius: 0.8rem;">Oxygen</h2><</replace>>
+           <<replace "#coderesult4">><</replace>>
+    <</timed>>
+     <<timed 5s>>
+      <<include "checkphotoprogress">>
+      <</timed>>
+<</if>>
+<</if>>
+/% CODEWORD INCORRECT %/
+<<if $code isnot "">>
+  <<if $code is not "OXYGEN" and $code is not "OXYGEN ">>
+  <<replace "#coderesult4">><div class="confirmation" id="confirmation">That's not right...</div><</replace>>
+  <<timed 1.5s>><<replace "#coderesult4">><</replace>><</timed>>
+  <</if>>
+  <</if>>
+<</button>>
+</div>
+
+</div>
+
+:: photoPw5 [nobr]
+
+<div class="treecoderesult" id="coderesult5"></div>
+ <div id="resultbutton" class="resultbutton5">
+/% CODEWORD INPUT %/
+<div class="code-input">
+<<textbox "$code" "">>
+<<button "Enter">>
+</div>
+ /% PASSWORD CODE %/
+<<set $code to $code.toUpperCase()>>
+/% CODEWORD CORRECT %/
+<<if $code isnot "">> 
+  <<if $code is "SUGAR" or $code is "SUGAR ">>
+    <<replace "#coderesult5">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
+   <<run $photoprogress.push("SUGAR")>>
+     <<timed 3s>>
+         <<replace ".resultbutton5">><h2 style="color: white;
+    font-weight: 800;
+    background: var(--browny);
+    width: fit-content;
+    padding: 0.5rem;
+    border-radius: 0.8rem;">Sugar </h2><</replace>>
+           <<replace "#coderesult5">><</replace>>
+    <</timed>>
+     <<timed 5s>>
+      <<include "checkphotoprogress">>
+      <</timed>>
+<</if>>
+<</if>>
+/% CODEWORD INCORRECT %/
+<<if $code isnot "">>
+  <<if $code is not "SUGAR" and $code is not "SUGAR ">>
+  <<replace "#coderesult5">><div class="confirmation" id="confirmation">That's not right...</div><</replace>>
+  <<timed 1.5s>><<replace "#coderesult5">><</replace>><</timed>>
+  <</if>>
+  <</if>>
+<</button>>
+</div>
+
+</div>
+
 
 :: scrabble [nobr purple]
 <<include "footer">>
@@ -2754,8 +3468,6 @@ Please enter the Box Serial Code.
 
 
 :: letter[nobr]
-<main class="letter">
-
 <div class="letter-wrapper">
   <div class="letterpaper" alt="">
 			<div id="letterinner" class="letterinner">
@@ -2767,5 +3479,3 @@ Please enter the Box Serial Code.
 		</div>
     </div>
 
-</main>
-<<include "footer">>
