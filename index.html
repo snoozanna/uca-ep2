@@ -622,13 +622,139 @@ Please enter the Box Serial Code.
 
 /* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="14" name="portalAnneSays3" tags="purple nobr" position="475,225" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSays2&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalAnneSays3&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;portalAnneSays4&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;portalAnneSays3a&quot;&gt;&gt;
 &lt;&lt;set $list to [&#39;Branches&#39;,&#39;Roots&#39;,&#39;Leaves&#39;, &#39;Trunk&#39;]&gt;&gt;
 &lt;&lt;set $counter to 0&gt;&gt;
 &lt;main class=&quot;annesays t8n&quot;  id=&quot;annesays&quot;&gt;
      &lt;div id=&quot;titleWrapper&quot; class=&quot;titleWrapper&quot;&gt;
         &lt;div class=&quot;title&quot; id=&quot;title&quot;&gt;
             &lt;h1&gt;&lt;span id=&quot;randomitem&quot;&gt;ANNE SAYS&lt;/span&gt;&lt;/h1&gt;
+             &lt;h2&gt;Round 1&lt;/h2&gt;
+      &lt;/div&gt;
+     &lt;/div&gt;
+
+  
+&lt;/main&gt;
+&lt;&lt;include &quot;footerannesays&quot;&gt;&gt;
+&lt;&lt;timed 2s&gt;&gt;
+  &lt;&lt;addclass &quot;#annesays&quot; &quot;darker&quot;&gt;&gt;
+  &lt;&lt;replace &quot;#nextMount&quot;&gt;&gt;
+   &lt;&lt;button &quot;GO!&quot;&gt;&gt;
+       &lt;&lt;set $counter to $counter + 1&gt;&gt;
+      &lt;&lt;timed 0.5s&gt;&gt;
+          &lt;&lt;replace &quot;#titleWrapper&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+        &lt;&lt;set $randomitem to $list.random()&gt;&gt;
+        &lt;&lt;timed 1.5s&gt;&gt;
+        &lt;&lt;replace &quot;#titleWrapper&quot;&gt;&gt;
+            &lt;div class=&quot;title&quot; id=&quot;title&quot;&gt;
+          &lt;h1&gt;&lt;span id=&quot;randomitem&quot;&gt;Anne Says: $randomitem&lt;/span&gt;&lt;/h1&gt;
+    &lt;/div&gt;
+        &lt;&lt;/replace&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
+        &lt;&lt;replace &quot;#nextMount&quot;&gt;&gt;
+        &lt;&lt;button &quot;NEXT&quot;&gt;&gt;
+             &lt;&lt;if $counter gte 20&gt;&gt;
+                &lt;&lt;timed 0.1s&gt;&gt;
+                &lt;&lt;replace &quot;#titleWrapper&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+                  &lt;&lt;/timed&gt;&gt;
+                    &lt;&lt;timed 0.4s&gt;&gt;
+                &lt;&lt;goto $nextpass&gt;&gt;
+              &lt;&lt;/timed&gt;&gt;
+              &lt;&lt;elseif $counter gte 4&gt;&gt;
+                &lt;&lt;set $counter to $counter + 1&gt;&gt;
+                &lt;&lt;replace &quot;#titleWrapper&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+              &lt;&lt;timed 0.5s&gt;&gt;
+                &lt;&lt;set $randomitem to $list.random()&gt;&gt;
+              &lt;&lt;replace &quot;#titleWrapper&quot;&gt;&gt;
+                &lt;div class=&quot;title&quot; id=&quot;title&quot;&gt;
+                  &lt;h1&gt;&lt;span id=&quot;randomitem&quot;&gt;$randomitem &lt;/span&gt;&lt;/h1&gt; &lt;/div&gt;
+            &lt;&lt;/replace&gt;&gt;
+              &lt;&lt;/timed&gt;&gt;
+           &lt;&lt;else&gt;&gt;
+                &lt;&lt;set $counter to $counter + 1&gt;&gt;
+                &lt;&lt;replace &quot;#titleWrapper&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+              &lt;&lt;timed 0.5s&gt;&gt;
+                &lt;&lt;set $randomitem to $list.random()&gt;&gt;
+              &lt;&lt;replace &quot;#titleWrapper&quot;&gt;&gt;
+                &lt;div class=&quot;title&quot; id=&quot;title&quot;&gt;
+                  &lt;h1&gt;&lt;span id=&quot;randomitem&quot;&gt;Anne Says: $randomitem &lt;/span&gt;&lt;/h1&gt; &lt;/div&gt;
+            &lt;&lt;/replace&gt;&gt;
+              &lt;&lt;/timed&gt;&gt;
+            &lt;&lt;/if&gt;&gt;
+         &lt;&lt;/button&gt;&gt;
+         &lt;&lt;/replace&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;/button&gt;&gt;
+  &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="portalAnneSays3a" tags="purple nobr" position="600,225" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSays3&quot;&gt;&gt;
+&lt;&lt;set $pass to &quot;portalAnneSays3a&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;portalAnneSays3b&quot;&gt;&gt;
+&lt;main class=&quot;main portal grid-container&quot;&gt;
+  &lt;section class=&quot;hero&quot;&gt;
+ &lt;div class=&quot;annesays&quot; id=&quot;annesays&quot;&gt;
+&lt;div class=&quot;titleWrapper&quot;&gt;
+  &lt;div class=&quot;title&quot;&gt;
+  &lt;h1&gt;&lt;span&gt;Anne&lt;/span&gt; &lt;span&gt;Says&lt;/span&gt;&lt;/h1&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;/div&gt;
+  &lt;/section&gt;
+  &lt;section class=&quot;chat&quot;&gt;
+  &lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt; &lt;/div&gt;
+  &lt;div class=&quot;chat-input&quot;&gt;
+  /* &lt;&lt;include &quot;codeword&quot;&gt;&gt; */
+  &lt;/div&gt;
+  &lt;/section&gt;
+  &lt;section class=&quot;portal-footer video&quot;&gt;
+    &lt;&lt;include &quot;portalfooter&quot;&gt;&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+
+&lt;&lt;timed 2s&gt;&gt;
+  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
+    &lt;div class=&quot;message&quot;&gt;
+      &lt;div class=&quot;avatar&quot;&gt;
+        &lt;img src=&quot;assets/img/user.png&quot; alt=&quot;avatar&quot;/&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;message-container&quot; &gt;
+        &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
+        &lt;p&gt;Teacher, did everyone make it through? Anyone who didn’t needs to sit down.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 4s&gt;&gt;
+
+  &lt;&lt;replace &quot;#annesays&quot;&gt;&gt;
+    &lt;div class=&quot;titleWrapper&quot;&gt;
+  &lt;div class=&quot;title&quot;&gt;
+  &lt;h1&gt;&lt;span&gt;Anne&lt;/span&gt; &lt;span&gt;Says&lt;/span&gt;&lt;/h1&gt;
+  &lt;h2&gt;Round 2&lt;/h2&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+  &lt;&lt;/replace&gt;&gt;
+
+ &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
+     &lt;&lt;button &quot;BEGIN&quot;&gt;&gt;
+      &lt;&lt;timed 1s&gt;&gt;
+      &lt;&lt;goto $nextpass&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
+      &lt;&lt;/button&gt;&gt;
+    &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="portalAnneSays3b" tags="purple nobr" position="725,225" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSays3a&quot;&gt;&gt;
+&lt;&lt;set $pass to &quot;portalAnneSays3b&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;portalAnneSays4a&quot;&gt;&gt;
+&lt;&lt;set $list to [&#39;Branches&#39;,&#39;Roots&#39;,&#39;Leaves&#39;, &#39;Trunk&#39;, &#39;Anne Says: &lt;br/&gt;Branches&#39;,&#39;Anne Says:&lt;br/&gt; Roots&#39;,&#39;Anne Says: &lt;br/&gt;Leaves&#39;, &#39;Anne Says:&lt;br/&gt; Trunk&#39;,]&gt;&gt;
+&lt;&lt;set $counter to 0&gt;&gt;
+&lt;main class=&quot;annesays t8n&quot;  id=&quot;annesays&quot;&gt;
+     &lt;div id=&quot;titleWrapper&quot; class=&quot;titleWrapper&quot;&gt;
+        &lt;div class=&quot;title&quot; id=&quot;title&quot;&gt;
+            &lt;h1&gt;&lt;span id=&quot;randomitem&quot;&gt;ANNE SAYS&lt;/span&gt;&lt;/h1&gt;
+             &lt;h2&gt;Round 2&lt;/h2&gt;
       &lt;/div&gt;
      &lt;/div&gt;
 
@@ -675,8 +801,123 @@ Please enter the Box Serial Code.
       &lt;&lt;/timed&gt;&gt;
     &lt;&lt;/button&gt;&gt;
   &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="portalAnneSays4" tags="purple nobr" position="600,225" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSays3&quot;&gt;&gt;
-&lt;&lt;set $pass to &quot;portalAnneSays4&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="portalAnneSays4a" tags="purple nobr" position="850,225" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSays3b&quot;&gt;&gt;
+&lt;&lt;set $pass to &quot;portalAnneSays4a&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;portalAnneSays4b&quot;&gt;&gt;
+&lt;main class=&quot;main portal grid-container&quot;&gt;
+  &lt;section class=&quot;hero&quot;&gt;
+ &lt;div class=&quot;annesays&quot; id=&quot;annesays&quot;&gt;
+&lt;div class=&quot;titleWrapper&quot;&gt;
+  &lt;div class=&quot;title&quot;&gt;
+  &lt;h1&gt;&lt;span&gt;Anne&lt;/span&gt; &lt;span&gt;Says&lt;/span&gt;&lt;/h1&gt;
+ 
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;/div&gt;
+  &lt;/section&gt;
+  &lt;section class=&quot;chat&quot;&gt;
+  &lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt; &lt;/div&gt;
+  &lt;div class=&quot;chat-input&quot;&gt;
+  /* &lt;&lt;include &quot;codeword&quot;&gt;&gt; */
+  &lt;/div&gt;
+  &lt;/section&gt;
+  &lt;section class=&quot;portal-footer video&quot;&gt;
+    &lt;&lt;include &quot;portalfooter&quot;&gt;&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+
+&lt;&lt;timed 2s&gt;&gt;
+  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
+    &lt;div class=&quot;message&quot;&gt;
+      &lt;div class=&quot;avatar&quot;&gt;
+        &lt;img src=&quot;assets/img/user.png&quot; alt=&quot;avatar&quot;/&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;message-container&quot; &gt;
+        &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
+        &lt;p&gt;Teacher, who missed one of them? Anyone who did should sit down in their seat. &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 4s&gt;&gt;
+
+  &lt;&lt;replace &quot;#annesays&quot;&gt;&gt;
+    &lt;div class=&quot;titleWrapper&quot;&gt;
+  &lt;div class=&quot;title&quot;&gt;
+  &lt;h1&gt;&lt;span&gt;Anne&lt;/span&gt; &lt;span&gt;Says&lt;/span&gt;&lt;/h1&gt;
+  &lt;h2&gt;Round 3&lt;/h2&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+  &lt;&lt;/replace&gt;&gt;
+
+ &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
+     &lt;&lt;button &quot;BEGIN&quot;&gt;&gt;
+      &lt;&lt;timed 1s&gt;&gt;
+      &lt;&lt;goto $nextpass&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
+      &lt;&lt;/button&gt;&gt;
+    &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="portalAnneSays4b" tags="purple nobr" position="975,225" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSays4a&quot;&gt;&gt;
+&lt;&lt;set $pass to &quot;portalAnneSays4b&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;portalAnneSaysChal2&quot;&gt;&gt;
+&lt;&lt;set $list to [&#39;Branches&#39;,&#39;Roots&#39;,&#39;Leaves&#39;, &#39;Trunk&#39;, &#39;Anne Says: &lt;br/&gt;Branches&#39;,&#39;Anne Says:&lt;br/&gt; Roots&#39;,&#39;Anne Says: &lt;br/&gt;Leaves&#39;, &#39;Anne Says:&lt;br/&gt; Trunk&#39;,]&gt;&gt;
+&lt;&lt;set $counter to 0&gt;&gt;
+&lt;main class=&quot;annesays t8n&quot;  id=&quot;annesays&quot;&gt;
+     &lt;div id=&quot;titleWrapper&quot; class=&quot;titleWrapper&quot;&gt;
+        &lt;div class=&quot;title&quot; id=&quot;title&quot;&gt;
+            &lt;h1&gt;&lt;span id=&quot;randomitem&quot;&gt;ANNE SAYS&lt;/span&gt;&lt;/h1&gt;
+             &lt;h2&gt;Round 3&lt;/h2&gt;
+      &lt;/div&gt;
+     &lt;/div&gt;
+
+  
+&lt;/main&gt;
+&lt;&lt;include &quot;footerannesays&quot;&gt;&gt;
+&lt;&lt;timed 2s&gt;&gt;
+  &lt;&lt;addclass &quot;#annesays&quot; &quot;darker&quot;&gt;&gt;
+  &lt;&lt;replace &quot;#nextMount&quot;&gt;&gt;
+   &lt;&lt;button &quot;GO!&quot;&gt;&gt;
+       &lt;&lt;set $counter to $counter + 1&gt;&gt;
+      &lt;&lt;timed 0.5s&gt;&gt;
+          &lt;&lt;replace &quot;#titleWrapper&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+        &lt;&lt;set $randomitem to $list.random()&gt;&gt;
+        &lt;&lt;timed 1.5s&gt;&gt;
+        &lt;&lt;replace &quot;#titleWrapper&quot;&gt;&gt;
+            &lt;div class=&quot;title&quot; id=&quot;title&quot;&gt;
+          &lt;h1&gt;&lt;span id=&quot;randomitem&quot;&gt;$randomitem&lt;/span&gt;&lt;/h1&gt;
+    &lt;/div&gt;
+        &lt;&lt;/replace&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
+        &lt;&lt;replace &quot;#nextMount&quot;&gt;&gt;
+        &lt;&lt;button &quot;NEXT&quot;&gt;&gt;
+             &lt;&lt;if $counter gte 20&gt;&gt;
+                &lt;&lt;timed 0.1s&gt;&gt;
+                &lt;&lt;replace &quot;#titleWrapper&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+                  &lt;&lt;/timed&gt;&gt;
+                    &lt;&lt;timed 0.4s&gt;&gt;
+                &lt;&lt;goto $nextpass&gt;&gt;
+              &lt;&lt;/timed&gt;&gt;
+           &lt;&lt;else&gt;&gt;
+                &lt;&lt;set $counter to $counter + 1&gt;&gt;
+                &lt;&lt;replace &quot;#titleWrapper&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+              &lt;&lt;timed 0.5s&gt;&gt;
+                &lt;&lt;set $randomitem to $list.random()&gt;&gt;
+              &lt;&lt;replace &quot;#titleWrapper&quot;&gt;&gt;
+                &lt;div class=&quot;title&quot; id=&quot;title&quot;&gt;
+                  &lt;h1&gt;&lt;span id=&quot;randomitem&quot;&gt;$randomitem &lt;/span&gt;&lt;/h1&gt; &lt;/div&gt;
+            &lt;&lt;/replace&gt;&gt;
+              &lt;&lt;/timed&gt;&gt;
+            &lt;&lt;/if&gt;&gt;
+         &lt;&lt;/button&gt;&gt;
+         &lt;&lt;/replace&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;/button&gt;&gt;
+  &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="portalAnneSaysChal2" tags="purple nobr" position="1100,225" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSays4b&quot;&gt;&gt;
+&lt;&lt;set $pass to &quot;portalAnneSaysChal2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalAnneSaysVid5&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
   &lt;section class=&quot;hero&quot; id=&quot;hero&quot;&gt;
@@ -684,7 +925,7 @@ Please enter the Box Serial Code.
           &lt;div class=&quot;titleWrapper&quot;&gt;
             &lt;div class=&quot;title&quot;&gt;
             &lt;h1&gt;&lt;span&gt;Anne&lt;/span&gt; &lt;span&gt;Says&lt;/span&gt;&lt;/h1&gt;
-            &lt;h2&gt;Round 2&lt;/h2&gt;
+            &lt;h2&gt;Challenge 2&lt;/h2&gt;
             &lt;h2&gt;Team&lt;/h2&gt;
             &lt;/div&gt;
           &lt;/div&gt;
@@ -801,7 +1042,7 @@ Please enter the Box Serial Code.
     &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="16" name="portalAnneSaysVid5" tags="purple nobr" position="725,225" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSays4&quot;&gt;&gt;
+/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="20" name="portalAnneSaysVid5" tags="purple nobr" position="1225,225" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSays4&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalAnneSaysVid5&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalTree6&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -965,7 +1206,7 @@ Please enter the Box Serial Code.
     &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="17" name="portalTree6" tags="purple nobr" position="850,225" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSaysVid5&quot;&gt;&gt;
+/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="21" name="portalTree6" tags="purple nobr" position="100,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSaysVid5&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalTree6&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalVid7&quot;&gt;&gt;
 &lt;&lt;set $treeprogress to [&quot;test&quot;]&gt;&gt;
@@ -1004,11 +1245,11 @@ Please enter the Box Serial Code.
 &lt;&lt;/timed&gt;&gt;
 
 
-/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="18" name="checktreeprogress" tags="" position="975,225" size="100,100">&lt;&lt;if $treeprogress.includesAll(&quot;LEAVES&quot;, &quot;BRANCHES&quot;, &quot;TRUNK&quot;, &quot;ROOTS&quot;)&gt;&gt;
+/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="22" name="checktreeprogress" tags="" position="225,350" size="100,100">&lt;&lt;if $treeprogress.includesAll(&quot;LEAVES&quot;, &quot;BRANCHES&quot;, &quot;TRUNK&quot;, &quot;ROOTS&quot;)&gt;&gt;
   &lt;&lt;timed 5s&gt;&gt;
   &lt;&lt;goto $nextpass&gt;&gt;
   &lt;&lt;/timed&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="portalVid7" tags="purple nobr" position="1100,225" size="100,100">&lt;&lt;set $prevpass to &quot;portalTree6&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="portalVid7" tags="purple nobr" position="350,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalTree6&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalVid7&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalVid8&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -1148,7 +1389,7 @@ Please enter the Box Serial Code.
         &lt;&lt;/timed&gt;&gt;
       &lt;&lt;/button&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="portalVid8" tags="purple nobr" position="1225,225" size="100,100">&lt;&lt;set $prevpass to &quot;portalVid7&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="portalVid8" tags="purple nobr" position="475,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalVid7&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalVid8&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalQuiz9&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -1231,7 +1472,7 @@ Please enter the Box Serial Code.
         &lt;&lt;/timed&gt;&gt;
       &lt;&lt;/button&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="portalQuiz9" tags="purple nobr" position="100,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalVid8&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="portalQuiz9" tags="purple nobr" position="600,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalVid8&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalQuiz9&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalQuiz9b&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -1332,7 +1573,7 @@ Please enter the Box Serial Code.
 &lt;h3 id=&quot;hint&quot;&gt;&lt;/h3&gt;
     &lt;/div&gt;
   &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="portalQuiz9b" tags="purple nobr" position="225,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalQuiz9&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="portalQuiz9b" tags="purple nobr" position="725,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalQuiz9&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalQuiz9b&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalQuiz9c&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -1406,7 +1647,7 @@ Please enter the Box Serial Code.
 &lt;h3 id=&quot;hint&quot;&gt;&lt;/h3&gt;
     &lt;/div&gt;
   &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="portalQuiz9c" tags="purple nobr" position="350,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalQuiz9b&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="portalQuiz9c" tags="purple nobr" position="850,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalQuiz9b&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalQuiz9c&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalQuiz9d&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -1470,7 +1711,7 @@ Please enter the Box Serial Code.
 &lt;h3 id=&quot;hint&quot;&gt;&lt;/h3&gt;
     &lt;/div&gt;
   &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="portalQuiz9d" tags="purple nobr" position="475,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalQuiz9c&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="portalQuiz9d" tags="purple nobr" position="975,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalQuiz9c&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalQuiz9d&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalQuiz9e&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -1536,7 +1777,7 @@ Please enter the Box Serial Code.
 &lt;h3 id=&quot;hint&quot;&gt;&lt;/h3&gt;
     &lt;/div&gt;
   &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="portalQuiz9e" tags="purple nobr" position="600,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalQuiz9d&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="portalQuiz9e" tags="purple nobr" position="1100,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalQuiz9d&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalQuiz9e&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalQuiz9f&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -1599,7 +1840,7 @@ Please enter the Box Serial Code.
 &lt;h3 id=&quot;hint&quot;&gt;&lt;/h3&gt;
     &lt;/div&gt;
   &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="portalQuiz9f" tags="purple nobr" position="725,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalQuiz9e&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="portalQuiz9f" tags="purple nobr" position="1225,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalQuiz9e&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalQuiz9f&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalQuiz9g&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -1662,7 +1903,7 @@ Please enter the Box Serial Code.
 &lt;h3 id=&quot;hint&quot;&gt;&lt;/h3&gt;
     &lt;/div&gt;
   &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="portalQuiz9g" tags="purple nobr" position="850,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalQuiz9f&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="portalQuiz9g" tags="purple nobr" position="100,475" size="100,100">&lt;&lt;set $prevpass to &quot;portalQuiz9f&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalQuiz9g&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalClimateScrabble&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -1724,7 +1965,7 @@ Please enter the Box Serial Code.
 &lt;h3 id=&quot;hint&quot;&gt;&lt;/h3&gt;
     &lt;/div&gt;
   &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="portalClimateScrabble" tags="purple nobr" position="975,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalQuiz9g&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="portalClimateScrabble" tags="purple nobr" position="225,475" size="100,100">&lt;&lt;set $prevpass to &quot;portalQuiz9g&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalClimateScrabble&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalvid10&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -1823,7 +2064,7 @@ Please enter the Box Serial Code.
     &lt;&lt;/timed&gt;&gt;
   &lt;&lt;/button&gt;&gt;
   &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="portalvid10" tags="purple nobr" position="1100,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalClimateScrabble&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="portalvid10" tags="purple nobr" position="350,475" size="100,100">&lt;&lt;set $prevpass to &quot;portalClimateScrabble&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalvid10&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portal11&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -1856,7 +2097,7 @@ Please enter the Box Serial Code.
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="portalvid10b" tags="purple nobr" position="1225,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalClimateScrabble&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="portalvid10b" tags="purple nobr" position="475,475" size="100,100">&lt;&lt;set $prevpass to &quot;portalClimateScrabble&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalvid10&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portal11&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -1920,7 +2161,7 @@ Please enter the Box Serial Code.
 &lt;&lt;timed 10s&gt;&gt;
   &lt;&lt;goto $nextpass&gt;&gt;
 
-  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="portal11" tags="purple nobr" position="100,475" size="100,100">&lt;&lt;set $prevpass to &quot;portalvid10&quot;&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="portal11" tags="purple nobr" position="600,475" size="100,100">&lt;&lt;set $prevpass to &quot;portalvid10&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portal11&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portal12&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -1966,7 +2207,7 @@ Please enter the Box Serial Code.
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="portal12" tags="purple nobr" position="225,475" size="100,100">&lt;&lt;set $prevpass to &quot;portal11&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="portal12" tags="purple nobr" position="725,475" size="100,100">&lt;&lt;set $prevpass to &quot;portal11&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portal12&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portal13&quot;&gt;&gt;
 &lt;&lt;set $photoprogress to []&gt;&gt;
@@ -2122,7 +2363,7 @@ Please enter the Box Serial Code.
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="portal13" tags="purple nobr" position="350,475" size="100,100">&lt;&lt;set $prevpass to &quot;portal12&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="portal13" tags="purple nobr" position="850,475" size="100,100">&lt;&lt;set $prevpass to &quot;portal12&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portal13&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalVid14&quot;&gt;&gt;
 
@@ -2168,7 +2409,7 @@ Please enter the Box Serial Code.
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="portalVid14" tags="purple nobr" position="475,475" size="100,100">&lt;&lt;set $prevpass to &quot;portal13&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="portalVid14" tags="purple nobr" position="975,475" size="100,100">&lt;&lt;set $prevpass to &quot;portal13&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalVid14&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalVid15&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -2195,7 +2436,7 @@ Please enter the Box Serial Code.
  &lt;&lt;replace &quot;#chatInput&quot;&gt;&gt;
      &lt;&lt;include &quot;codeword7&quot;&gt;&gt;
   &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="portalVid15" tags="purple nobr" position="600,475" size="100,100">&lt;&lt;set $prevpass to &quot;portalVid14&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="portalVid15" tags="purple nobr" position="1100,475" size="100,100">&lt;&lt;set $prevpass to &quot;portalVid14&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalVid15&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalExercise16&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -2222,7 +2463,7 @@ Please enter the Box Serial Code.
  &lt;&lt;replace &quot;#chatInput&quot;&gt;&gt;
      &lt;&lt;include &quot;codeword7&quot;&gt;&gt;
   &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="portalExercise16" tags="purple nobr" position="725,475" size="100,100">&lt;&lt;set $prevpass to &quot;portalVid15&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="portalExercise16" tags="purple nobr" position="1225,475" size="100,100">&lt;&lt;set $prevpass to &quot;portalVid15&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalExercise16&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalVid17&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -2385,7 +2626,7 @@ Please enter the Box Serial Code.
   &lt;&lt;replace &quot;#chatInput&quot;&gt;&gt;
     &lt;&lt;include &quot;codeword8&quot;&gt;&gt;
     &lt;&lt;/replace&gt;&gt;
-  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="portalVid17" tags="purple nobr" position="850,475" size="100,100">&lt;&lt;set $prevpass to &quot;portalExercise16&quot;&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="portalVid17" tags="purple nobr" position="100,600" size="100,100">&lt;&lt;set $prevpass to &quot;portalExercise16&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalVid17&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalVid18&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -2437,7 +2678,7 @@ Please enter the Box Serial Code.
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="portalVid18" tags="purple nobr" position="975,475" size="100,100">&lt;&lt;set $prevpass to &quot;portalVid17&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="42" name="portalVid18" tags="purple nobr" position="225,600" size="100,100">&lt;&lt;set $prevpass to &quot;portalVid17&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalVid18&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -2455,11 +2696,11 @@ Please enter the Box Serial Code.
   &lt;section class=&quot;portal-footer video&quot;&gt;
     &lt;&lt;include &quot;portalfooter&quot;&gt;&gt;
   &lt;/section&gt;
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="39" name="checkphotoprogress" tags="" position="1100,475" size="100,100">&lt;&lt;if $photoprogress.includesAll(&quot;SUN&quot;,&quot;WATER&quot;,&quot;CARBON DIOXIDE&quot;, &quot;OXYGEN&quot;,&quot;SUGAR&quot;)&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="43" name="checkphotoprogress" tags="" position="350,600" size="100,100">&lt;&lt;if $photoprogress.includesAll(&quot;SUN&quot;,&quot;WATER&quot;,&quot;CARBON DIOXIDE&quot;, &quot;OXYGEN&quot;,&quot;SUGAR&quot;)&gt;&gt;
   &lt;&lt;timed 5s&gt;&gt;
   &lt;&lt;goto $nextpass&gt;&gt;
   &lt;&lt;/timed&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="portalVideo" tags="purple nobr" position="1225,475" size="100,100">&lt;main class=&quot;main portal grid-container&quot;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="portalVideo" tags="purple nobr" position="475,600" size="100,100">&lt;main class=&quot;main portal grid-container&quot;&gt;
   &lt;section class=&quot;hero&quot;&gt;
         /* &lt;iframe allow=&quot;autoplay&quot; width=&#39;800px&#39; height=&#39;450px&#39;
       src=&#39;https://player.vimeo.com/video/531960916?autoplay=1&amp;byline=0&amp;portrait=0&#39;&gt;&lt;/iframe&gt; */
@@ -2498,7 +2739,7 @@ Please enter the Box Serial Code.
   &lt;/section&gt;
 &lt;/main&gt;
 
-/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="41" name="portalText" tags="purple nobr" position="100,600" size="100,100">&lt;main class=&quot;main portal grid-container text&quot;&gt;
+/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="45" name="portalText" tags="purple nobr" position="600,600" size="100,100">&lt;main class=&quot;main portal grid-container text&quot;&gt;
   &lt;section class=&quot;chatlogo&quot;&gt;
      &lt;&lt;include &quot;rotatelogo&quot;&gt;&gt;
 
@@ -2528,7 +2769,7 @@ Please enter the Box Serial Code.
  &lt;&lt;include &quot;footerchat&quot;&gt;&gt;
 &lt;/main&gt;
 
-[[rotatelogogreen]]</tw-passagedata><tw-passagedata pid="42" name="portalAnneSays" tags="purple nobr" position="225,600" size="100,100">&lt;main class=&quot;main portal grid-container&quot;&gt;
+[[rotatelogogreen]]</tw-passagedata><tw-passagedata pid="46" name="portalAnneSays" tags="purple nobr" position="725,600" size="100,100">&lt;main class=&quot;main portal grid-container&quot;&gt;
   &lt;section class=&quot;hero&quot;&gt;
  &lt;div class=&quot;annesays&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;&lt;h1&gt;&lt;span&gt;Anne&lt;/span&gt; &lt;span&gt;Says&lt;/span&gt;&lt;/h1&gt;&lt;/div&gt;
@@ -2570,7 +2811,7 @@ Please enter the Box Serial Code.
   &lt;/section&gt;
 &lt;/main&gt;
 
-/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="43" name="buttonProgress" tags="nobr" position="350,600" size="100,100">&lt;div class=&quot;main button-grid-container&quot;&gt;
+/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="47" name="buttonProgress" tags="nobr" position="850,600" size="100,100">&lt;div class=&quot;main button-grid-container&quot;&gt;
   &lt;div class=&quot;portal-button-container&quot;&gt;
     &lt;img src=&quot;assets/img/logobutton.png&quot;/&gt;
     &lt;/div&gt;
@@ -2586,7 +2827,7 @@ Please enter the Box Serial Code.
     &lt;div class=&quot;portal-task-item four&quot;&gt;
     &lt;img src=&quot;assets/img/play.png&quot;/&gt;
     &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="44" name="codeword1" tags="nobr" position="475,600" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="codeword1" tags="nobr" position="975,600" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -2613,7 +2854,7 @@ Please enter the Box Serial Code.
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="45" name="codeword2" tags="nobr" position="600,600" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="codeword2" tags="nobr" position="1100,600" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -2640,7 +2881,7 @@ Please enter the Box Serial Code.
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="codeword3" tags="nobr" position="725,600" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="codeword3" tags="nobr" position="1225,600" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -2667,7 +2908,7 @@ Please enter the Box Serial Code.
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="codeword4" tags="nobr" position="850,600" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="codeword4" tags="nobr" position="100,725" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -2696,7 +2937,7 @@ Please enter the Box Serial Code.
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="codeword5" tags="nobr" position="975,600" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="codeword5" tags="nobr" position="225,725" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -2725,7 +2966,7 @@ Please enter the Box Serial Code.
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="codeword6" tags="nobr" position="1100,600" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="codeword6" tags="nobr" position="350,725" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -2754,7 +2995,7 @@ Please enter the Box Serial Code.
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="codeword7" tags="nobr" position="1225,600" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="codeword7" tags="nobr" position="475,725" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -2783,7 +3024,7 @@ Please enter the Box Serial Code.
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="codeword8" tags="nobr" position="100,725" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="codeword8" tags="nobr" position="600,725" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -2812,7 +3053,7 @@ Please enter the Box Serial Code.
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="codeword9" tags="nobr" position="225,725" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="codeword9" tags="nobr" position="725,725" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -2841,7 +3082,7 @@ Please enter the Box Serial Code.
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="codeword" tags="nobr" position="350,725" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="codeword" tags="nobr" position="850,725" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -2868,13 +3109,13 @@ Please enter the Box Serial Code.
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="rotatelogo" tags="nobr" position="475,725" size="100,100">&lt;div class=&quot;rotate-logo-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="rotatelogo" tags="nobr" position="975,725" size="100,100">&lt;div class=&quot;rotate-logo-wrapper&quot;&gt;
 &lt;div class=&quot;animated rotateInDownLeft overlay-image&quot;&gt;[img[https://remote.co.com/UCA/assets/img/logobutton.png]]&lt;/div&gt;
 &lt;div class=&quot;animated fadeInLeftBig overlay-image one&quot; &gt;[img[https://remote.co.com/UCA/assets/img/undercover.png]]&lt;/div&gt;&lt;div
         class=&quot;animated fadeInRightBig overlay-image two&quot;&gt;[img[https://remote.co.com/UCA/assets/img/caretaker.png]]&lt;/div&gt;&lt;div
         class=&quot;animated fadeInLeftBig overlay-image three&quot;&gt;[img[https://remote.co.com/UCA/assets/img/agency.png]]&lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="rotatelogogreen" tags="green" position="748.6666666666667,601" size="100,100">&lt;messagebox&gt;&lt;div
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="rotatelogogreen" tags="green" position="748.6666666666667,601" size="100,100">&lt;messagebox&gt;&lt;div
       class=&quot;animated
       rotateIn&quot;&gt;[img[https://remote.co.com/UCA/assets/img/logobutton.png]]&lt;/div&gt;
 &lt;/messagebox&gt;
@@ -2886,7 +3127,7 @@ Please enter the Box Serial Code.
       class=&quot;animated
       fadeInLeftBig&quot;&gt;[img[https://remote.co.com/UCA/assets/img/agency.png]]&lt;/div&gt;
 &lt;/messagebox&gt;
-&lt;&lt;timed 5s&gt;&gt;&lt;&lt;goto &quot;Start&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="56" name="tree" tags="nobr" position="725,725" size="100,100">&lt;main class=&quot;main tree-grid-container&quot;&gt;
+&lt;&lt;timed 5s&gt;&gt;&lt;&lt;goto &quot;Start&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="60" name="tree" tags="nobr" position="1225,725" size="100,100">&lt;main class=&quot;main tree-grid-container&quot;&gt;
 
   /* &lt;div class=&quot;full-img-container&quot;&gt;
     &lt;img src=&quot;assets/img/tree.png&quot;/&gt;
@@ -2899,7 +3140,7 @@ Please enter the Box Serial Code.
 
 
 
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="57" name="treePw1" tags="nobr" position="850,725" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult1&quot;&gt;&lt;/div&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="61" name="treePw1" tags="nobr" position="100,850" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult1&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot; class=&quot;resultbutton1&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -2933,7 +3174,7 @@ Please enter the Box Serial Code.
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="treePw2" tags="nobr" position="975,725" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult2&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="62" name="treePw2" tags="nobr" position="225,850" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult2&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot; class=&quot;resultbutton2&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -2966,7 +3207,7 @@ Please enter the Box Serial Code.
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="treePw3" tags="nobr" position="1100,725" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult3&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="treePw3" tags="nobr" position="350,850" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult3&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot;  class=&quot;resultbutton3&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -2999,7 +3240,7 @@ Please enter the Box Serial Code.
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="treePw4" tags="nobr" position="1225,725" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult4&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="treePw4" tags="nobr" position="475,850" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult4&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot; class=&quot;resultbutton4&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -3032,7 +3273,7 @@ Please enter the Box Serial Code.
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="photoPw1" tags="nobr" position="100,850" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult1&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="photoPw1" tags="nobr" position="600,850" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult1&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot; class=&quot;resultbutton1&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -3071,7 +3312,7 @@ Please enter the Box Serial Code.
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="62" name="photoPw2" tags="nobr" position="225,850" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult2&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="66" name="photoPw2" tags="nobr" position="725,850" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult2&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot; class=&quot;resultbutton2&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -3109,7 +3350,7 @@ Please enter the Box Serial Code.
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="photoPw3" tags="nobr" position="350,850" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult3&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="photoPw3" tags="nobr" position="850,850" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult3&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot;  class=&quot;resultbutton3&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -3147,7 +3388,7 @@ Please enter the Box Serial Code.
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="photoPw4" tags="nobr" position="475,850" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult4&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="68" name="photoPw4" tags="nobr" position="975,850" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult4&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot; class=&quot;resultbutton4&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -3186,7 +3427,7 @@ Please enter the Box Serial Code.
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="photoPw5" tags="nobr" position="600,850" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult5&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="69" name="photoPw5" tags="nobr" position="1100,850" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult5&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot; class=&quot;resultbutton5&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -3224,7 +3465,7 @@ Please enter the Box Serial Code.
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="66" name="scrabble" tags="nobr purple" position="725,850" size="100,100">&lt;&lt;include &quot;footer&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="70" name="scrabble" tags="nobr purple" position="1225,850" size="100,100">&lt;&lt;include &quot;footer&quot;&gt;&gt;
 [[Start]]
 &lt;main&gt;
 &lt;&lt;button &quot;Help&quot;&gt;&gt;
@@ -3257,7 +3498,7 @@ Please enter the Box Serial Code.
   &lt;/div&gt; */
  
   
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="67" name="loading" tags="nobr" position="850,850" size="100,100">&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="68" name="annesays" tags="nobr" position="975,850" size="100,100">&lt;main class=&quot;annesays&quot;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="71" name="loading" tags="nobr" position="100,975" size="100,100">&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="72" name="annesays" tags="nobr" position="225,975" size="100,100">&lt;main class=&quot;annesays&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;&lt;h1&gt;&lt;span&gt;Anne&lt;/span&gt; &lt;span&gt;Says&lt;/span&gt;&lt;/h1&gt;&lt;/div&gt;
 
 
@@ -3265,8 +3506,8 @@ Please enter the Box Serial Code.
 
 &lt;&lt;timed 5s&gt;&gt;&lt;&lt;goto &quot;portalAnneSays1&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="69" name="funcircle" tags="" position="1100,850" size="100,100">&lt;div class=&quot;play-btn-container box&quot;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="70" name="photosynthesis" tags="nobr" position="1225,850" size="100,100">&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="71" name="letter" tags="nobr" position="100,975" size="100,100">&lt;div class=&quot;letter-wrapper&quot;&gt;
+/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="73" name="funcircle" tags="" position="350,975" size="100,100">&lt;div class=&quot;play-btn-container box&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="74" name="photosynthesis" tags="nobr" position="475,975" size="100,100">&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="75" name="letter" tags="nobr" position="600,975" size="100,100">&lt;div class=&quot;letter-wrapper&quot;&gt;
   &lt;div class=&quot;letterpaper&quot; alt=&quot;&quot;&gt;
 			&lt;div id=&quot;letterinner&quot; class=&quot;letterinner&quot;&gt;
 				&lt;p&gt;Dear [Enter Name], &lt;/p&gt;

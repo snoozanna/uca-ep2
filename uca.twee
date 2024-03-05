@@ -591,18 +591,154 @@ Please enter the Box Serial Code.
 
 /* <<include "footer">> */
 
-
-
 :: portalAnneSays3 [purple nobr]
 <<set $prevpass to "portalAnneSays2">>
 <<set $pass to "portalAnneSays3">>
-<<set $nextpass to "portalAnneSays4">>
+<<set $nextpass to "portalAnneSays3a">>
 <<set $list to ['Branches','Roots','Leaves', 'Trunk']>>
 <<set $counter to 0>>
 <main class="annesays t8n"  id="annesays">
      <div id="titleWrapper" class="titleWrapper">
         <div class="title" id="title">
             <h1><span id="randomitem">ANNE SAYS</span></h1>
+             <h2>Round 1</h2>
+      </div>
+     </div>
+
+  
+</main>
+<<include "footerannesays">>
+<<timed 2s>>
+  <<addclass "#annesays" "darker">>
+  <<replace "#nextMount">>
+   <<button "GO!">>
+       <<set $counter to $counter + 1>>
+      <<timed 0.5s>>
+          <<replace "#titleWrapper">><</replace>>
+        <<set $randomitem to $list.random()>>
+        <<timed 1.5s>>
+        <<replace "#titleWrapper">>
+            <div class="title" id="title">
+          <h1><span id="randomitem">Anne Says: $randomitem</span></h1>
+    </div>
+        <</replace>>
+        <</timed>>
+        <<replace "#nextMount">>
+        <<button "NEXT">>
+             <<if $counter gte 20>>
+                <<timed 0.1s>>
+                <<replace "#titleWrapper">><</replace>>
+                  <</timed>>
+                    <<timed 0.4s>>
+                <<goto $nextpass>>
+              <</timed>>
+              <<elseif $counter gte 4>>
+                <<set $counter to $counter + 1>>
+                <<replace "#titleWrapper">><</replace>>
+              <<timed 0.5s>>
+                <<set $randomitem to $list.random()>>
+              <<replace "#titleWrapper">>
+                <div class="title" id="title">
+                  <h1><span id="randomitem">$randomitem </span></h1> </div>
+            <</replace>>
+              <</timed>>
+           <<else>>
+                <<set $counter to $counter + 1>>
+                <<replace "#titleWrapper">><</replace>>
+              <<timed 0.5s>>
+                <<set $randomitem to $list.random()>>
+              <<replace "#titleWrapper">>
+                <div class="title" id="title">
+                  <h1><span id="randomitem">Anne Says: $randomitem </span></h1> </div>
+            <</replace>>
+              <</timed>>
+            <</if>>
+         <</button>>
+         <</replace>>
+      <</timed>>
+    <</button>>
+  <</replace>>
+<</timed>>
+
+
+:: portalAnneSays3a [purple nobr]
+<<set $prevpass to "portalAnneSays3">>
+<<set $pass to "portalAnneSays3a">>
+<<set $nextpass to "portalAnneSays3b">>
+<main class="main portal grid-container">
+  <section class="hero">
+ <div class="annesays" id="annesays">
+<div class="titleWrapper">
+  <div class="title">
+  <h1><span>Anne</span> <span>Says</span></h1>
+
+  </div>
+</div>
+
+
+</div>
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"> </div>
+  <div class="chat-input">
+  /* <<include "codeword">> */
+  </div>
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+<<timed 2s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Teacher, did everyone make it through? Anyone who didn’t needs to sit down.</p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 4s>>
+
+  <<replace "#annesays">>
+    <div class="titleWrapper">
+  <div class="title">
+  <h1><span>Anne</span> <span>Says</span></h1>
+  <h2>Round 2</h2>
+  </div>
+</div>
+  <</replace>>
+
+ <<append "#messagesContainer">>
+     <<button "BEGIN">>
+      <<timed 1s>>
+      <<goto $nextpass>>
+        <</timed>>
+      <</button>>
+    <</append>>
+<</timed>>
+
+
+
+
+
+
+:: portalAnneSays3b [purple nobr]
+<<set $prevpass to "portalAnneSays3a">>
+<<set $pass to "portalAnneSays3b">>
+<<set $nextpass to "portalAnneSays4a">>
+<<set $list to ['Branches','Roots','Leaves', 'Trunk', 'Anne Says: <br/>Branches','Anne Says:<br/> Roots','Anne Says: <br/>Leaves', 'Anne Says:<br/> Trunk',]>>
+<<set $counter to 0>>
+<main class="annesays t8n"  id="annesays">
+     <div id="titleWrapper" class="titleWrapper">
+        <div class="title" id="title">
+            <h1><span id="randomitem">ANNE SAYS</span></h1>
+             <h2>Round 2</h2>
       </div>
      </div>
 
@@ -650,13 +786,133 @@ Please enter the Box Serial Code.
     <</button>>
   <</replace>>
 <</timed>>
+
+:: portalAnneSays4a [purple nobr]
+<<set $prevpass to "portalAnneSays3b">>
+<<set $pass to "portalAnneSays4a">>
+<<set $nextpass to "portalAnneSays4b">>
+<main class="main portal grid-container">
+  <section class="hero">
+ <div class="annesays" id="annesays">
+<div class="titleWrapper">
+  <div class="title">
+  <h1><span>Anne</span> <span>Says</span></h1>
+ 
+  </div>
+</div>
+
+
+</div>
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"> </div>
+  <div class="chat-input">
+  /* <<include "codeword">> */
+  </div>
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+<<timed 2s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Teacher, who missed one of them? Anyone who did should sit down in their seat. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 4s>>
+
+  <<replace "#annesays">>
+    <div class="titleWrapper">
+  <div class="title">
+  <h1><span>Anne</span> <span>Says</span></h1>
+  <h2>Round 3</h2>
+  </div>
+</div>
+  <</replace>>
+
+ <<append "#messagesContainer">>
+     <<button "BEGIN">>
+      <<timed 1s>>
+      <<goto $nextpass>>
+        <</timed>>
+      <</button>>
+    <</append>>
+<</timed>>
  
 
+:: portalAnneSays4b [purple nobr]
+<<set $prevpass to "portalAnneSays4a">>
+<<set $pass to "portalAnneSays4b">>
+<<set $nextpass to "portalAnneSaysChal2">>
+<<set $list to ['Branches','Roots','Leaves', 'Trunk', 'Anne Says: <br/>Branches','Anne Says:<br/> Roots','Anne Says: <br/>Leaves', 'Anne Says:<br/> Trunk',]>>
+<<set $counter to 0>>
+<main class="annesays t8n"  id="annesays">
+     <div id="titleWrapper" class="titleWrapper">
+        <div class="title" id="title">
+            <h1><span id="randomitem">ANNE SAYS</span></h1>
+             <h2>Round 3</h2>
+      </div>
+     </div>
+
+  
+</main>
+<<include "footerannesays">>
+<<timed 2s>>
+  <<addclass "#annesays" "darker">>
+  <<replace "#nextMount">>
+   <<button "GO!">>
+       <<set $counter to $counter + 1>>
+      <<timed 0.5s>>
+          <<replace "#titleWrapper">><</replace>>
+        <<set $randomitem to $list.random()>>
+        <<timed 1.5s>>
+        <<replace "#titleWrapper">>
+            <div class="title" id="title">
+          <h1><span id="randomitem">$randomitem</span></h1>
+    </div>
+        <</replace>>
+        <</timed>>
+        <<replace "#nextMount">>
+        <<button "NEXT">>
+             <<if $counter gte 20>>
+                <<timed 0.1s>>
+                <<replace "#titleWrapper">><</replace>>
+                  <</timed>>
+                    <<timed 0.4s>>
+                <<goto $nextpass>>
+              <</timed>>
+           <<else>>
+                <<set $counter to $counter + 1>>
+                <<replace "#titleWrapper">><</replace>>
+              <<timed 0.5s>>
+                <<set $randomitem to $list.random()>>
+              <<replace "#titleWrapper">>
+                <div class="title" id="title">
+                  <h1><span id="randomitem">$randomitem </span></h1> </div>
+            <</replace>>
+              <</timed>>
+            <</if>>
+         <</button>>
+         <</replace>>
+      <</timed>>
+    <</button>>
+  <</replace>>
+<</timed>>
 
 
-:: portalAnneSays4 [purple nobr]
-<<set $prevpass to "portalAnneSays3">>
-<<set $pass to "portalAnneSays4">>
+:: portalAnneSaysChal2 [purple nobr]
+<<set $prevpass to "portalAnneSays4b">>
+<<set $pass to "portalAnneSaysChal2">>
 <<set $nextpass to "portalAnneSaysVid5">>
 <main class="main portal grid-container">
   <section class="hero" id="hero">
@@ -664,7 +920,7 @@ Please enter the Box Serial Code.
           <div class="titleWrapper">
             <div class="title">
             <h1><span>Anne</span> <span>Says</span></h1>
-            <h2>Round 2</h2>
+            <h2>Challenge 2</h2>
             <h2>Team</h2>
             </div>
           </div>
