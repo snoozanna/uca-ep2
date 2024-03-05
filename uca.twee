@@ -264,7 +264,7 @@ $(document.head).find('#style-ui-bar').remove();
 :: ucalab [nobr]
 <<set $prevpass to "login">>
 <<set $pass to "ucalab">>
-<<set $nextpass to "portalvid1">>
+<<set $nextpass to "intro">>
 <main>
 UCA Box Recovery Service
 Please enter the Box Serial Code. 
@@ -272,13 +272,52 @@ Please enter the Box Serial Code.
 <<include "codeword1">>
 </main>
 
-:: portalvid1 [purple nobr]
+
+
+:: intro [purple nobr]
 <<set $prevpass to "ucalab">>
+<<set $pass to "intro">>
+<<set $nextpass to "portalvid1">>
+<main class="main portal grid-container">
+  <section class="hero" id="hero">
+/* ANNE VIDEO 1: UCA Introduction */
+       <iframe width='800px' height='450px'
+      src='https://player.vimeo.com/video/531960916?autoplay=1&byline=0&portrait=0'></iframe>
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"></div>
+  <div class="chat-input">
+  <<include "codeword1a">>
+  </div>
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+
+<<timed 2s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>  THIS IS UNFINISHED </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+
+:: portalvid1 [purple nobr]
+<<set $prevpass to "intro">>
 <<set $pass to "portalvid1">>
 <<set $nextpass to "annesays">>
 <main class="main portal grid-container">
   <section class="hero" id="hero">
-
+/* ANNE VIDEO 2 */
        <iframe width='800px' height='450px'
       src='https://player.vimeo.com/video/531960916?autoplay=1&byline=0&portrait=0'></iframe>
   </section>
@@ -2115,7 +2154,7 @@ Please enter the Box Serial Code.
 :: portalvid10 [purple nobr]
 <<set $prevpass to "portalClimateScrabble">>
 <<set $pass to "portalvid10">>
-<<set $nextpass to "portal11">>
+<<set $nextpass to "portal10b">>
 <main class="main portal grid-container">
   <section class="hero" id="hero">
 
@@ -2150,8 +2189,8 @@ Please enter the Box Serial Code.
 
 
 :: portalvid10b [purple nobr]
-<<set $prevpass to "portalClimateScrabble">>
-<<set $pass to "portalvid10">>
+<<set $prevpass to "portalvid10">>
+<<set $pass to "portalvid10b">>
 <<set $nextpass to "portal11">>
 <main class="main portal grid-container">
   <section class="hero" id="hero">
@@ -2218,7 +2257,7 @@ Please enter the Box Serial Code.
 
 
 :: portal11 [purple nobr]
-<<set $prevpass to "portalvid10">>
+<<set $prevpass to "portalvid10b">>
 <<set $pass to "portal11">>
 <<set $nextpass to "portal12">>
 <main class="main portal grid-container">
@@ -2284,7 +2323,7 @@ Please enter the Box Serial Code.
   <section class="chat">
   <div class="messages-container" id="messagesContainer"></div>
   <div class="chat-input">
-  <<include "codeword4">>
+
   </div>
   </section>
   <section class="portal-footer video">
@@ -2959,6 +2998,36 @@ Please enter the Box Serial Code.
 /% CODEWORD INCORRECT %/
 <<if $code isnot "">>
   <<if $code is not "ANNE" and $code is not "ANNE ">>
+  <<replace "#coderesult">><div class="confirmation" id="confirmation">That's not right...</div><</replace>>
+  <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+  <</if>>
+  <</if>>
+<</button>>
+</div>
+
+</div>
+
+:: codeword1a [nobr]
+<div id="coderesult"></div>
+ <div id="resultbutton">
+/% CODEWORD INPUT %/
+<div class="code-input">
+<<textbox "$code" "">>
+<<button "Send">>
+</div>
+ /% PASSWORD CODE %/
+<<set $code to $code.toUpperCase()>>
+/% CODEWORD CORRECT %/
+<<if $code isnot "">> 
+  <<if $code is "WEETABIX" or $code is "WEETABIX ">>
+    <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
+    <<timed 3s>><<goto $nextpass>><</timed>>
+   
+<</if>>
+<</if>>
+/% CODEWORD INCORRECT %/
+<<if $code isnot "">>
+  <<if $code is not "WEETABIX" and $code is not "WEETABIX ">>
   <<replace "#coderesult">><div class="confirmation" id="confirmation">That's not right...</div><</replace>>
   <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
   <</if>>
