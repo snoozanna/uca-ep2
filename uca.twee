@@ -7,7 +7,7 @@ UCA Episode 2
 	"ifid": "8a8811e5-4d1b-4c67-9f23-57d8c826f3a2",
 	"format": "SugarCube",
 	"format-version": "2.30.0",
-	"start": "",
+	"start": "login",
 	"tag-colors": {
 		"green": "green"
 	},
@@ -249,27 +249,53 @@ $(document.head).find('#style-ui-bar').remove();
   </div>
   </section>
 
-:: login [nobr]
+:: login [purple nobr]
 <<set $prevpass to "login">>
 <<set $pass to "login">>
 <<set $nextpass to "ucalab">>
-<main>
-  login as before with buzzer, then diverting to UCA Lab
-  <<button "Next">>
-    <<goto $nextpass>>
-  <</button>>
+<main><messagebox2>[img[https://remote.co.com/UCA/assets/img/intercom2.png][staticbuzz1]]</messagebox2>
+
 </main>
+
+
+
+
+:: staticbuzz1 {"position":"47.999999999999964,2141.333333333333","size":"100,100"}
+<main>
+STATIC BUZZ
+<div id="mount"></div>
+</main>
+      <<timed 0.5s>>
+      /* <iframe src="https://remote.co.com/UCA/assets/audio/crispy-static.mp3"  style="display:none" allow="autoplay" ></iframe> */
+      <audio src="https://remote.co.com/UCA/assets/audio/crispy-static.mp3" autoplay style="display:none">Audio is not supported on your device</audio> 
+      <</timed>>
+
+       <<timed 2s>>
+    <<replace "#mount">>Diverting...<</replace>>
+     <</timed>>
+
+
+  <<timed 4s>>
+    <<goto "ucalab">>
+     <</timed>>
+
 
 
 :: ucalab [nobr]
 <<set $prevpass to "login">>
 <<set $pass to "ucalab">>
 <<set $nextpass to "intro">>
-<main>
-UCA Box Recovery Service
-Please enter the Box Serial Code. 
+<main class="ucalab">
 
-<<include "codeword1">>
+<div class="uca-logo" >
+     <img src="assets/img/logobutton.png" alt="logo"/>
+     </div>
+<div class="ucalab-wrapper">
+  <h3>UCA Box Recovery Service</h3>
+  <p>Please enter the Box Serial Code. </p>
+  
+  <<include "codeword1">>
+</div>
 </main>
 
 
@@ -304,7 +330,7 @@ Please enter the Box Serial Code.
       </div>
       <div class="message-container" >
         <span class="sender">Anne</span>
-        <p>  THIS IS UNFINISHED </p>
+        <p> What am I holding? </p>
       </div>
     </div>
   <</append>>
@@ -502,7 +528,7 @@ Please enter the Box Serial Code.
     </div>
   <</append>>
   <<append "#annesays">>
-    <div class="play-btn-container" id="play-btn-container">
+    <div class="play-btn-container bobbing " id="play-btn-container">
      [img[Forward|assets/img/play.png][portalAnneSays2]]
      </div>
     <</append>>
@@ -622,7 +648,7 @@ Please enter the Box Serial Code.
     </div>
   <</append>>
   <<append "#annesays">>
-    <div class="play-btn-container" id="play-btn-container">
+    <div class="play-btn-container bobbing " id="play-btn-container">
      [img[Forward|assets/img/play.png][portalAnneSays3]]
      </div>
     <</append>>
@@ -754,7 +780,7 @@ Please enter the Box Serial Code.
   <</replace>>
 
  <<append "#messagesContainer">>
-     <<button "BEGIN">>
+     <<button "NEXT ROUND">>
       <<timed 1s>>
       <<goto $nextpass>>
         <</timed>>
@@ -880,7 +906,7 @@ Please enter the Box Serial Code.
   <</replace>>
 
  <<append "#messagesContainer">>
-     <<button "BEGIN">>
+     <<button "NEXT ROUND">>
       <<timed 1s>>
       <<goto $nextpass>>
         <</timed>>
@@ -1305,6 +1331,7 @@ Please enter the Box Serial Code.
 <<set $nextpass to "portalVid8">>
 <main class="main portal grid-container">
   <section class="hero" id="hero">
+/* ANNE VIDEO 3: REFLECTING ON TREES */
 
        <iframe width='800px' height='450px'
       src='https://player.vimeo.com/video/531960916?autoplay=1&byline=0&portrait=0'></iframe>
@@ -1538,12 +1565,10 @@ Please enter the Box Serial Code.
 
     
   </section>
-  <section class="chat">
+  /* <section class="chat">
   <div class="messages-container" id="messagesContainer"></div>
-  /* <div class="chat-input">
-  <<include "codeword2">>
-  </div> */
-  </section>
+
+  </section> */
   <section class="portal-footer video">
     <<include "portalfooter">>
   </section>
@@ -1644,12 +1669,10 @@ Please enter the Box Serial Code.
 
     
   </section>
-  <section class="chat">
+  /* <section class="chat">
   <div class="messages-container" id="messagesContainer"></div>
-  /* <div class="chat-input">
-  <<include "codeword2">>
-  </div> */
-  </section>
+
+  </section> */
   <section class="portal-footer video">
     <<include "portalfooter">>
   </section>
@@ -1722,12 +1745,10 @@ Please enter the Box Serial Code.
 
     
   </section>
-  <section class="chat">
+  /* <section class="chat">
   <div class="messages-container" id="messagesContainer"></div>
-  /* <div class="chat-input">
-  <<include "codeword2">>
-  </div> */
-  </section>
+
+  </section> */
   <section class="portal-footer video">
     <<include "portalfooter">>
   </section>
@@ -1789,12 +1810,10 @@ Please enter the Box Serial Code.
 
     
   </section>
-  <section class="chat">
+  /* <section class="chat">
   <div class="messages-container" id="messagesContainer"></div>
-  /* <div class="chat-input">
-  <<include "codeword2">>
-  </div> */
-  </section>
+
+  </section> */
   <section class="portal-footer video">
     <<include "portalfooter">>
   </section>
@@ -1857,12 +1876,10 @@ Please enter the Box Serial Code.
 <main class="main portal grid-container">
   <section class="hero" id="hero">
   </section>
-  <section class="chat">
+  /* <section class="chat">
   <div class="messages-container" id="messagesContainer"></div>
-  /* <div class="chat-input">
-  <<include "codeword2">>
-  </div> */
-  </section>
+
+  </section> */
   <section class="portal-footer video">
     <<include "portalfooter">>
   </section>
@@ -1923,12 +1940,10 @@ Please enter the Box Serial Code.
 <main class="main portal grid-container">
   <section class="hero" id="hero">
   </section>
-  <section class="chat">
+  /* <section class="chat">
   <div class="messages-container" id="messagesContainer"></div>
-  /* <div class="chat-input">
-  <<include "codeword2">>
-  </div> */
-  </section>
+
+  </section> */
   <section class="portal-footer video">
     <<include "portalfooter">>
   </section>
@@ -1990,12 +2005,10 @@ Please enter the Box Serial Code.
 <main class="main portal grid-container">
   <section class="hero" id="hero">
   </section>
-  <section class="chat">
+  /* <section class="chat">
   <div class="messages-container" id="messagesContainer"></div>
-  /* <div class="chat-input">
-  <<include "codeword2">>
-  </div> */
-  </section>
+
+  </section> */
   <section class="portal-footer video">
     <<include "portalfooter">>
   </section>
@@ -2154,10 +2167,10 @@ Please enter the Box Serial Code.
 :: portalvid10 [purple nobr]
 <<set $prevpass to "portalClimateScrabble">>
 <<set $pass to "portalvid10">>
-<<set $nextpass to "portal10b">>
+<<set $nextpass to "portalvid10b">>
 <main class="main portal grid-container">
   <section class="hero" id="hero">
-
+/* ANNE VIDEO 4: WANGARI */
        <iframe width='800px' height='450px'
       src='https://player.vimeo.com/video/531960916?autoplay=1&byline=0&portrait=0'></iframe>
   </section>
@@ -2192,15 +2205,20 @@ Please enter the Box Serial Code.
 <<set $prevpass to "portalvid10">>
 <<set $pass to "portalvid10b">>
 <<set $nextpass to "portal11">>
+<<set $sun to "[ . . . ]">>
+<<set $water to "[ . . . . . ]">>
+<<set $co2 to "[ . . . . . .   . . . . . . ]">>
+<<set $oxygen to "[ . . . . . . ]">>
+<<set $sugar to "[ . . . . . ]">>
 <main class="main portal grid-container">
   <section class="hero" id="hero">
  <<include "buttonProgress">>
   </section>
   <section class="chat">
   <div class="messages-container" id="messagesContainer"></div>
-  <div class="chat-input">
+  /* <div class="chat-input">
   <<include "codeword4">>
-  </div>
+  </div> */
   </section>
   <section class="portal-footer video">
     <<include "portalfooter">>
@@ -2305,13 +2323,19 @@ Please enter the Box Serial Code.
   <</append>>
 <</timed>>
 
+:: photoprogress[nobr]
+
+ 
+<div class="photoprogress"><h3>$sun + $water + $co2 = $oxygen + $sugar</h3></div>
 
 :: portal12 [purple nobr]
 <<set $prevpass to "portal11">>
 <<set $pass to "portal12">>
 <<set $nextpass to "portal13">>
 <<set $photoprogress to []>>
-<main class="main portal grid-container">
+<main class="main portal grid-container photo">
+<div id="progress-wrapper"><<include "photoprogress">></div>
+
 <section class="hero photo-grid-container" id="hero">
 
      <div class="photo-one"><<include "photoPw1">></div>
@@ -2330,6 +2354,8 @@ Please enter the Box Serial Code.
     <<include "portalfooter">>
   </section>
 </main>
+
+
 
 
 <<timed 2s>>
@@ -2473,7 +2499,7 @@ Please enter the Box Serial Code.
 
 <main class="main portal grid-container">
 <section class="hero " id="hero">
-
+<<include "rotatelogo">>
   </section>
   <section class="chat">
   <div class="messages-container" id="messagesContainer"></div>
@@ -2518,10 +2544,10 @@ Please enter the Box Serial Code.
 :: portalVid14 [purple nobr]
 <<set $prevpass to "portal13">>
 <<set $pass to "portalVid14">>
-<<set $nextpass to "portalVid15">>
+<<set $nextpass to "portalExercise16">>
 <main class="main portal grid-container">
   <section class="hero" id="hero">
-
+/* ANNE VIDEO 5: PHOTOSYNTHESIS */
        <iframe width='800px' height='450px'
       src='https://player.vimeo.com/video/531960916?autoplay=1&byline=0&portrait=0'></iframe>
   </section>
@@ -2545,38 +2571,9 @@ Please enter the Box Serial Code.
   <</replace>>
 <</timed>>
 
-:: portalVid15 [purple nobr]
-<<set $prevpass to "portalVid14">>
-<<set $pass to "portalVid15">>
-<<set $nextpass to "portalExercise16">>
-<main class="main portal grid-container">
-  <section class="hero" id="hero">
-/* ANNE VIDEO 5: PHOTOSYNTHESIS */
-       <iframe width='800px' height='450px'
-      src='https://player.vimeo.com/video/531960916?autoplay=1&byline=0&portrait=0'></iframe>
-  </section>
-  <section class="chat">
-  <div class="messages-container" id="messagesContainer"></div>
-  <div class="chat-input" id="chatInput">
-
-  </div>
-  </section>
-  <section class="portal-footer video">
-    <<include "portalfooter">>
-  </section>
-</main>
-
-<<timed 10s>>
-  <<replace "#hero">>
-    <<include "buttonProgress">>
-  <</replace>>
- <<replace "#chatInput">>
-     <<include "codeword7">>
-  <</replace>>
-<</timed>>
 
 :: portalExercise16 [purple nobr]
-<<set $prevpass to "portalVid15">>
+<<set $prevpass to "portalVid14">>
 <<set $pass to "portalExercise16">>
 <<set $nextpass to "portalVid17">>
 <main class="main portal grid-container">
@@ -2820,6 +2817,20 @@ Please enter the Box Serial Code.
   </section>
 </main>
 
+<<timed 3s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+         <span class="sender">Anne</span>
+        <p>The end</p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
 
 
 :: checkphotoprogress
@@ -2960,19 +2971,64 @@ Please enter the Box Serial Code.
     <img src="assets/img/logobutton.png"/>
     </div>
   <div class="portal-task-item one">
-    <img src="assets/img/play.png"/>
+    <div class="circle red" id="task1"></div>
+    <div id="task1Text"></div>
     </div>
-  <div class="portal-task-item two">
-    <img src="assets/img/play.png"/>
+  <div class="portal-task-item two ">
+      <div class="circle red" id="task2"></div>
+       <div id="task2Text"></div>
     </div>
-  <div class="portal-task-item three">
-    <img src="assets/img/play.png"/>
+  <div class="portal-task-item three ">
+        <div id="task3Text"></div>
+      <div class="circle red" id="task3"></div>
+ 
     </div>
     <div class="portal-task-item four">
-    <img src="assets/img/play.png"/>
+         <div id="task4Text"></div>
+    <div class="circle red" id="task4"></div>
+
     </div>
 </div>
 
+<<if hasVisited("portalTree6")>>
+  <<timed 0.1s>>
+    <<removeclass "#task1" "red">>
+    <<addclass "#task1" "greencorrect">>
+    <<replace "#task1Text">>
+      <h3>MY</h3>
+      <</replace>>
+  <</timed>>
+<</if>>
+
+<<if hasVisited("portalvid10")>>
+  <<timed 0.1s>>
+    <<removeclass "#task3" "red">>
+    <<addclass "#task3" "greencorrect">>
+    <<replace "#task3Text">>
+      <h3 class="above">CORR</h3>
+      <</replace>>
+  <</timed>>
+<</if>>
+
+<<if hasVisited("portal13")>>
+  <<timed 0.1s>>
+    <<removeclass "#task2" "red">>
+    <<addclass "#task2" "greencorrect">>
+    <<replace "#task2Text">>
+      <h3>HI</h3>
+      <</replace>>
+  <</timed>>
+<</if>>
+
+<<if hasVisited("portalExercise16")>>
+  <<timed 0.1s>>
+    <<removeclass "#task4" "red">>
+    <<addclass "#task4" "greencorrect">>
+    <<replace "#task4Text">>
+      <h3 class="above">ZAL</h3>
+      <</replace>>
+  <</timed>>
+<</if>>
 
 
 
@@ -2983,7 +3039,7 @@ Please enter the Box Serial Code.
 /% CODEWORD INPUT %/
 <div class="code-input">
 <<textbox "$code" "">>
-<<button "Send">>
+<<button "Enter">>
 </div>
  /% PASSWORD CODE %/
 <<set $code to $code.toUpperCase()>>
@@ -3543,8 +3599,13 @@ Please enter the Box Serial Code.
     padding: 0.5rem;
     border-radius: 0.8rem;">Sun</h2><</replace>>
            <<replace "#coderesult1">><</replace>>
+      
     <</timed>>
     <<timed 5s>>
+      <<set $sun to "SUN">>
+      <<replace "#progress-wrapper">>
+        <<include "photoprogress">>
+        <</replace>>
       <<include "checkphotoprogress">>
       <</timed>>
    
@@ -3588,6 +3649,10 @@ Please enter the Box Serial Code.
            <<replace "#coderesult2">><</replace>>
     <</timed>>
      <<timed 5s>>
+        <<set $water to "WATER">>
+      <<replace "#progress-wrapper">>
+        <<include "photoprogress">>
+        <</replace>>
       <<include "checkphotoprogress">>
       <</timed>>
 <</if>>
@@ -3630,6 +3695,10 @@ Please enter the Box Serial Code.
            <<replace "#coderesult3">><</replace>>
     <</timed>>
      <<timed 5s>>
+        <<set $co2 to "CARBON DIOXIDE">>
+      <<replace "#progress-wrapper">>
+        <<include "photoprogress">>
+        <</replace>>
       <<include "checkphotoprogress">>
       <</timed>>
 <</if>>
@@ -3673,6 +3742,10 @@ Please enter the Box Serial Code.
            <<replace "#coderesult4">><</replace>>
     <</timed>>
      <<timed 5s>>
+        <<set $oxygen to "OXYGEN">>
+      <<replace "#progress-wrapper">>
+        <<include "photoprogress">>
+        <</replace>>
       <<include "checkphotoprogress">>
       <</timed>>
 <</if>>
@@ -3715,6 +3788,10 @@ Please enter the Box Serial Code.
            <<replace "#coderesult5">><</replace>>
     <</timed>>
      <<timed 5s>>
+        <<set $sugar to "SUGAR">>
+      <<replace "#progress-wrapper">>
+        <<include "photoprogress">>
+        <</replace>>
       <<include "checkphotoprogress">>
       <</timed>>
 <</if>>

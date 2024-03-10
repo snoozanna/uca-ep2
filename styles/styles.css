@@ -7,6 +7,8 @@
   --offwhite: #f6eee3;
   --orange: rgb(255, 85, 0);
   --lightorange: orange;
+  --red: rgb(146, 22, 22);
+  --greencorrect: #59bd5b;
   --browny: #6d3443;
   --greeny: #cde96f;
   --main-bg-color: rgb(14, 9, 14);
@@ -91,6 +93,12 @@ body[data-tags~="t8n-dissolve"] .transition-out {
 
 /* MAIN STYLES  */
 
+h1,
+h2,
+h3 {
+  font-family: "Contrail One", cursive;
+}
+
 .purple {
   color: black;
   background-image: url("https://remote.co.com/UCA/assets/img/purplebackground.jpg");
@@ -120,6 +128,32 @@ messagebox {
   position: fixed;
   top: 20vh;
   left: 15vw;
+}
+
+messagebox2 {
+  width: 70vw;
+  padding: 5vh 0;
+  height: 60vh;
+  font-size: x-large;
+  position: fixed;
+  top: 20vh;
+  left: 15vw;
+  display: flex;
+  justify-content: center;
+}
+
+.staticgif {
+  box-shadow: -150px #fff;
+  width: 300px;
+  padding: 10px;
+}
+
+.staticgif.center {
+  width: 200px;
+  position: fixed;
+  left: 15vw;
+  top: 10vw;
+  z-index: 1;
 }
 
 /* footer  */
@@ -223,6 +257,8 @@ section.chat > .chat-input {
 
 section.chat > .chat-input > #resultbutton > .code-input > input,
 #resultbutton > .code-input > input {
+  font-family: "Contrail One", cursive;
+  font-size: 1.6rem;
   background-color: rgb(203, 198, 198);
   color: black;
   font-weight: 800;
@@ -428,6 +464,34 @@ section.hero.tree-grid-container {
 
 /* PHOTOSYN  */
 
+.grid-container.photo {
+  display: grid;
+  grid-template-areas:
+    "progress chat"
+    "video chat"
+    "footer footer";
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 0.5fr 6.5fr 0.5fr;
+  height: 100vh;
+  gap: 2rem;
+}
+
+.grid-container.photo > .chat {
+  grid-area: chat;
+}
+
+.photoprogress {
+  grid-area: progress;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photoprogress > h3 {
+  color: white;
+  font-size: 3rem;
+}
+
 section.hero.photo-grid-container {
   display: grid;
 }
@@ -516,6 +580,40 @@ section.hero.photo-grid-container > div > #resultbutton > .code-input > input {
 
 .portal-button-container {
   grid-area: button;
+}
+
+.portal-task-item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.portal-task-item > div > h3 {
+  color: white;
+  font-size: 3rem;
+  margin-block-end: -6rem;
+}
+
+.portal-task-item > div > h3.above {
+  margin-block-end: 0rem;
+}
+
+.portal-task-item > .circle {
+  width: 6rem; /* Adjust the width to your preference */
+  height: 6rem; /* Adjust the height to your preference */
+
+  border-radius: 50%; /* Creates a circular shape */
+  display: inline-block; /* Ensures the circle doesn't disrupt the layout */
+  box-shadow: var(--blackish) 4px 4px;
+}
+.portal-task-item > .circle.red {
+  background-color: var(--red);
+}
+
+.portal-task-item > .circle.greencorrect {
+  background-color: var(--greencorrect);
 }
 
 /* PAPER EFFECT  */
@@ -949,6 +1047,27 @@ main.annesays > .titleWrapper > .title > h1 > span,
   background-color: var(--greeny);
 }
 
+/* UCALAB */
+main.ucalab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 2rem;
+}
+
+main.ucalab > .ucalab-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+main.ucalab > .ucalab-wrapper > h3 {
+  font-family: "Contrail One", cursive;
+  font-size: 3rem;
+}
+
 /* ANIMATION  */
 
 @keyframes rotate {
@@ -1258,4 +1377,18 @@ main.annesays > .titleWrapper > .title > h1 > span,
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
   animation-timing-function: linear;
+}
+
+@keyframes bobbing {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px); /* Adjust the distance of the bobbing */
+  }
+}
+
+.bobbing {
+  animation: bobbing 1.5s infinite; /* Adjust the duration of the animation */
 }
