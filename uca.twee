@@ -95,6 +95,10 @@ $(document.head).find('#style-ui-bar').remove();
 
 :: StoryInit
 <<cacheaudio "ping1" "assets/audio/ping1.mp3">>
+<<cacheaudio "ticker3" "assets/sound/ticker3.mp3">>
+<<cacheaudio "correct" "assets/sound/keep2.mp3">>
+<<cacheaudio "uploading" "assets/sound/uploading.mp3">>
+<<cacheaudio "complete" "assets/sound/uploadcomplete.mp3">>
 
 <<waitforaudio>>
 
@@ -104,7 +108,7 @@ $(document.head).find('#style-ui-bar').remove();
 <main>
  <p>hello</p>
    
-
+<<audio ":all" stop>>
 [[portalVideo]]
 [[portalAnneSays]]
 [[portalText]]
@@ -127,6 +131,7 @@ $(document.head).find('#style-ui-bar').remove();
 
 :: footer [nobr]
 <footer>
+   [[Back to the start|Start]]
 <div class="logo-wrapper">
   <div class="uca-logo">
      <img src="assets/img/logobutton.png" alt="logo"/>
@@ -135,17 +140,20 @@ $(document.head).find('#style-ui-bar').remove();
      <img src="assets/img/logotitle.png" alt="logo"/>
   </div>
 </div>
-   [[Start]]
+
+
 </footer>  
 
 :: portalfooter [nobr]
+  [[Back to the start|Start]]
 <div class="uca-logo">
    <img src="assets/img/logobutton.png" alt="logo"/>
    </div>
    <div class="uca-logo-text">
    <img src="assets/img/logotitle.png" alt="logo"/>
    </div>
-   [[Start]]
+
+
 
 
 :: footer2 [nobr]
@@ -228,6 +236,7 @@ $(document.head).find('#style-ui-bar').remove();
   </div>
 </div>
    [[Start]]
+ 
    <div id="nextMount"></div>
 </footer>  
 
@@ -241,7 +250,7 @@ $(document.head).find('#style-ui-bar').remove();
        [img[Forward|assets/img/nextbutton.png][$nextpass]]
     </div>
       <div class="nav-item">
-       [img[Forward|assets/img/nextbutton.png][$nextpass]]
+       [img[Forward|astssets/img/nextbutton.png][$nextpass]]
     </div>
       <div class="nav-item">
        [img[Forward|assets/img/nextbutton.png][$nextpass]]
@@ -250,6 +259,7 @@ $(document.head).find('#style-ui-bar').remove();
   </section>
 
 :: login [purple nobr]
+<<audio ":all" stop>>
 <<set $prevpass to "login">>
 <<set $pass to "login">>
 <<set $nextpass to "ucalab">>
@@ -261,27 +271,32 @@ $(document.head).find('#style-ui-bar').remove();
 
 
 :: staticbuzz1 {"position":"47.999999999999964,2141.333333333333","size":"100,100"}
+
 <main>
-STATIC BUZZ
 <div id="mount"></div>
+
+<static>
+ <img src="https://remote.co.com/UCA/assets/img/static5.gif" class="staticgif center staticFade" id="staticgif">
+      </static>
 </main>
       <<timed 0.5s>>
       /* <iframe src="https://remote.co.com/UCA/assets/audio/crispy-static.mp3"  style="display:none" allow="autoplay" ></iframe> */
       <audio src="https://remote.co.com/UCA/assets/audio/crispy-static.mp3" autoplay style="display:none">Audio is not supported on your device</audio> 
       <</timed>>
 
-       <<timed 2s>>
-    <<replace "#mount">>Diverting...<</replace>>
+       <<timed 3s>>
+    <<replace "#mount">><<type 40ms>><h2>Diverting...</h2><</type>><</replace>>
      <</timed>>
 
 
-  <<timed 4s>>
+  <<timed 8s>>
     <<goto "ucalab">>
      <</timed>>
 
 
 
-:: ucalab [nobr]
+:: ucalab [nobr purple]
+<<audio ":all" stop>>
 <<set $prevpass to "login">>
 <<set $pass to "ucalab">>
 <<set $nextpass to "intro">>
@@ -656,74 +671,63 @@ STATIC BUZZ
 
 /* <<include "footer">> */
 
+
+
 :: portalAnneSays3 [purple nobr]
 <<set $prevpass to "portalAnneSays2">>
 <<set $pass to "portalAnneSays3">>
 <<set $nextpass to "portalAnneSays3a">>
-<<set $list to ['Branches','Roots','Leaves', 'Trunk']>>
-<<set $counter to 0>>
-<main class="annesays t8n"  id="annesays">
-     <div id="titleWrapper" class="titleWrapper">
-        <div class="title" id="title">
-            <h1><span id="randomitem">ANNE SAYS</span></h1>
-             <h2>Round 1</h2>
-      </div>
-     </div>
-
-  
+<<set $list to ["Anne says Roots", "Anne says Trunk", "Anne says Branches", "Anne says Leaves", "Roots", "Leaves", "Anne says Branches", "Leaves", "Anne says Branches", "Roots", "Anne says Roots", "Anne says Leaves"]>>
+<<set $currentIndex to 0>>
+<<audio ":all" stop>>
+  <<audio "uploading" play>>
+<main class="annesays t8n" id="annesays">
+  <div id="titleWrapper" class="titleWrapper">
+    <div class="title" id="title">
+      <h1><span id="randomitem">ANNE SAYS</span></h1>
+      <h2>Round 1</h2>
+    </div>
+  </div>
 </main>
 <<include "footerannesays">>
+
 <<timed 2s>>
   <<addclass "#annesays" "darker">>
   <<replace "#nextMount">>
-   <<button "GO!">>
-       <<set $counter to $counter + 1>>
-      <<timed 0.5s>>
-          <<replace "#titleWrapper">><</replace>>
-        <<set $randomitem to $list.random()>>
-        <<timed 1.5s>>
-        <<replace "#titleWrapper">>
-            <div class="title" id="title">
-          <h1><span id="randomitem">Anne Says: $randomitem</span></h1>
-    </div>
-        <</replace>>
+    <<button "GO!">>
+      <<timed 0.1s>>
+        <<replace "#titleWrapper">><</replace>>
+        <<timed 0.3s>>
+          <<replace "#titleWrapper">>
+          <div class="title" id="title">
+            <h1><span id="randomitem">$list[$currentIndex]</span></h1>
+          </div>
+          <</replace>>
         <</timed>>
-        <<replace "#nextMount">>
-        <<button "NEXT">>
-             <<if $counter gte 20>>
-                <<timed 0.1s>>
-                <<replace "#titleWrapper">><</replace>>
-                  <</timed>>
-                    <<timed 0.4s>>
-                <<goto $nextpass>>
-              <</timed>>
-              <<elseif $counter gte 4>>
-                <<set $counter to $counter + 1>>
-                <<replace "#titleWrapper">><</replace>>
-              <<timed 0.5s>>
-                <<set $randomitem to $list.random()>>
-              <<replace "#titleWrapper">>
-                <div class="title" id="title">
-                  <h1><span id="randomitem">$randomitem </span></h1> </div>
-            <</replace>>
-              <</timed>>
-           <<else>>
-                <<set $counter to $counter + 1>>
-                <<replace "#titleWrapper">><</replace>>
-              <<timed 0.5s>>
-                <<set $randomitem to $list.random()>>
-              <<replace "#titleWrapper">>
-                <div class="title" id="title">
-                  <h1><span id="randomitem">Anne Says: $randomitem </span></h1> </div>
-            <</replace>>
-              <</timed>>
-            <</if>>
-         <</button>>
-         <</replace>>
       <</timed>>
+      <<replace "#nextMount">>
+      <<button "NEXT">>
+  <<if $currentIndex + 1 >= $list.length>> // Check if it's at the end of the array
+    <<audio ":all" stop>>
+  <<audio "complete" play>>
+    <<timed 3s>>
+    <<goto $nextpass>>
+    <</timed>>
+  <<else>>
+    <<set $currentIndex to $currentIndex + 1>>
+    <<replace "#titleWrapper">>
+      <div class="title" id="title">
+        <h1><span id="randomitem">$list[$currentIndex]</span></h1>
+      </div>
+    <</replace>>
+  <</if>>
+<</button>>
+      <</replace>>
     <</button>>
   <</replace>>
 <</timed>>
+
+
 
 
 :: portalAnneSays3a [purple nobr]
@@ -797,57 +801,66 @@ STATIC BUZZ
 <<set $prevpass to "portalAnneSays3a">>
 <<set $pass to "portalAnneSays3b">>
 <<set $nextpass to "portalAnneSays4a">>
-<<set $list to ['Branches','Roots','Leaves', 'Trunk', 'Anne Says: <br/>Branches','Anne Says:<br/> Roots','Anne Says: <br/>Leaves', 'Anne Says:<br/> Trunk',]>>
-<<set $counter to 0>>
-<main class="annesays t8n"  id="annesays">
-     <div id="titleWrapper" class="titleWrapper">
-        <div class="title" id="title">
-            <h1><span id="randomitem">ANNE SAYS</span></h1>
-             <h2>Round 2</h2>
-      </div>
-     </div>
+<<set $list to [
+  "Anne says ROOTS",
+  "TRUNK",
+  "BRANCHES",
+  "Anne says LEAVES",
+  "ROOTS",
+  "Anne says LEAVES",
+  "ROOTS",
+  "LEAVES",
+  "Anne says BRANCHES",
+  "Anne says LEAVES",
+  "TRUNK",
+  "BRANCHES"
+]>>
+<<set $currentIndex to 0>>
+<<audio ":all" stop>>
+  <<audio "uploading" play>>
 
-  
+<main class="annesays t8n" id="annesays">
+  <div id="titleWrapper" class="titleWrapper">
+    <div class="title" id="title">
+      <h1><span id="randomitem">ANNE SAYS</span></h1>
+      <h2>Round 2</h2>
+    </div>
+  </div>
 </main>
 <<include "footerannesays">>
+
 <<timed 2s>>
   <<addclass "#annesays" "darker">>
   <<replace "#nextMount">>
-   <<button "GO!">>
-       <<set $counter to $counter + 1>>
-      <<timed 0.5s>>
-          <<replace "#titleWrapper">><</replace>>
-        <<set $randomitem to $list.random()>>
-        <<timed 1.5s>>
-        <<replace "#titleWrapper">>
-            <div class="title" id="title">
-          <h1><span id="randomitem">$randomitem</span></h1>
-    </div>
-        <</replace>>
+    <<button "GO!">>
+      <<timed 0.1s>>
+        <<replace "#titleWrapper">><</replace>>
+        <<timed 0.3s>>
+          <<replace "#titleWrapper">>
+          <div class="title" id="title">
+            <h1><span id="randomitem">$list[$currentIndex]</span></h1>
+          </div>
+          <</replace>>
         <</timed>>
-        <<replace "#nextMount">>
-        <<button "NEXT">>
-             <<if $counter gte 20>>
-                <<timed 0.1s>>
-                <<replace "#titleWrapper">><</replace>>
-                  <</timed>>
-                    <<timed 0.4s>>
-                <<goto $nextpass>>
-              <</timed>>
-           <<else>>
-                <<set $counter to $counter + 1>>
-                <<replace "#titleWrapper">><</replace>>
-              <<timed 0.5s>>
-                <<set $randomitem to $list.random()>>
-              <<replace "#titleWrapper">>
-                <div class="title" id="title">
-                  <h1><span id="randomitem">$randomitem </span></h1> </div>
-            <</replace>>
-              <</timed>>
-            <</if>>
-         <</button>>
-         <</replace>>
       <</timed>>
+      <<replace "#nextMount">>
+      <<button "NEXT">>
+  <<if $currentIndex + 1 >= $list.length>> // Check if it's at the end of the array
+    <<audio ":all" stop>>
+  <<audio "complete" play>>
+    <<timed 4s>>
+    <<goto $nextpass>>
+    <</timed>>
+  <<else>>
+    <<set $currentIndex to $currentIndex + 1>>
+    <<replace "#titleWrapper">>
+      <div class="title" id="title">
+        <h1><span id="randomitem">$list[$currentIndex]</span></h1>
+      </div>
+    <</replace>>
+  <</if>>
+<</button>>
+      <</replace>>
     <</button>>
   <</replace>>
 <</timed>>
@@ -918,65 +931,143 @@ STATIC BUZZ
 :: portalAnneSays4b [purple nobr]
 <<set $prevpass to "portalAnneSays4a">>
 <<set $pass to "portalAnneSays4b">>
-<<set $nextpass to "portalAnneSaysChal2">>
-<<set $list to ['Branches','Roots','Leaves', 'Trunk', 'Anne Says: <br/>Branches','Anne Says:<br/> Roots','Anne Says: <br/>Leaves', 'Anne Says:<br/> Trunk',]>>
-<<set $counter to 0>>
-<main class="annesays t8n"  id="annesays">
-     <div id="titleWrapper" class="titleWrapper">
-        <div class="title" id="title">
-            <h1><span id="randomitem">ANNE SAYS</span></h1>
-             <h2>Round 3</h2>
-      </div>
-     </div>
+<<set $nextpass to "portalAnneSays4c">>
+<<set $list to [
+  "Anne says TRUNK",
+  "Anne says BRANCHES",
+  "Anne says LEAVES",
+  "ROOTS",
+  "Anne says LEAVES",
+  "ROOTS",
+  "ROOTS",
+  "LEAVES",
+  "TRUNK",
+  "Anne Says TRUNK",
+  "Anne Says BRANCHES",
+  "ANNE SAYS ROOTS"
+]>>
+<<set $currentIndex to 0>>
+<<audio ":all" stop>>
+  <<audio "uploading" play>>
 
-  
+<main class="annesays t8n" id="annesays">
+  <div id="titleWrapper" class="titleWrapper">
+    <div class="title" id="title">
+      <h1><span id="randomitem">ANNE SAYS</span></h1>
+      <h2>Round 3</h2>
+    </div>
+  </div>
 </main>
 <<include "footerannesays">>
+
 <<timed 2s>>
   <<addclass "#annesays" "darker">>
   <<replace "#nextMount">>
-   <<button "GO!">>
-       <<set $counter to $counter + 1>>
-      <<timed 0.5s>>
-          <<replace "#titleWrapper">><</replace>>
-        <<set $randomitem to $list.random()>>
-        <<timed 1.5s>>
-        <<replace "#titleWrapper">>
-            <div class="title" id="title">
-          <h1><span id="randomitem">$randomitem</span></h1>
-    </div>
-        <</replace>>
+    <<button "GO!">>
+      <<timed 0.1s>>
+        <<replace "#titleWrapper">><</replace>>
+        <<timed 0.3s>>
+          <<replace "#titleWrapper">>
+          <div class="title" id="title">
+            <h1><span id="randomitem">$list[$currentIndex]</span></h1>
+          </div>
+          <</replace>>
         <</timed>>
-        <<replace "#nextMount">>
-        <<button "NEXT">>
-             <<if $counter gte 20>>
-                <<timed 0.1s>>
-                <<replace "#titleWrapper">><</replace>>
-                  <</timed>>
-                    <<timed 0.4s>>
-                <<goto $nextpass>>
-              <</timed>>
-           <<else>>
-                <<set $counter to $counter + 1>>
-                <<replace "#titleWrapper">><</replace>>
-              <<timed 0.5s>>
-                <<set $randomitem to $list.random()>>
-              <<replace "#titleWrapper">>
-                <div class="title" id="title">
-                  <h1><span id="randomitem">$randomitem </span></h1> </div>
-            <</replace>>
-              <</timed>>
-            <</if>>
-         <</button>>
-         <</replace>>
       <</timed>>
+      <<replace "#nextMount">>
+      <<button "NEXT">>
+  <<if $currentIndex + 1 >= $list.length>> // Check if it's at the end of the array
+    <<audio ":all" stop>>
+  <<audio "complete" play>>
+    <<timed 4s>>
+     <<goto $nextpass>>
+    <</timed>>
+  <<else>>
+    <<set $currentIndex to $currentIndex + 1>>
+    <<replace "#titleWrapper">>
+      <div class="title" id="title">
+        <h1><span id="randomitem">$list[$currentIndex]</span></h1>
+      </div>
+    <</replace>>
+  <</if>>
+<</button>>
+      <</replace>>
     <</button>>
   <</replace>>
 <</timed>>
 
 
-:: portalAnneSaysChal2 [purple nobr]
+:: portalAnneSays4c [purple nobr]
 <<set $prevpass to "portalAnneSays4b">>
+<<set $pass to "portalAnneSays4c">>
+<<set $nextpass to "portalAnneSaysChal2">>
+<main class="main portal grid-container">
+  <section class="hero" id="hero">
+      <div class="annesays" id="annesays">
+          <div class="titleWrapper">
+            <div class="title">
+            <h1><span>Anne</span> <span>Says</span></h1>
+            
+            </div>
+          </div>
+      </div>
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"> </div>
+  <div class="chat-input">
+  /* <<include "codeword">> */
+  </div>
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+<<timed 2s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>That seems to be the final round of this Challenge.</p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 4s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Who is still standing? Give them a round of applause!</p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+
+<<timed 6s>>
+ <<append "#messagesContainer">>
+     <<button "CHALLENGE 2">>
+      <<timed 1s>>
+      <<goto $nextpass>>
+        <</timed>>
+      <</button>>
+    <</append>>
+<</timed>>
+
+/* <<include "footer">> */
+
+
+
+:: portalAnneSaysChal2 [purple nobr]
+<<set $prevpass to "portalAnneSays4c">>
 <<set $pass to "portalAnneSaysChal2">>
 <<set $nextpass to "portalAnneSaysVid5">>
 <main class="main portal grid-container">
@@ -1170,7 +1261,8 @@ STATIC BUZZ
 <<timed 8s>>
 
   <<replace "#hero">>
-
+<<audio ":all" stop>>
+  <<audio "uploading" play>>
      <div class="annesays" id="annesays">
           <div class="titleWrapper" id="titleWrapper">
             <div class="title">
@@ -1220,7 +1312,7 @@ STATIC BUZZ
 <</timed>>
 
 <<timed 20s>>
-
+<<audio ":all" stop>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -1432,6 +1524,7 @@ STATIC BUZZ
 <</timed>>
 
 <<timed 21s>>
+ <<audio ":all" stop>>
    <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -1565,10 +1658,10 @@ STATIC BUZZ
 
     
   </section>
-  /* <section class="chat">
+  <section class="chat">
   <div class="messages-container" id="messagesContainer"></div>
 
-  </section> */
+  </section>
   <section class="portal-footer video">
     <<include "portalfooter">>
   </section>
@@ -1603,10 +1696,10 @@ STATIC BUZZ
 <</timed>>
 
 
-<<timed 1s>>
+<<timed 6s>>
   <<replace "#hero">>
     <div class="quiz">
-    <h3> Wangari Maathai was the first woman to become a professor in which country? </h3>
+    <h3>1. Wangari Maathai was the first woman to become a professor in which country? </h3>
 <div class="quiz-options">
   <div class="option" id="opt1">
     <<button "P. Japan">> 
@@ -1669,10 +1762,10 @@ STATIC BUZZ
 
     
   </section>
-  /* <section class="chat">
+  <section class="chat">
   <div class="messages-container" id="messagesContainer"></div>
 
-  </section> */
+  </section>
   <section class="portal-footer video">
     <<include "portalfooter">>
   </section>
@@ -1683,7 +1776,7 @@ STATIC BUZZ
 <<timed 1s>>
   <<replace "#hero">>
     <div class="quiz">
-    <h3> When the trees were being cut down for commercial planting, what was being affected?</h3>
+    <h3>2. When the trees were being cut down for commercial planting, what was being affected?</h3>
 <div class="quiz-options">
   <div class="option" id="opt1">
     <<button "P. Loss of Biodiversity">> 
@@ -1745,10 +1838,10 @@ STATIC BUZZ
 
     
   </section>
-  /* <section class="chat">
+  <section class="chat">
   <div class="messages-container" id="messagesContainer"></div>
 
-  </section> */
+  </section>
   <section class="portal-footer video">
     <<include "portalfooter">>
   </section>
@@ -1759,7 +1852,7 @@ STATIC BUZZ
 <<timed 1s>>
   <<replace "#hero">>
     <div class="quiz">
-    <h3>In 1977 she started what movement?</h3>
+    <h3>3. In 1977 she started what movement?</h3>
 <div class="quiz-options">
   <div class="option" id="opt1">
     <<button "N. The Blue Belt Movement">> 
@@ -1810,10 +1903,10 @@ STATIC BUZZ
 
     
   </section>
-  /* <section class="chat">
+  <section class="chat">
   <div class="messages-container" id="messagesContainer"></div>
 
-  </section> */
+  </section>
   <section class="portal-footer video">
     <<include "portalfooter">>
   </section>
@@ -1824,10 +1917,10 @@ STATIC BUZZ
 <<timed 1s>>
   <<replace "#hero">>
     <div class="quiz">
-    <h3>By 2004, how many trees had the Green Belt Movement planted? </h3>
+    <h3>4. By 2004, how many trees had the Green Belt Movement planted? </h3>
 <div class="quiz-options">
   <div class="option" id="opt1">
-    <<button "30,000,000 trees.">> 
+    <<button "30,000,000 trees">> 
 
       <<timed 0.5s>>
       <<replace "#hint">>Correct!<</replace>>
@@ -1839,7 +1932,7 @@ STATIC BUZZ
       <</button>>
   </div>
    <div class="option" id="opt2">
-  <<button "B. 30,000 trees ">> 
+  <<button "B. 30,000 trees">> 
       <<timed 0.5s>>
       <<replace "#hint">>Incorrect. Try again<</replace>>
       <</timed>>
@@ -1876,10 +1969,10 @@ STATIC BUZZ
 <main class="main portal grid-container">
   <section class="hero" id="hero">
   </section>
-  /* <section class="chat">
+  <section class="chat">
   <div class="messages-container" id="messagesContainer"></div>
 
-  </section> */
+  </section>
   <section class="portal-footer video">
     <<include "portalfooter">>
   </section>
@@ -1890,7 +1983,7 @@ STATIC BUZZ
 <<timed 1s>>
   <<replace "#hero">>
     <div class="quiz">
-    <h3>What was being sold to private companies that prompted Wangari Maathai to oppose the government? </h3>
+    <h3>5. What was being sold to private companies that prompted Wangari Maathai to oppose the government? </h3>
 <div class="quiz-options">
   <div class="option" id="opt1">
     <<button "M. Forests">> 
@@ -1940,10 +2033,10 @@ STATIC BUZZ
 <main class="main portal grid-container">
   <section class="hero" id="hero">
   </section>
-  /* <section class="chat">
+  <section class="chat">
   <div class="messages-container" id="messagesContainer"></div>
 
-  </section> */
+  </section>
   <section class="portal-footer video">
     <<include "portalfooter">>
   </section>
@@ -1954,7 +2047,7 @@ STATIC BUZZ
 <<timed 1s>>
   <<replace "#hero">>
     <div class="quiz">
-    <h3>How did her peace work start?</h3>
+    <h3>6. How did her peace work start?</h3>
 <div class="quiz-options">
   <div class="option" id="opt1">
     <<button "O. On Tik Tok">> 
@@ -1968,7 +2061,7 @@ STATIC BUZZ
       <</button>>
   </div>
    <div class="option" id="opt2">
-  <<button "I. Planting One Tree ">> 
+  <<button "I. Planting One Tree">> 
     <<timed 0.5s>>
       <<replace "#hint">>Correct!<</replace>>
       <</timed>>
@@ -1980,7 +2073,7 @@ STATIC BUZZ
    </div>
   
    <div class="option" id="opt4">
-   <<button "W. With all her Money. ">> 
+   <<button "W. With all her Money">> 
       <<timed 0.5s>>
       <<replace "#hint">>Incorrect. Try again<</replace>>
       <</timed>>
@@ -2005,10 +2098,10 @@ STATIC BUZZ
 <main class="main portal grid-container">
   <section class="hero" id="hero">
   </section>
-  /* <section class="chat">
+  <section class="chat">
   <div class="messages-container" id="messagesContainer"></div>
 
-  </section> */
+  </section>
   <section class="portal-footer video">
     <<include "portalfooter">>
   </section>
@@ -2019,7 +2112,7 @@ STATIC BUZZ
 <<timed 1s>>
   <<replace "#hero">>
     <div class="quiz">
-    <h3>What was Wangari’s method for change? </h3>
+    <h3>7. What was Wangari’s method for change? </h3>
 <div class="quiz-options">
   <div class="option" id="opt1">
     <<button "T. Start little and do the best you can">> 
@@ -2116,15 +2209,17 @@ STATIC BUZZ
  
  
 
-    <div class="scrabble-container">
-     <div id="pos1"> <div class="tile" data-letter="C"></div></div>
-    <div id="pos2"> <div class="tile" data-letter="L"></div></div>
-    <div id="pos3"><div class="tile" data-letter="E"></div></div>
-    <div id="pos4"><div class="tile" data-letter="A"></div></div>
-      <div id="pos5"><div class="tile" data-letter="M"></div></div>
-      <div id="pos6"><div class="tile" data-letter="I"></div></div>
-     <div id="pos7"><div class="tile" data-letter="T"></div> </div>      
-  </div>
+    <div class="scrabble-wrapper" id="scrabbleWrapper">
+      <div class="scrabble-container">
+       <div id="pos1"> <div class="tile" data-letter="C"></div></div>
+      <div id="pos2"> <div class="tile" data-letter="L"></div></div>
+      <div id="pos3"><div class="tile" data-letter="E"></div></div>
+      <div id="pos4"><div class="tile" data-letter="A"></div></div>
+        <div id="pos5"><div class="tile" data-letter="M"></div></div>
+        <div id="pos6"><div class="tile" data-letter="I"></div></div>
+       <div id="pos7"><div class="tile" data-letter="T"></div> </div>      
+    </div>
+    </div>
 
 
   <</replace>>
@@ -2132,7 +2227,7 @@ STATIC BUZZ
 
 <<timed 10s>>
   <<replace "#helperText">><span>Enter the correct word:</span><</replace>>
-<<append "#messagesContainer">>
+<<append "#scrabbleWrapper">>
 
   <<button "HELP">>
     <<timed 0.5s>>
@@ -2833,6 +2928,8 @@ STATIC BUZZ
 
 
 
+
+
 :: checkphotoprogress
 <<if $photoprogress.includesAll("SUN","WATER","CARBON DIOXIDE", "OXYGEN","SUGAR")>>
   <<timed 5s>>
@@ -2965,27 +3062,27 @@ STATIC BUZZ
 /* <<include "footer">> */
 
 :: buttonProgress [nobr]
-
+<<audio ":all" stop>>
+  <<audio "ticker3" play>>
 <div class="main button-grid-container">
   <div class="portal-button-container">
     <img src="assets/img/logobutton.png"/>
     </div>
   <div class="portal-task-item one">
-    <div class="circle red" id="task1"></div>
+    <div class="circle red pulse" id="task1"></div>
     <div id="task1Text"></div>
     </div>
   <div class="portal-task-item two ">
-      <div class="circle red" id="task2"></div>
-       <div id="task2Text"></div>
+    <div id="task2Text"></div>
+      <div class="circle red pulse" id="task2"></div>
     </div>
   <div class="portal-task-item three ">
+      <div class="circle red pulse" id="task3"></div>
         <div id="task3Text"></div>
-      <div class="circle red" id="task3"></div>
- 
     </div>
     <div class="portal-task-item four">
          <div id="task4Text"></div>
-    <div class="circle red" id="task4"></div>
+    <div class="circle red pulse" id="task4"></div>
 
     </div>
 </div>
@@ -2993,6 +3090,7 @@ STATIC BUZZ
 <<if hasVisited("portalTree6")>>
   <<timed 0.1s>>
     <<removeclass "#task1" "red">>
+      <<removeclass "#task1" "pulse">>
     <<addclass "#task1" "greencorrect">>
     <<replace "#task1Text">>
       <h3>MY</h3>
@@ -3003,9 +3101,11 @@ STATIC BUZZ
 <<if hasVisited("portalvid10")>>
   <<timed 0.1s>>
     <<removeclass "#task3" "red">>
+      <<removeclass "#task3" "pulse">>
     <<addclass "#task3" "greencorrect">>
+  
     <<replace "#task3Text">>
-      <h3 class="above">CORR</h3>
+      <h3>CORR</h3>
       <</replace>>
   <</timed>>
 <</if>>
@@ -3013,9 +3113,10 @@ STATIC BUZZ
 <<if hasVisited("portal13")>>
   <<timed 0.1s>>
     <<removeclass "#task2" "red">>
+      <<removeclass "#task2" "pulse">>
     <<addclass "#task2" "greencorrect">>
     <<replace "#task2Text">>
-      <h3>HI</h3>
+      <h3 class="above">HI</h3>
       <</replace>>
   <</timed>>
 <</if>>
@@ -3023,6 +3124,7 @@ STATIC BUZZ
 <<if hasVisited("portalExercise16")>>
   <<timed 0.1s>>
     <<removeclass "#task4" "red">>
+      <<removeclass "#task4" "pulse">>
     <<addclass "#task4" "greencorrect">>
     <<replace "#task4Text">>
       <h3 class="above">ZAL</h3>
@@ -3032,36 +3134,44 @@ STATIC BUZZ
 
 
 
-
 :: codeword1 [nobr]
 <div id="coderesult"></div>
- <div id="resultbutton">
-/% CODEWORD INPUT %/
-<div class="code-input">
-<<textbox "$code" "">>
-<<button "Enter">>
-</div>
- /% PASSWORD CODE %/
-<<set $code to $code.toUpperCase()>>
-/% CODEWORD CORRECT %/
-<<if $code isnot "">> 
-  <<if $code is "ANNE" or $code is "ANNE ">>
-    <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
-    <<timed 3s>><<goto $nextpass>><</timed>>
-   
-<</if>>
-<</if>>
-/% CODEWORD INCORRECT %/
-<<if $code isnot "">>
-  <<if $code is not "ANNE" and $code is not "ANNE ">>
-  <<replace "#coderesult">><div class="confirmation" id="confirmation">That's not right...</div><</replace>>
-  <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+<div id="resultbutton">
+  /% CODEWORD INPUT %/
+  <div class="code-input entrance">
+    <<textbox "$code1" "">>
+    <<textbox "$code2" "">>
+    <<textbox "$code3" "">>
+    <<textbox "$code4" "">>
+ 
+    <<button "Enter">>
+  </div>
+  /% PASSWORD CODE %/
+  <<set $code1 to $code1.toUpperCase()>>
+  <<set $code2 to $code2.toUpperCase()>>
+  <<set $code3 to $code3.toUpperCase()>>
+  <<set $code4 to $code4.toUpperCase()>>
+  /% CODEWORD CORRECT %/
+  <<if $code1 isnot "" and $code2 isnot "" and $code3 isnot "" and $code4 isnot "">>
+    <<if ($code1 + $code2 + $code3 + $code4) is "ANNE">>
+      <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
+      <<audio "correct" play>>
+      <<timed 3s>><<goto $nextpass>><</timed>>
+    <</if>>
   <</if>>
+  /% CODEWORD INCORRECT %/
+  <<if $code1 isnot "" and $code2 isnot "" and $code3 isnot "" and $code4 isnot "">>
+    <<if ($code1 + $code2 + $code3 + $code4) isnot "ANNE">>
+      <<replace "#coderesult">><div class="confirmation" id="confirmation">That's not right...</div><</replace>>
+      <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+    <</if>>
   <</if>>
 <</button>>
 </div>
-
 </div>
+
+
+
 
 :: codeword1a [nobr]
 <div id="coderesult"></div>
@@ -3076,6 +3186,7 @@ STATIC BUZZ
 /% CODEWORD CORRECT %/
 <<if $code isnot "">> 
   <<if $code is "WEETABIX" or $code is "WEETABIX ">>
+    <<audio "correct" play>>
     <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
     <<timed 3s>><<goto $nextpass>><</timed>>
    
@@ -3106,6 +3217,7 @@ STATIC BUZZ
 /% CODEWORD CORRECT %/
 <<if $code isnot "">> 
   <<if $code is "TREES" or $code is "TREES ">>
+    <<audio "correct" play>>
     <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
     <<timed 3s>><<goto $nextpass>><</timed>>
    
@@ -3136,6 +3248,7 @@ STATIC BUZZ
 /% CODEWORD CORRECT %/
 <<if $code isnot "">> 
   <<if $code is "CLIMATE" or $code is "CLIMATE ">>
+    <<audio "correct" play>>
     <<replace "#helperText">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
     <<timed 3s>><<goto $nextpass>><</timed>>
    
@@ -3166,6 +3279,7 @@ STATIC BUZZ
 /% CODEWORD CORRECT %/
 <<if $code isnot "">> 
   <<if $code is "PLANTED" or $code is "PLANTED ">>
+    <<audio "correct" play>>
     <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
     <<timed 3s>>
     <<goto $nextpass>>
@@ -3198,6 +3312,7 @@ STATIC BUZZ
 /% CODEWORD CORRECT %/
 <<if $code isnot "">> 
   <<if $code is "PHOTOSYNTHESIS" or $code is "PHOTOSYNTHESIS ">>
+    <<audio "correct" play>>
     <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
     <<timed 3s>>
      <<goto $nextpass>>
@@ -3230,6 +3345,7 @@ STATIC BUZZ
 /% CODEWORD CORRECT %/
 <<if $code isnot "">> 
   <<if $code is "LEAVES" or $code is "LEAVES ">>
+    <<audio "correct" play>>
     <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
     <<timed 3s>>
      <<goto $nextpass>>
@@ -3262,6 +3378,7 @@ STATIC BUZZ
 /% CODEWORD CORRECT %/
 <<if $code isnot "">> 
   <<if $code is "FELIX" or $code is "FELIX ">>
+    <<audio "correct" play>>
     <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
     <<timed 3s>>
      <<goto $nextpass>>
@@ -3295,6 +3412,7 @@ STATIC BUZZ
 /% CODEWORD CORRECT %/
 <<if $code isnot "">> 
   <<if $code is "LETTERS" or $code is "LETTERS ">>
+    <<audio "correct" play>>
     <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
     <<timed 3s>>
      <<goto $nextpass>>
@@ -3328,6 +3446,7 @@ STATIC BUZZ
 /% CODEWORD CORRECT %/
 <<if $code isnot "">> 
   <<if $code is "MYCORRHIZAL" or $code is "MYCORRHIZAL ">>
+    <<audio "correct" play>>
     <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
     <<timed 3s>>
      <<goto $nextpass>>
@@ -3361,6 +3480,7 @@ STATIC BUZZ
 /% CODEWORD CORRECT %/
 <<if $code isnot "">> 
   <<if $code is "CODEWORD" or $code is "CODEWORD ">>
+    <<audio "correct" play>>
     <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
     <<timed 3s>><<goto $nextpass>><</timed>>
    
@@ -3439,6 +3559,7 @@ STATIC BUZZ
 /% CODEWORD CORRECT %/
 <<if $code isnot "">> 
   <<if $code is "LEAVES" or $code is "LEAVES ">>
+    <<audio "correct" play>>
     <<replace "#coderesult1">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
      <<run $treeprogress.push("LEAVES")>>
     <<timed 3s>>
@@ -3477,6 +3598,7 @@ STATIC BUZZ
 /% CODEWORD CORRECT %/
 <<if $code isnot "">> 
   <<if $code is "BRANCHES" or $code is "BRANCHES ">>
+    <<audio "correct" play>>
     <<replace "#coderesult2">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
     <<run $treeprogress.push("BRANCHES")>>
     <<timed 3s>>
@@ -3514,6 +3636,7 @@ STATIC BUZZ
 /% CODEWORD CORRECT %/
 <<if $code isnot "">> 
   <<if $code is "ROOTS" or $code is "ROOTS ">>
+    <<audio "correct" play>>
     <<replace "#coderesult3">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
      <<run $treeprogress.push("ROOTS")>>
      <<timed 3s>>
@@ -3551,6 +3674,7 @@ STATIC BUZZ
 /% CODEWORD CORRECT %/
 <<if $code isnot "">> 
   <<if $code is "TRUNK" or $code is "TRUNK ">>
+    <<audio "correct" play>>
     <<replace "#coderesult4">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
    <<run $treeprogress.push("TRUNK")>>
      <<timed 3s>>
@@ -3589,6 +3713,7 @@ STATIC BUZZ
 /% CODEWORD CORRECT %/
 <<if $code isnot "">> 
   <<if $code is "SUN" or $code is "SUN ">>
+    <<audio "correct" play>>
     <<replace "#coderesult1">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
      <<run $photoprogress.push("SUN")>>
     <<timed 3s>>
@@ -3637,6 +3762,7 @@ STATIC BUZZ
 /% CODEWORD CORRECT %/
 <<if $code isnot "">> 
   <<if $code is "WATER" or $code is "WATER ">>
+    <<audio "correct" play>>
     <<replace "#coderesult2">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
     <<run $photoprogress.push("WATER")>>
     <<timed 3s>>
@@ -3683,6 +3809,7 @@ STATIC BUZZ
 /% CODEWORD CORRECT %/
 <<if $code isnot "">> 
   <<if $code is "CARBON DIOXIDE" or $code is "CARBON DIOXIDE ">>
+    <<audio "correct" play>>
     <<replace "#coderesult3">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
      <<run $photoprogress.push("CARBON DIOXIDE")>>
      <<timed 3s>>
@@ -3729,6 +3856,7 @@ STATIC BUZZ
 /% CODEWORD CORRECT %/
 <<if $code isnot "">> 
   <<if $code is "OXYGEN" or $code is "OXYGEN ">>
+    <<audio "correct" play>>
     <<replace "#coderesult4">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
    <<run $photoprogress.push("OXYGEN")>>
      <<timed 3s>>
@@ -3775,7 +3903,8 @@ STATIC BUZZ
 <<set $code to $code.toUpperCase()>>
 /% CODEWORD CORRECT %/
 <<if $code isnot "">> 
-  <<if $code is "SUGAR" or $code is "SUGAR ">>
+  <<if $code is "SUGAR" or $code is "SUGAR " or $code is "SUGARS" or $code is "SUGARS ">>
+    <<audio "correct" play>>
     <<replace "#coderesult5">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
    <<run $photoprogress.push("SUGAR")>>
      <<timed 3s>>
@@ -3798,7 +3927,7 @@ STATIC BUZZ
 <</if>>
 /% CODEWORD INCORRECT %/
 <<if $code isnot "">>
-  <<if $code is not "SUGAR" and $code is not "SUGAR ">>
+  <<if $code is not "SUGAR" and $code is not "SUGAR " and $code is not "SUGARS" and $code is not "SUGARS ">>
   <<replace "#coderesult5">><div class="confirmation" id="confirmation">That's not right...</div><</replace>>
   <<timed 1.5s>><<replace "#coderesult5">><</replace>><</timed>>
   <</if>>
@@ -3832,17 +3961,7 @@ STATIC BUZZ
           <div class="tile" data-letter="I"></div>
           <div class="tile" data-letter="T"></div>   
   </div>
-  /* <div class="scrabble-container scrabble-container2 hide">
-          <div class="tile" data-letter="C"></div>
-          <div class="tile" data-letter="L"></div>
-           <div class="tile" data-letter="I"></div>
-           <div class="tile" data-letter="E"></div>
-          <div class="tile" data-letter="A"></div>
-          <div class="tile" data-letter="M"></div>
-          <div class="tile" data-letter="T"></div>   
-  </div> */
- 
-  
+
 </main>
 :: loading [nobr]
 
@@ -3864,9 +3983,6 @@ STATIC BUZZ
 <div class="play-btn-container box">
 </div>
 
-:: photosynthesis [nobr]
-
-<<include "footer">>
 
 
 :: letter[nobr]

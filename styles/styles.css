@@ -99,6 +99,10 @@ h3 {
   font-family: "Contrail One", cursive;
 }
 
+p {
+  font-size: 1.6rem;
+}
+
 .purple {
   color: black;
   background-image: url("https://remote.co.com/UCA/assets/img/purplebackground.jpg");
@@ -149,7 +153,7 @@ messagebox2 {
 }
 
 .staticgif.center {
-  width: 200px;
+  width: 1000px;
   position: fixed;
   left: 15vw;
   top: 10vw;
@@ -251,6 +255,14 @@ section.hero {
   grid-area: footer;
 }
 
+/* entrance  */
+#resultbutton > .code-input.entrance > input {
+  max-width: 5rem;
+  min-width: inherit;
+  text-align: center;
+  font-size: 2rem;
+}
+
 /* chat input  */
 section.chat > .chat-input {
 }
@@ -258,7 +270,7 @@ section.chat > .chat-input {
 section.chat > .chat-input > #resultbutton > .code-input > input,
 #resultbutton > .code-input > input {
   font-family: "Contrail One", cursive;
-  font-size: 1.6rem;
+  font-size: 2rem;
   background-color: rgb(203, 198, 198);
   color: black;
   font-weight: 800;
@@ -421,7 +433,7 @@ section.hero.tree-grid-container {
 }
 
 .tree-grid-container {
-  background-image: url("/assets/img/tree.png"); /* Replace with your image file path */
+  background-image: url("/assets/img/tree2.png"); /* Replace with your image file path */
   background-size: contain; /* Cover the entire viewport */
 
   background-position: center; /* Center the image */
@@ -543,9 +555,9 @@ section.hero.photo-grid-container > div > #resultbutton > .code-input > input {
 .button-grid-container {
   display: grid;
   grid-template-areas:
-    "taskOne . taskTwo"
+    "taskOne . taskThree"
     ". button . "
-    "taskThree . taskFour";
+    "taskTwo . taskFour";
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   height: 80vh;
@@ -763,6 +775,7 @@ main.letter {
 .letterinner > p {
   margin-bottom: 1rem;
   font-family: "Shantell Sans", serif;
+  font-size: 2.5rem;
 }
 
 /* ANNE SAYS  */
@@ -908,6 +921,13 @@ main.annesays > .titleWrapper > .title > h1 > span,
 }
 
 /* SCRABBLE  */
+
+.scrabble-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .scrabble-container {
   display: flex;
@@ -1061,6 +1081,7 @@ main.ucalab > .ucalab-wrapper {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  color: var(--offwhite);
 }
 
 main.ucalab > .ucalab-wrapper > h3 {
@@ -1391,4 +1412,52 @@ main.ucalab > .ucalab-wrapper > h3 {
 
 .bobbing {
   animation: bobbing 1.5s infinite; /* Adjust the duration of the animation */
+}
+
+.pulse {
+  animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px var(--lightorange);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+  }
+}
+
+.staticFade {
+  -webkit-animation-name: staticFade;
+  animation-name: staticFade;
+  -webkit-animation-duration: 8s;
+  animation-duration: 8s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+}
+
+@keyframes staticFade {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+@-webkit-keyframes staticFade {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.2;
+  }
 }
