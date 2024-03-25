@@ -103,26 +103,6 @@ $(document.head).find('#style-ui-bar').remove();
 <<waitforaudio>>
 
 
-:: Start {"position":"425,75","size":"100,100"}
-<<set $nextpass to "Start">>
-<main>
- <p>hello</p>
-   
-<<audio ":all" stop>>
-[[portalVideo]]
-[[portalAnneSays]]
-[[portalText]]
-[[portalButton]]
-[[tree]]
-[[loading]]
-[[annesays]]
-[[photosynthesis]]
-[[letter]]
-[[rotatelogogreen]]
-[[scrabble]]
-[[login]]
-
-</main>  
 
 :: header [nobr]
 <header>
@@ -258,10 +238,10 @@ $(document.head).find('#style-ui-bar').remove();
   </div>
   </section>
 
-:: login [purple nobr]
+:: Start [purple nobr]
 <<audio ":all" stop>>
-<<set $prevpass to "login">>
-<<set $pass to "login">>
+<<set $prevpass to "Start">>
+<<set $pass to "Start">>
 <<set $nextpass to "ucalab">>
 <main><messagebox2>[img[https://remote.co.com/UCA/assets/img/intercom2.png][staticbuzz1]]</messagebox2>
 
@@ -297,7 +277,7 @@ $(document.head).find('#style-ui-bar').remove();
 
 :: ucalab [nobr purple]
 <<audio ":all" stop>>
-<<set $prevpass to "login">>
+<<set $prevpass to "Start">>
 <<set $pass to "ucalab">>
 <<set $nextpass to "intro">>
 <main class="ucalab">
@@ -356,6 +336,7 @@ $(document.head).find('#style-ui-bar').remove();
 <<set $prevpass to "intro">>
 <<set $pass to "portalvid1">>
 <<set $nextpass to "annesays">>
+<<audio ":all" stop>>
 <main class="main portal grid-container">
   <section class="hero" id="hero">
 /* ANNE VIDEO 2 */
@@ -441,6 +422,7 @@ $(document.head).find('#style-ui-bar').remove();
 <<set $prevpass to "portalvid1">>
 <<set $pass to "portalAnneSays1">>
 <<set $nextpass to "portalAnneSays2">>
+<<audio ":all" stop>>
 <main class="main portal grid-container">
   <section class="hero">
  <div class="annesays" id="annesays">
@@ -555,6 +537,7 @@ $(document.head).find('#style-ui-bar').remove();
 <<set $prevpass to "portalAnneSays1">>
 <<set $pass to "portalAnneSays2">>
 <<set $nextpass to "portalAnneSays3">>
+<<audio ":all" stop>>
 <main class="main portal grid-container">
   <section class="hero">
  <div class="annesays" id="annesays">
@@ -2671,6 +2654,7 @@ $(document.head).find('#style-ui-bar').remove();
 <<set $prevpass to "portalVid14">>
 <<set $pass to "portalExercise16">>
 <<set $nextpass to "portalVid17">>
+<<audio ":all" stop>>
 <main class="main portal grid-container">
   <section class="hero" id="hero">
 /* ANNE VIDEO 6: FELIX */
@@ -2895,6 +2879,7 @@ $(document.head).find('#style-ui-bar').remove();
 <<set $prevpass to "portalVid17">>
 <<set $pass to "portalVid18">>
 <<set $nextpass to "">>
+<<audio ":all" stop>>
 <main class="main portal grid-container">
   <section class="hero" id="hero">
 /* ANNE VIDEO 8: MYCORRHIZAL*/
