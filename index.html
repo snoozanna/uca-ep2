@@ -98,7 +98,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://8A8811E5-4D1B-4C67-9F23-57D8C826F3A2// --><tw-storydata name="UCA Episode 2" startnode="9" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="8A8811E5-4D1B-4C67-9F23-57D8C826F3A2" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
+	<!-- UUID://8A8811E5-4D1B-4C67-9F23-57D8C826F3A2// --><tw-storydata name="UCA Episode 2" startnode="24" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="8A8811E5-4D1B-4C67-9F23-57D8C826F3A2" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Contrail+One&display=swap');
@@ -172,26 +172,8 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;cacheaudio &quot;uploading&quot; &quot;assets/sound/uploading.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;complete&quot; &quot;assets/sound/uploadcomplete.mp3&quot;&gt;&gt;
 
-&lt;&lt;waitforaudio&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="Start" tags="" position="425,75" size="100,100">&lt;&lt;set $nextpass to &quot;Start&quot;&gt;&gt;
-&lt;main&gt;
- &lt;p&gt;hello&lt;/p&gt;
-   
-&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
-[[portalVideo]]
-[[portalAnneSays]]
-[[portalText]]
-[[portalButton]]
-[[tree]]
-[[loading]]
-[[annesays]]
-[[photosynthesis]]
-[[letter]]
-[[rotatelogogreen]]
-[[scrabble]]
-[[login]]
-
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="3" name="header" tags="nobr" position="350,100" size="100,100">&lt;header&gt;
-&lt;/header&gt;</tw-passagedata><tw-passagedata pid="4" name="footer" tags="nobr" position="475,100" size="100,100">&lt;footer&gt;
+&lt;&lt;waitforaudio&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="header" tags="nobr" position="225,100" size="100,100">&lt;header&gt;
+&lt;/header&gt;</tw-passagedata><tw-passagedata pid="3" name="footer" tags="nobr" position="350,100" size="100,100">&lt;footer&gt;
    [[Back to the start|Start]]
 &lt;div class=&quot;logo-wrapper&quot;&gt;
   &lt;div class=&quot;uca-logo&quot;&gt;
@@ -203,79 +185,13 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;/div&gt;
 
 
-&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="5" name="portalfooter" tags="nobr" position="600,100" size="100,100">[[Back to the start|Start]]
+&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="4" name="portalfooter" tags="nobr" position="475,100" size="100,100">[[Back to the start|Start]]
 &lt;div class=&quot;uca-logo&quot;&gt;
    &lt;img src=&quot;assets/img/logobutton.png&quot; alt=&quot;logo&quot;/&gt;
    &lt;/div&gt;
    &lt;div class=&quot;uca-logo-text&quot;&gt;
    &lt;img src=&quot;assets/img/logotitle.png&quot; alt=&quot;logo&quot;/&gt;
-   &lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="footer2" tags="nobr" position="725,100" size="100,100">&lt;footer&gt;
-&lt;&lt;if $showBackwards is true&gt;&gt;
-  &lt;div class=&quot;nav-wrapper&quot;&gt;
-    &lt;div class=&quot;nav-item&quot;&gt;
-        [img[Back|assets/img/back.png][$prevpass]]
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;&lt;/if&gt;&gt;
-  /* &lt;&lt;if $showRewind is true&gt;&gt;
-  &lt;div class=&quot;nav-wrapper&quot;&gt;
-    &lt;div class=&quot;nav-item&quot;&gt;
-   &lt;&lt;link [img[assets/img/backward.png]]&gt;&gt;&lt;&lt;audio $audio time -5s&gt;&gt;&lt;&lt;/link&gt;&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;&lt;/if&gt;&gt; */
-  &lt;&lt;if $showMap is true&gt;&gt;
-    &lt;div class=&quot;nav-wrapper&quot;&gt;
-      &lt;div class=&quot;nav-item&quot;&gt;
-    &lt;&lt;link [img[assets/img/map.png]]&gt;&gt;
-    &lt;&lt;toggleclass &quot;#map&quot; &quot;hide&quot;&gt;&gt;
-    &lt;&lt;/link&gt;&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;&lt;/if&gt;&gt;
-  &lt;&lt;if $showAudio is true&gt;&gt;
-   &lt;div class=&quot;nav-wrapper&quot;&gt;
-    &lt;div class=&quot;nav-item&quot;&gt;
- &lt;&lt;link [img[assets/img/play.png]]&gt;&gt;&lt;&lt;replace &quot;#audio&quot;&gt;&gt;&lt;p&gt;[audio playing...]&lt;/p&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/link&gt;&gt;
-   &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;&lt;/if&gt;&gt;
-    &lt;&lt;if $showReplay is true&gt;&gt;
-     &lt;div class=&quot;nav-wrapper&quot;&gt;
-    &lt;div class=&quot;nav-item&quot;&gt;
-    [img[Replay|assets/img/replay.png][$passage]]
-    &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;&lt;/if&gt;&gt;
-    /* &lt;&lt;if $showCredits is true&gt;&gt;
-     &lt;div class=&quot;nav-wrapper&quot;&gt;
-    &lt;div class=&quot;nav-item&quot;&gt;
-    [[Credits|credits]]
-    &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;&lt;/if&gt;&gt; */
-     &lt;&lt;if $showCaptionsIcon is true&gt;&gt;
-     &lt;div class=&quot;nav-wrapper&quot;&gt;
-    &lt;div class=&quot;nav-item&quot;&gt;
-  &lt;&lt;link [img[assets/img/captions.png]]&gt;&gt;&lt;&lt;set $captions to !$captions&gt;&gt;&lt;&lt;goto $passage&gt;&gt;&lt;&lt;/link&gt;&gt;
-    &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;&lt;/if&gt;&gt;
-    /* &lt;&lt;if $showFF is true&gt;&gt;
-    &lt;div class=&quot;nav-wrapper&quot;&gt;
-    &lt;div class=&quot;nav-item&quot;&gt;
-        &lt;&lt;link [img[assets/img/forward.png]]&gt;&gt;&lt;&lt;audio $audio time +10s&gt;&gt;&lt;&lt;/link&gt;&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-     &lt;&lt;/if&gt;&gt; */
-&lt;&lt;if $showForwards is true&gt;&gt;
-    &lt;div class=&quot;nav-wrapper&quot; id=&quot;forIcon&quot;&gt;
-    &lt;div class=&quot;nav-item&quot;&gt;
-         [img[Forward|assets/img/for.png][$nextpass]]
-    &lt;/div&gt;
-  &lt;/div&gt;
-     &lt;&lt;/if&gt;&gt;
-&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="7" name="footerannesays" tags="nobr" position="850,100" size="100,100">&lt;footer&gt;
+   &lt;/div&gt;</tw-passagedata><tw-passagedata pid="5" name="footerannesays" tags="nobr" position="600,100" size="100,100">&lt;footer&gt;
 &lt;div class=&quot;logo-wrapper&quot;&gt;
   &lt;div class=&quot;uca-logo&quot;&gt;
      &lt;img src=&quot;assets/img/logobutton.png&quot; alt=&quot;logo&quot;/&gt;
@@ -287,7 +203,7 @@ $(document.head).find('#style-ui-bar').remove();
    [[Start]]
  
    &lt;div id=&quot;nextMount&quot;&gt;&lt;/div&gt;
-&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="8" name="footerchat" tags="nobr" position="975,100" size="100,100">&lt;section class=&quot;portal-footer&quot;&gt;
+&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="6" name="footerchat" tags="nobr" position="725,100" size="100,100">&lt;section class=&quot;portal-footer&quot;&gt;
  [[Start]]
 
  &lt;div class=&quot;nav-wrapper&quot;&gt;
@@ -301,33 +217,14 @@ $(document.head).find('#style-ui-bar').remove();
        [img[Forward|assets/img/nextbutton.png][$nextpass]]
     &lt;/div&gt;
   &lt;/div&gt;
-  &lt;/section&gt;</tw-passagedata><tw-passagedata pid="9" name="login" tags="purple nobr" position="1100,100" size="100,100">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
-&lt;&lt;set $prevpass to &quot;login&quot;&gt;&gt;
-&lt;&lt;set $pass to &quot;login&quot;&gt;&gt;
+  &lt;/section&gt;</tw-passagedata><tw-passagedata pid="7" name="Start" tags="purple nobr" position="850,100" size="100,100">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+&lt;&lt;set $prevpass to &quot;Start&quot;&gt;&gt;
+&lt;&lt;set $pass to &quot;Start&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;ucalab&quot;&gt;&gt;
-&lt;main&gt;&lt;messagebox2&gt;[img[https://remote.co.com/UCA/assets/img/intercom2.png][staticbuzz1]]&lt;/messagebox2&gt;
+&lt;main&gt;&lt;messagebox2&gt;[img[https://remote.co.com/UCA/assets/img/intercom2.png][ucalab]]&lt;/messagebox2&gt;
 
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="10" name="staticbuzz1" tags="" position="47.999999999999964,2141.333333333333" size="100,100">&lt;main&gt;
-&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
-
-&lt;static&gt;
- &lt;img src=&quot;https://remote.co.com/UCA/assets/img/static5.gif&quot; class=&quot;staticgif center staticFade&quot; id=&quot;staticgif&quot;&gt;
-      &lt;/static&gt;
-&lt;/main&gt;
-      &lt;&lt;timed 0.5s&gt;&gt;
-      /* &lt;iframe src=&quot;https://remote.co.com/UCA/assets/audio/crispy-static.mp3&quot;  style=&quot;display:none&quot; allow=&quot;autoplay&quot; &gt;&lt;/iframe&gt; */
-      &lt;audio src=&quot;https://remote.co.com/UCA/assets/audio/crispy-static.mp3&quot; autoplay style=&quot;display:none&quot;&gt;Audio is not supported on your device&lt;/audio&gt; 
-      &lt;&lt;/timed&gt;&gt;
-
-       &lt;&lt;timed 3s&gt;&gt;
-    &lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 40ms&gt;&gt;&lt;h2&gt;Diverting...&lt;/h2&gt;&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;
-     &lt;&lt;/timed&gt;&gt;
-
-
-  &lt;&lt;timed 8s&gt;&gt;
-    &lt;&lt;goto &quot;ucalab&quot;&gt;&gt;
-     &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="ucalab" tags="nobr purple" position="100,225" size="100,100">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
-&lt;&lt;set $prevpass to &quot;login&quot;&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="8" name="ucalab" tags="nobr purple" position="975,100" size="100,100">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+&lt;&lt;set $prevpass to &quot;Start&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;ucalab&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;intro&quot;&gt;&gt;
 &lt;main class=&quot;ucalab&quot;&gt;
@@ -341,7 +238,7 @@ $(document.head).find('#style-ui-bar').remove();
   
   &lt;&lt;include &quot;codeword1&quot;&gt;&gt;
 &lt;/div&gt;
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="12" name="intro" tags="purple nobr" position="225,225" size="100,100">&lt;&lt;set $prevpass to &quot;ucalab&quot;&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="9" name="intro" tags="purple nobr" position="1100,100" size="100,100">&lt;&lt;set $prevpass to &quot;ucalab&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalvid1&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -374,9 +271,10 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="portalvid1" tags="purple nobr" position="350,225" size="100,100">&lt;&lt;set $prevpass to &quot;intro&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="portalvid1" tags="purple nobr" position="1225,100" size="100,100">&lt;&lt;set $prevpass to &quot;intro&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalvid1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;annesays&quot;&gt;&gt;
+&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
   &lt;section class=&quot;hero&quot; id=&quot;hero&quot;&gt;
 /* ANNE VIDEO 2 */
@@ -445,7 +343,7 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;/div&gt;
       &lt;div class=&quot;message-container&quot; &gt;
         &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
-        &lt;p&gt;Open the box when you are ready – the first compartment’s code is XXXX. If you find anything in the compartment send it through to me and I will run it through the UCA Computer here at the UCA Lab. &lt;/p&gt;
+        &lt;p&gt;Open the box when you are ready – the first compartment’s code is 762. If you find anything in the compartment send it through to me and I will run it through the UCA Computer here at the UCA Lab. &lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
@@ -456,9 +354,10 @@ $(document.head).find('#style-ui-bar').remove();
   &lt;&lt;replace &quot;#hero&quot;&gt;&gt;
     &lt;&lt;include &quot;buttonProgress&quot;&gt;&gt;
   &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="portalAnneSays1" tags="purple nobr" position="475,225" size="100,100">&lt;&lt;set $prevpass to &quot;portalvid1&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="portalAnneSays1" tags="purple nobr" position="100,225" size="100,100">&lt;&lt;set $prevpass to &quot;portalvid1&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalAnneSays1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalAnneSays2&quot;&gt;&gt;
+&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
   &lt;section class=&quot;hero&quot;&gt;
  &lt;div class=&quot;annesays&quot; id=&quot;annesays&quot;&gt;
@@ -567,9 +466,10 @@ $(document.head).find('#style-ui-bar').remove();
     &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="15" name="portalAnneSays2" tags="purple nobr" position="600,225" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSays1&quot;&gt;&gt;
+/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="12" name="portalAnneSays2" tags="purple nobr" position="225,225" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSays1&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalAnneSays2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalAnneSays3&quot;&gt;&gt;
+&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
   &lt;section class=&quot;hero&quot;&gt;
  &lt;div class=&quot;annesays&quot; id=&quot;annesays&quot;&gt;
@@ -673,7 +573,7 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;/div&gt;
       &lt;div class=&quot;message-container&quot; &gt;
         &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
-        &lt;p&gt;When ready click play.&lt;/p&gt;
+        &lt;p&gt;Learn the 4 moves from the resource cards and when ready click play.&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
@@ -684,7 +584,7 @@ $(document.head).find('#style-ui-bar').remove();
     &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="16" name="portalAnneSays3" tags="purple nobr" position="725,225" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSays2&quot;&gt;&gt;
+/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="13" name="portalAnneSays3" tags="purple nobr" position="350,225" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSays2&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalAnneSays3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalAnneSays3a&quot;&gt;&gt;
 &lt;&lt;set $list to [&quot;Anne says Roots&quot;, &quot;Anne says Trunk&quot;, &quot;Anne says Branches&quot;, &quot;Anne says Leaves&quot;, &quot;Roots&quot;, &quot;Leaves&quot;, &quot;Anne says Branches&quot;, &quot;Leaves&quot;, &quot;Anne says Branches&quot;, &quot;Roots&quot;, &quot;Anne says Roots&quot;, &quot;Anne says Leaves&quot;]&gt;&gt;
@@ -717,7 +617,12 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;&lt;/timed&gt;&gt;
       &lt;&lt;replace &quot;#nextMount&quot;&gt;&gt;
       &lt;&lt;button &quot;NEXT&quot;&gt;&gt;
-  &lt;&lt;if $currentIndex + 1 &gt;= $list.length&gt;&gt; // Check if it&#39;s at the end of the array
+  &lt;&lt;if $currentIndex + 1 &gt;= $list.length&gt;&gt; 
+   &lt;&lt;replace &quot;#titleWrapper&quot;&gt;&gt;
+      &lt;div class=&quot;title&quot; id=&quot;title&quot;&gt;
+        &lt;h1&gt;&lt;span id=&quot;randomitem&quot;&gt;ROUND COMPLETE!&lt;/span&gt;&lt;/h1&gt;
+      &lt;/div&gt;
+    &lt;&lt;/replace&gt;&gt;
     &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
   &lt;&lt;audio &quot;complete&quot; play&gt;&gt;
     &lt;&lt;timed 3s&gt;&gt;
@@ -735,7 +640,7 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;&lt;/replace&gt;&gt;
     &lt;&lt;/button&gt;&gt;
   &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="portalAnneSays3a" tags="purple nobr" position="850,225" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSays3&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="portalAnneSays3a" tags="purple nobr" position="475,225" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSays3&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalAnneSays3a&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalAnneSays3b&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -794,7 +699,7 @@ $(document.head).find('#style-ui-bar').remove();
         &lt;&lt;/timed&gt;&gt;
       &lt;&lt;/button&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="portalAnneSays3b" tags="purple nobr" position="975,225" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSays3a&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="portalAnneSays3b" tags="purple nobr" position="600,225" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSays3a&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalAnneSays3b&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalAnneSays4a&quot;&gt;&gt;
 &lt;&lt;set $list to [
@@ -841,7 +746,12 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;&lt;/timed&gt;&gt;
       &lt;&lt;replace &quot;#nextMount&quot;&gt;&gt;
       &lt;&lt;button &quot;NEXT&quot;&gt;&gt;
-  &lt;&lt;if $currentIndex + 1 &gt;= $list.length&gt;&gt; // Check if it&#39;s at the end of the array
+  &lt;&lt;if $currentIndex + 1 &gt;= $list.length&gt;&gt; 
+    &lt;&lt;replace &quot;#titleWrapper&quot;&gt;&gt;
+      &lt;div class=&quot;title&quot; id=&quot;title&quot;&gt;
+        &lt;h1&gt;&lt;span id=&quot;randomitem&quot;&gt;ROUND COMPLETE!&lt;/span&gt;&lt;/h1&gt;
+      &lt;/div&gt;
+    &lt;&lt;/replace&gt;&gt;
     &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
   &lt;&lt;audio &quot;complete&quot; play&gt;&gt;
     &lt;&lt;timed 4s&gt;&gt;
@@ -859,7 +769,7 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;&lt;/replace&gt;&gt;
     &lt;&lt;/button&gt;&gt;
   &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="portalAnneSays4a" tags="purple nobr" position="1100,225" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSays3b&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="portalAnneSays4a" tags="purple nobr" position="725,225" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSays3b&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalAnneSays4a&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalAnneSays4b&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -918,7 +828,7 @@ $(document.head).find('#style-ui-bar').remove();
         &lt;&lt;/timed&gt;&gt;
       &lt;&lt;/button&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="portalAnneSays4b" tags="purple nobr" position="1225,225" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSays4a&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="portalAnneSays4b" tags="purple nobr" position="850,225" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSays4a&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalAnneSays4b&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalAnneSays4c&quot;&gt;&gt;
 &lt;&lt;set $list to [
@@ -965,7 +875,12 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;&lt;/timed&gt;&gt;
       &lt;&lt;replace &quot;#nextMount&quot;&gt;&gt;
       &lt;&lt;button &quot;NEXT&quot;&gt;&gt;
-  &lt;&lt;if $currentIndex + 1 &gt;= $list.length&gt;&gt; // Check if it&#39;s at the end of the array
+  &lt;&lt;if $currentIndex + 1 &gt;= $list.length&gt;&gt; 
+  &lt;&lt;replace &quot;#titleWrapper&quot;&gt;&gt;
+      &lt;div class=&quot;title&quot; id=&quot;title&quot;&gt;
+        &lt;h1&gt;&lt;span id=&quot;randomitem&quot;&gt;ROUND COMPLETE!&lt;/span&gt;&lt;/h1&gt;
+      &lt;/div&gt;
+    &lt;&lt;/replace&gt;&gt;
     &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
   &lt;&lt;audio &quot;complete&quot; play&gt;&gt;
     &lt;&lt;timed 4s&gt;&gt;
@@ -983,7 +898,7 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;&lt;/replace&gt;&gt;
     &lt;&lt;/button&gt;&gt;
   &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="portalAnneSays4c" tags="purple nobr" position="100,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSays4b&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="portalAnneSays4c" tags="purple nobr" position="975,225" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSays4b&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalAnneSays4c&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalAnneSaysChal2&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -1047,7 +962,7 @@ $(document.head).find('#style-ui-bar').remove();
     &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="22" name="portalAnneSaysChal2" tags="purple nobr" position="225,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSays4c&quot;&gt;&gt;
+/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="19" name="portalAnneSaysChal2" tags="purple nobr" position="1100,225" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSays4c&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalAnneSaysChal2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalAnneSaysVid5&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -1081,7 +996,7 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;/div&gt;
       &lt;div class=&quot;message-container&quot; &gt;
         &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
-        &lt;p&gt;On the screen are going to be 4 moves &lt;/p&gt;
+        &lt;p&gt;On the screen we are going to do 4 moves to do together.&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
@@ -1095,7 +1010,7 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;/div&gt;
       &lt;div class=&quot;message-container&quot; &gt;
         &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
-        &lt;p&gt;You need to put to learn all 4 moves in the sequence &lt;/p&gt;
+        &lt;p&gt;All 4 in a sequence - ROOTS - TRUNK - BRANCHES - LEAVES.&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
@@ -1109,7 +1024,7 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;/div&gt;
       &lt;div class=&quot;message-container&quot; &gt;
         &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
-        &lt;p&gt;You’ll only have 45 seconds to learn the moves. &lt;/p&gt;
+        &lt;p&gt;We need to do them in that order - all together as one whole class - to win.&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
@@ -1123,47 +1038,32 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;/div&gt;
       &lt;div class=&quot;message-container&quot; &gt;
         &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
-        &lt;p&gt;Then Anne will come on the screen and you’ll have to do it with her. &lt;/p&gt;
+        &lt;p&gt;A team game! &lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
+
+
+
 
 &lt;&lt;timed 10s&gt;&gt;
-&lt;&lt;replace &quot;#messagesContainer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-
-
-&lt;&lt;timed 12s&gt;&gt;
-  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
+  &lt;&lt;replace &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;avatar&quot;&gt;
         &lt;img src=&quot;assets/img/user.png&quot; alt=&quot;avatar&quot;/&gt;
       &lt;/div&gt;
       &lt;div class=&quot;message-container&quot; &gt;
         &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
-        &lt;p&gt;Oh - a team game - ok we all need to learn the moves together to win.&lt;/p&gt;
+        &lt;p&gt;Click BEGIN when you are ready to run through with me.&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
-  &lt;&lt;/append&gt;&gt;
+  &lt;&lt;/replace&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
+
+
 
 &lt;&lt;timed 14s&gt;&gt;
-  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
-    &lt;div class=&quot;message&quot;&gt;
-      &lt;div class=&quot;avatar&quot;&gt;
-        &lt;img src=&quot;assets/img/user.png&quot; alt=&quot;avatar&quot;/&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;message-container&quot; &gt;
-        &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
-        &lt;p&gt;Click BEGIN when you are ready to start learning. &lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;&lt;/append&gt;&gt;
-
-&lt;&lt;/timed&gt;&gt;
-
-&lt;&lt;timed 15s&gt;&gt;
  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
      &lt;&lt;button &quot;BEGIN&quot;&gt;&gt;
       &lt;&lt;timed 1s&gt;&gt;
@@ -1173,7 +1073,7 @@ $(document.head).find('#style-ui-bar').remove();
     &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="23" name="portalAnneSaysVid5" tags="purple nobr" position="350,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSays4&quot;&gt;&gt;
+/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="20" name="portalAnneSaysVid5" tags="purple nobr" position="1225,225" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSays4&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalAnneSaysVid5&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalTree6&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -1192,153 +1092,37 @@ $(document.head).find('#style-ui-bar').remove();
   &lt;/section&gt;
 &lt;/main&gt;
 
-&lt;&lt;timed 2s&gt;&gt;
-  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
-    &lt;div class=&quot;message&quot;&gt;
-      &lt;div class=&quot;avatar&quot;&gt;
-        &lt;img src=&quot;assets/img/user.png&quot; alt=&quot;avatar&quot;/&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;message-container&quot; &gt;
-        &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
-        &lt;p&gt;Ok - here we go.  &lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-
-&lt;&lt;timed 4s&gt;&gt;
-  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
-    &lt;div class=&quot;message&quot;&gt;
-      &lt;div class=&quot;avatar&quot;&gt;
-        &lt;img src=&quot;assets/img/user.png&quot; alt=&quot;avatar&quot;/&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;message-container&quot; &gt;
-        &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
-        &lt;p&gt;Everyone ready. We’ll do it 3 times together.  &lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-
-&lt;&lt;timed 6s&gt;&gt;
-  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
-    &lt;div class=&quot;message&quot;&gt;
-      &lt;div class=&quot;avatar&quot;&gt;
-        &lt;img src=&quot;assets/img/user.png&quot; alt=&quot;avatar&quot;/&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;message-container&quot; &gt;
-        &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
-        &lt;p&gt;3-2-1 &lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-
 &lt;&lt;timed 8s&gt;&gt;
-
-  &lt;&lt;replace &quot;#hero&quot;&gt;&gt;
-&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
-  &lt;&lt;audio &quot;uploading&quot; play&gt;&gt;
-     &lt;div class=&quot;annesays&quot; id=&quot;annesays&quot;&gt;
-          &lt;div class=&quot;titleWrapper&quot; id=&quot;titleWrapper&quot;&gt;
-            &lt;div class=&quot;title&quot;&gt;
-            &lt;h1&gt;&lt;span&gt;Anne&lt;/span&gt; &lt;span&gt;Says&lt;/span&gt;&lt;/h1&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;&lt;/replace&gt;&gt;
-  &lt;&lt;/timed&gt;&gt;
-
-
-&lt;&lt;timed 10s&gt;&gt;
-&lt;&lt;replace &quot;#messagesContainer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-
-
-&lt;&lt;timed 12s&gt;&gt;
-  &lt;&lt;replace &quot;#titleWrapper&quot;&gt;&gt;
-      &lt;div class=&quot;title&quot;&gt;
-        &lt;h1&gt;&lt;span&gt;ROOTS&lt;/span&gt;&lt;/h1&gt;
-     &lt;/div&gt;
-  &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-
-&lt;&lt;timed 14s&gt;&gt;
-  &lt;&lt;replace &quot;#titleWrapper&quot;&gt;&gt;
-      &lt;div class=&quot;title&quot;&gt;
-        &lt;h1&gt;&lt;span&gt;TRUNK&lt;/span&gt;&lt;/h1&gt;
-     &lt;/div&gt;
-  &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-
-&lt;&lt;timed 16s&gt;&gt;
-  &lt;&lt;replace &quot;#titleWrapper&quot;&gt;&gt;
-      &lt;div class=&quot;title&quot;&gt;
-        &lt;h1&gt;&lt;span&gt;BRANCHES&lt;/span&gt;&lt;/h1&gt;
-     &lt;/div&gt;
-  &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-
-&lt;&lt;timed 18s&gt;&gt;
-  &lt;&lt;replace &quot;#titleWrapper&quot;&gt;&gt;
-      &lt;div class=&quot;title&quot;&gt;
-        &lt;h1&gt;&lt;span&gt;LEAVES&lt;/span&gt;&lt;/h1&gt;
-     &lt;/div&gt;
-  &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-
-&lt;&lt;timed 20s&gt;&gt;
-&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
-  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
-    &lt;div class=&quot;message&quot;&gt;
-      &lt;div class=&quot;avatar&quot;&gt;
-        &lt;img src=&quot;assets/img/user.png&quot; alt=&quot;avatar&quot;/&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;message-container&quot; &gt;
-        &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
-        &lt;p&gt;Odd - there’s a question coming through. &lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-
-&lt;&lt;timed 22s&gt;&gt;
-
-  &lt;&lt;replace &quot;#titleWrapper&quot;&gt;&gt;
-      &lt;div class=&quot;title&quot;&gt;
-        &lt;h2&gt;&lt;span&gt;How does it feel to win together compared to winning individually? &lt;/span&gt;&lt;/h2&gt;
-     &lt;/div&gt;
-  &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-
-&lt;&lt;timed 24s&gt;&gt;
-
-  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
-    &lt;div class=&quot;message&quot;&gt;
-      &lt;div class=&quot;avatar&quot;&gt;
-        &lt;img src=&quot;assets/img/user.png&quot; alt=&quot;avatar&quot;/&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;message-container&quot; &gt;
-        &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
-        &lt;p&gt;You discuss with the teacher and I’ll load the next part. &lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-
-
-
-&lt;&lt;timed 26s&gt;&gt;
- &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
+   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
      &lt;&lt;button &quot;NEXT&quot;&gt;&gt;
       &lt;&lt;timed 1s&gt;&gt;
-      &lt;&lt;goto $nextpass&gt;&gt;
+        &lt;&lt;replace &quot;#hero&quot;&gt;&gt;
+        
+   &lt;div id=&quot;titleWrapper&quot; class=&quot;titleWrapper&quot;&gt;
+    &lt;div class=&quot;team-question&quot;&gt;
+        &lt;h2&gt;&lt;span&gt;How does it feel to win together compared to winning individually? &lt;/span&gt;&lt;/h2&gt;
+     &lt;/div&gt;
+  &lt;/div&gt;
+     
+  &lt;&lt;/replace&gt;&gt;
         &lt;&lt;/timed&gt;&gt;
       &lt;&lt;/button&gt;&gt;
     &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="24" name="portalTree6" tags="purple nobr" position="475,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSaysVid5&quot;&gt;&gt;
+
+
+&lt;&lt;timed 15s&gt;&gt;
+ &lt;&lt;replace &quot;#messagesContainer&quot;&gt;&gt;
+     &lt;&lt;button &quot;MOVE ON&quot;&gt;&gt;
+      &lt;&lt;timed 1s&gt;&gt;
+      &lt;&lt;goto $nextpass&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
+      &lt;&lt;/button&gt;&gt;
+    &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="21" name="portalTree6" tags="purple nobr" position="100,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalAnneSaysVid5&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalTree6&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalVid7&quot;&gt;&gt;
 &lt;&lt;set $treeprogress to [&quot;test&quot;]&gt;&gt;
@@ -1346,8 +1130,8 @@ $(document.head).find('#style-ui-bar').remove();
 
   &lt;section class=&quot;hero tree-grid-container&quot; id=&quot;hero&quot;&gt;
 
-     &lt;div class=&quot;tree-one&quot;&gt;&lt;&lt;include &quot;treePw1&quot;&gt;&gt;&lt;/div&gt;
-    &lt;div class=&quot;tree-two&quot;&gt;&lt;&lt;include &quot;treePw2&quot;&gt;&gt;&lt;/div&gt;
+     &lt;div class=&quot;tree-one&quot;&gt;&lt;&lt;include &quot;treePw2&quot;&gt;&gt;&lt;/div&gt;
+    &lt;div class=&quot;tree-two&quot;&gt;&lt;&lt;include &quot;treePw1&quot;&gt;&gt;&lt;/div&gt;
     &lt;div class=&quot;tree-three&quot;&gt;&lt;&lt;include &quot;treePw3&quot;&gt;&gt;&lt;/div&gt;
     &lt;div class=&quot;tree-four&quot;&gt;&lt;&lt;include &quot;treePw4&quot;&gt;&gt;&lt;/div&gt;
   &lt;/section&gt;
@@ -1377,11 +1161,11 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;/timed&gt;&gt;
 
 
-/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="25" name="checktreeprogress" tags="" position="600,350" size="100,100">&lt;&lt;if $treeprogress.includesAll(&quot;LEAVES&quot;, &quot;BRANCHES&quot;, &quot;TRUNK&quot;, &quot;ROOTS&quot;)&gt;&gt;
+/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="22" name="checktreeprogress" tags="" position="225,350" size="100,100">&lt;&lt;if $treeprogress.includesAll(&quot;LEAVES&quot;, &quot;BRANCHES&quot;, &quot;TRUNK&quot;, &quot;ROOTS&quot;)&gt;&gt;
   &lt;&lt;timed 5s&gt;&gt;
   &lt;&lt;goto $nextpass&gt;&gt;
   &lt;&lt;/timed&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="portalVid7" tags="purple nobr" position="725,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalTree6&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="portalVid7" tags="purple nobr" position="350,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalTree6&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalVid7&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalVid8&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -1431,7 +1215,7 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;/div&gt;
       &lt;div class=&quot;message-container&quot; &gt;
         &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
-        &lt;p&gt;Open the compartment using XXXX and take out part A.   &lt;/p&gt;
+        &lt;p&gt;Open the compartment using 184 and take out part A.&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
@@ -1480,13 +1264,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;/timed&gt;&gt;
 
 
-&lt;&lt;timed 19s&gt;&gt;
-  &lt;&lt;replace &quot;#messagesContainer&quot;&gt;&gt;
- 
-  &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-
-&lt;&lt;timed 21s&gt;&gt;
+&lt;&lt;timed 20s&gt;&gt;
  &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
    &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
@@ -1523,14 +1301,13 @@ $(document.head).find('#style-ui-bar').remove();
         &lt;&lt;/timed&gt;&gt;
       &lt;&lt;/button&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="portalVid8" tags="purple nobr" position="850,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalVid7&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="portalVid8" tags="purple nobr" position="475,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalVid7&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalVid8&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalQuiz9&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
   &lt;section class=&quot;hero&quot; id=&quot;hero&quot;&gt;
 
-       &lt;iframe width=&#39;800px&#39; height=&#39;450px&#39;
-      src=&#39;https://player.vimeo.com/video/531960916?autoplay=1&amp;byline=0&amp;portrait=0&#39;&gt;&lt;/iframe&gt;
+       &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/MJtC-3DKwfM?si=GLCcwwuVcImtDZOT&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen&gt;&lt;/iframe&gt;
   &lt;/section&gt;
   &lt;section class=&quot;chat&quot;&gt;
   &lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;
@@ -1543,7 +1320,7 @@ $(document.head).find('#style-ui-bar').remove();
   &lt;/section&gt;
 &lt;/main&gt;
 
-&lt;&lt;timed 7s&gt;&gt;
+&lt;&lt;timed 2s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;avatar&quot;&gt;
@@ -1557,7 +1334,7 @@ $(document.head).find('#style-ui-bar').remove();
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 9s&gt;&gt;
+&lt;&lt;timed 7s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;avatar&quot;&gt;
@@ -1565,20 +1342,20 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;/div&gt;
       &lt;div class=&quot;message-container&quot; &gt;
         &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
-        &lt;p&gt;Get your quizzes ready. When you are ready for the video to begin click begin.   &lt;/p&gt;
+        &lt;p&gt;Get your quizzes ready. When you are ready for the video to begin click the play icon.   &lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
 
-&lt;&lt;timed 12s&gt;&gt;
+&lt;&lt;timed 25s&gt;&gt;
   &lt;&lt;replace &quot;#messagesContainer&quot;&gt;&gt;
  
   &lt;&lt;/replace&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 15s&gt;&gt;
+&lt;&lt;timed 26s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;avatar&quot;&gt;
@@ -1593,7 +1370,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;/timed&gt;&gt;
 
 
-&lt;&lt;timed 17s&gt;&gt;
+&lt;&lt;timed 27s&gt;&gt;
  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
      &lt;&lt;button &quot;ANSWERS&quot;&gt;&gt;
       &lt;&lt;timed 1s&gt;&gt;
@@ -1606,7 +1383,7 @@ $(document.head).find('#style-ui-bar').remove();
         &lt;&lt;/timed&gt;&gt;
       &lt;&lt;/button&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="portalQuiz9" tags="purple nobr" position="975,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalVid8&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="portalQuiz9" tags="purple nobr" position="600,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalVid8&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalQuiz9&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalQuiz9b&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -1658,7 +1435,7 @@ $(document.head).find('#style-ui-bar').remove();
     &lt;h3&gt;1. Wangari Maathai was the first woman to become a professor in which country? &lt;/h3&gt;
 &lt;div class=&quot;quiz-options&quot;&gt;
   &lt;div class=&quot;option&quot; id=&quot;opt1&quot;&gt;
-    &lt;&lt;button &quot;P. Japan&quot;&gt;&gt; 
+    &lt;&lt;button &quot;&lt;span&gt;P&lt;/span&gt;. Japan&quot;&gt;&gt; 
       &lt;&lt;timed 0.5s&gt;&gt;
       &lt;&lt;replace &quot;#hint&quot;&gt;&gt;Incorrect. Try again&lt;&lt;/replace&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
@@ -1669,7 +1446,7 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;&lt;/button&gt;&gt;
   &lt;/div&gt;
    &lt;div class=&quot;option&quot; id=&quot;opt2&quot;&gt;
-  &lt;&lt;button &quot;A. US&quot;&gt;&gt; 
+  &lt;&lt;button &quot;&lt;span&gt;A&lt;/span&gt;. US&quot;&gt;&gt; 
       &lt;&lt;timed 0.5s&gt;&gt;
       &lt;&lt;replace &quot;#hint&quot;&gt;&gt;Incorrect. Try again&lt;&lt;/replace&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
@@ -1680,7 +1457,7 @@ $(document.head).find('#style-ui-bar').remove();
    &lt;&lt;/button&gt;&gt;
    &lt;/div&gt;
     &lt;div class=&quot;option&quot; id=&quot;opt3&quot;&gt;
-  &lt;&lt;button &quot;L. India&quot;&gt;&gt; 
+  &lt;&lt;button &quot;&lt;span&gt;L&lt;/span&gt;. India&quot;&gt;&gt; 
      &lt;&lt;timed 0.5s&gt;&gt;
       &lt;&lt;replace &quot;#hint&quot;&gt;&gt;Incorrect. Try again&lt;&lt;/replace&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
@@ -1691,9 +1468,10 @@ $(document.head).find('#style-ui-bar').remove();
   &lt;&lt;/button&gt;&gt;
   &lt;/div&gt;
    &lt;div class=&quot;option&quot; id=&quot;opt4&quot;&gt;
-   &lt;&lt;button &quot;C. Kenya&quot;&gt;&gt; 
+   &lt;&lt;button &quot;&lt;span&gt;C&lt;/span&gt;. Kenya&quot;&gt;&gt; 
      &lt;&lt;timed 0.5s&gt;&gt;
       &lt;&lt;replace &quot;#hint&quot;&gt;&gt;Correct!&lt;&lt;/replace&gt;&gt;
+       &lt;&lt;audio &quot;complete&quot; play&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
        &lt;&lt;timed 3s&gt;&gt;
       &lt;&lt;goto $nextpass&gt;&gt;
@@ -1705,7 +1483,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;h3 id=&quot;hint&quot;&gt;&lt;/h3&gt;
     &lt;/div&gt;
   &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="portalQuiz9b" tags="purple nobr" position="1100,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalQuiz9&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="portalQuiz9b" tags="purple nobr" position="725,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalQuiz9&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalQuiz9b&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalQuiz9c&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -1730,7 +1508,7 @@ $(document.head).find('#style-ui-bar').remove();
     &lt;h3&gt;2. When the trees were being cut down for commercial planting, what was being affected?&lt;/h3&gt;
 &lt;div class=&quot;quiz-options&quot;&gt;
   &lt;div class=&quot;option&quot; id=&quot;opt1&quot;&gt;
-    &lt;&lt;button &quot;P. Loss of Biodiversity&quot;&gt;&gt; 
+    &lt;&lt;button &quot;&lt;span&gt;P&lt;/span&gt;. Loss of Biodiversity&quot;&gt;&gt; 
       &lt;&lt;timed 0.5s&gt;&gt;
       &lt;&lt;replace &quot;#hint&quot;&gt;&gt;Incorrect. Try again&lt;&lt;/replace&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
@@ -1741,7 +1519,7 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;&lt;/button&gt;&gt;
   &lt;/div&gt;
    &lt;div class=&quot;option&quot; id=&quot;opt2&quot;&gt;
-  &lt;&lt;button &quot;G. Poverty&quot;&gt;&gt; 
+  &lt;&lt;button &quot;&lt;span&gt;G&lt;/span&gt;. Poverty&quot;&gt;&gt; 
       &lt;&lt;timed 0.5s&gt;&gt;
       &lt;&lt;replace &quot;#hint&quot;&gt;&gt;Incorrect. Try again&lt;&lt;/replace&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
@@ -1752,7 +1530,7 @@ $(document.head).find('#style-ui-bar').remove();
    &lt;&lt;/button&gt;&gt;
    &lt;/div&gt;
     &lt;div class=&quot;option&quot; id=&quot;opt3&quot;&gt;
-  &lt;&lt;button &quot;E. Drought&quot;&gt;&gt; 
+  &lt;&lt;button &quot;&lt;span&gt;E&lt;/span&gt;. Drought&quot;&gt;&gt; 
      &lt;&lt;timed 0.5s&gt;&gt;
       &lt;&lt;replace &quot;#hint&quot;&gt;&gt;Incorrect. Try again&lt;&lt;/replace&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
@@ -1763,9 +1541,10 @@ $(document.head).find('#style-ui-bar').remove();
   &lt;&lt;/button&gt;&gt;
   &lt;/div&gt;
    &lt;div class=&quot;option&quot; id=&quot;opt4&quot;&gt;
-   &lt;&lt;button &quot;L. All of them&quot;&gt;&gt; 
+   &lt;&lt;button &quot;&lt;span&gt;L&lt;/span&gt;. All of them&quot;&gt;&gt; 
      &lt;&lt;timed 0.5s&gt;&gt;
       &lt;&lt;replace &quot;#hint&quot;&gt;&gt;Correct!&lt;&lt;/replace&gt;&gt;
+       &lt;&lt;audio &quot;complete&quot; play&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
        &lt;&lt;timed 3s&gt;&gt;
       &lt;&lt;goto $nextpass&gt;&gt;
@@ -1777,7 +1556,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;h3 id=&quot;hint&quot;&gt;&lt;/h3&gt;
     &lt;/div&gt;
   &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="portalQuiz9c" tags="purple nobr" position="1225,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalQuiz9b&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="portalQuiz9c" tags="purple nobr" position="850,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalQuiz9b&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalQuiz9c&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalQuiz9d&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -1802,7 +1581,7 @@ $(document.head).find('#style-ui-bar').remove();
     &lt;h3&gt;3. In 1977 she started what movement?&lt;/h3&gt;
 &lt;div class=&quot;quiz-options&quot;&gt;
   &lt;div class=&quot;option&quot; id=&quot;opt1&quot;&gt;
-    &lt;&lt;button &quot;N. The Blue Belt Movement&quot;&gt;&gt; 
+    &lt;&lt;button &quot;&lt;span&gt;N&lt;/span&gt;. The Blue Belt Movement&quot;&gt;&gt; 
       &lt;&lt;timed 0.5s&gt;&gt;
       &lt;&lt;replace &quot;#hint&quot;&gt;&gt;Incorrect. Try again&lt;&lt;/replace&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
@@ -1813,7 +1592,7 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;&lt;/button&gt;&gt;
   &lt;/div&gt;
    &lt;div class=&quot;option&quot; id=&quot;opt2&quot;&gt;
-  &lt;&lt;button &quot; B. The Red Belt Movement&quot;&gt;&gt; 
+  &lt;&lt;button &quot; &lt;span&gt;B&lt;/span&gt;. The Red Belt Movement&quot;&gt;&gt; 
       &lt;&lt;timed 0.5s&gt;&gt;
       &lt;&lt;replace &quot;#hint&quot;&gt;&gt;Incorrect. Try again&lt;&lt;/replace&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
@@ -1825,9 +1604,10 @@ $(document.head).find('#style-ui-bar').remove();
    &lt;/div&gt;
   
    &lt;div class=&quot;option&quot; id=&quot;opt4&quot;&gt;
-   &lt;&lt;button &quot;E. The Green Belt Movement&quot;&gt;&gt; 
+   &lt;&lt;button &quot;&lt;span&gt;E&lt;/span&gt;. The Green Belt Movement&quot;&gt;&gt; 
      &lt;&lt;timed 0.5s&gt;&gt;
       &lt;&lt;replace &quot;#hint&quot;&gt;&gt;Correct!&lt;&lt;/replace&gt;&gt;
+       &lt;&lt;audio &quot;complete&quot; play&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
        &lt;&lt;timed 3s&gt;&gt;
       &lt;&lt;goto $nextpass&gt;&gt;
@@ -1839,7 +1619,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;h3 id=&quot;hint&quot;&gt;&lt;/h3&gt;
     &lt;/div&gt;
   &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="portalQuiz9d" tags="purple nobr" position="100,475" size="100,100">&lt;&lt;set $prevpass to &quot;portalQuiz9c&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="portalQuiz9d" tags="purple nobr" position="975,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalQuiz9c&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalQuiz9d&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalQuiz9e&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -1864,10 +1644,11 @@ $(document.head).find('#style-ui-bar').remove();
     &lt;h3&gt;4. By 2004, how many trees had the Green Belt Movement planted? &lt;/h3&gt;
 &lt;div class=&quot;quiz-options&quot;&gt;
   &lt;div class=&quot;option&quot; id=&quot;opt1&quot;&gt;
-    &lt;&lt;button &quot;30,000,000 trees&quot;&gt;&gt; 
+    &lt;&lt;button &quot;&lt;span&gt;A&lt;/span&gt;. 30,000,000 trees&quot;&gt;&gt; 
 
       &lt;&lt;timed 0.5s&gt;&gt;
       &lt;&lt;replace &quot;#hint&quot;&gt;&gt;Correct!&lt;&lt;/replace&gt;&gt;
+       &lt;&lt;audio &quot;complete&quot; play&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
        &lt;&lt;timed 3s&gt;&gt;
       &lt;&lt;goto $nextpass&gt;&gt;
@@ -1876,7 +1657,7 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;&lt;/button&gt;&gt;
   &lt;/div&gt;
    &lt;div class=&quot;option&quot; id=&quot;opt2&quot;&gt;
-  &lt;&lt;button &quot;B. 30,000 trees&quot;&gt;&gt; 
+  &lt;&lt;button &quot;&lt;span&gt;B&lt;/span&gt;. 30,000 trees&quot;&gt;&gt; 
       &lt;&lt;timed 0.5s&gt;&gt;
       &lt;&lt;replace &quot;#hint&quot;&gt;&gt;Incorrect. Try again&lt;&lt;/replace&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
@@ -1888,7 +1669,7 @@ $(document.head).find('#style-ui-bar').remove();
    &lt;/div&gt;
   
    &lt;div class=&quot;option&quot; id=&quot;opt4&quot;&gt;
-   &lt;&lt;button &quot;C. 3,000 trees&quot;&gt;&gt; 
+   &lt;&lt;button &quot;&lt;span&gt;C&lt;/span&gt;. 3,000 trees&quot;&gt;&gt; 
       &lt;&lt;timed 0.5s&gt;&gt;
       &lt;&lt;replace &quot;#hint&quot;&gt;&gt;Incorrect. Try again&lt;&lt;/replace&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
@@ -1903,7 +1684,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;h3 id=&quot;hint&quot;&gt;&lt;/h3&gt;
     &lt;/div&gt;
   &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="portalQuiz9e" tags="purple nobr" position="225,475" size="100,100">&lt;&lt;set $prevpass to &quot;portalQuiz9d&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="portalQuiz9e" tags="purple nobr" position="1100,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalQuiz9d&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalQuiz9e&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalQuiz9f&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -1926,9 +1707,10 @@ $(document.head).find('#style-ui-bar').remove();
     &lt;h3&gt;5. What was being sold to private companies that prompted Wangari Maathai to oppose the government? &lt;/h3&gt;
 &lt;div class=&quot;quiz-options&quot;&gt;
   &lt;div class=&quot;option&quot; id=&quot;opt1&quot;&gt;
-    &lt;&lt;button &quot;M. Forests&quot;&gt;&gt; 
+    &lt;&lt;button &quot;&lt;span&gt;M&lt;/span&gt;. Forests&quot;&gt;&gt; 
       &lt;&lt;timed 0.5s&gt;&gt;
       &lt;&lt;replace &quot;#hint&quot;&gt;&gt;Correct!&lt;&lt;/replace&gt;&gt;
+       &lt;&lt;audio &quot;complete&quot; play&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
        &lt;&lt;timed 3s&gt;&gt;
       &lt;&lt;goto $nextpass&gt;&gt;
@@ -1937,7 +1719,7 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;&lt;/button&gt;&gt;
   &lt;/div&gt;
    &lt;div class=&quot;option&quot; id=&quot;opt2&quot;&gt;
-  &lt;&lt;button &quot;B. Water&quot;&gt;&gt; 
+  &lt;&lt;button &quot;&lt;span&gt;B&lt;/span&gt;. Water&quot;&gt;&gt; 
       &lt;&lt;timed 0.5s&gt;&gt;
       &lt;&lt;replace &quot;#hint&quot;&gt;&gt;Incorrect. Try again&lt;&lt;/replace&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
@@ -1949,7 +1731,7 @@ $(document.head).find('#style-ui-bar').remove();
    &lt;/div&gt;
   
    &lt;div class=&quot;option&quot; id=&quot;opt4&quot;&gt;
-   &lt;&lt;button &quot;K. Pickles&quot;&gt;&gt; 
+   &lt;&lt;button &quot;&lt;span&gt;K&lt;/span&gt;. Pickles&quot;&gt;&gt; 
       &lt;&lt;timed 0.5s&gt;&gt;
       &lt;&lt;replace &quot;#hint&quot;&gt;&gt;Incorrect. Try again&lt;&lt;/replace&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
@@ -1964,7 +1746,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;h3 id=&quot;hint&quot;&gt;&lt;/h3&gt;
     &lt;/div&gt;
   &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="portalQuiz9f" tags="purple nobr" position="350,475" size="100,100">&lt;&lt;set $prevpass to &quot;portalQuiz9e&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="portalQuiz9f" tags="purple nobr" position="1225,350" size="100,100">&lt;&lt;set $prevpass to &quot;portalQuiz9e&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalQuiz9f&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalQuiz9g&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -1987,7 +1769,7 @@ $(document.head).find('#style-ui-bar').remove();
     &lt;h3&gt;6. How did her peace work start?&lt;/h3&gt;
 &lt;div class=&quot;quiz-options&quot;&gt;
   &lt;div class=&quot;option&quot; id=&quot;opt1&quot;&gt;
-    &lt;&lt;button &quot;O. On Tik Tok&quot;&gt;&gt; 
+    &lt;&lt;button &quot;&lt;span&gt;O&lt;/span&gt;. On Tik Tok&quot;&gt;&gt; 
      &lt;&lt;timed 0.5s&gt;&gt;
       &lt;&lt;replace &quot;#hint&quot;&gt;&gt;Incorrect. Try again&lt;&lt;/replace&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
@@ -1998,9 +1780,10 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;&lt;/button&gt;&gt;
   &lt;/div&gt;
    &lt;div class=&quot;option&quot; id=&quot;opt2&quot;&gt;
-  &lt;&lt;button &quot;I. Planting One Tree&quot;&gt;&gt; 
+  &lt;&lt;button &quot;&lt;span&gt;I&lt;/span&gt;. Planting One Tree&quot;&gt;&gt; 
     &lt;&lt;timed 0.5s&gt;&gt;
       &lt;&lt;replace &quot;#hint&quot;&gt;&gt;Correct!&lt;&lt;/replace&gt;&gt;
+       &lt;&lt;audio &quot;complete&quot; play&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
        &lt;&lt;timed 3s&gt;&gt;
       &lt;&lt;goto $nextpass&gt;&gt;
@@ -2010,7 +1793,7 @@ $(document.head).find('#style-ui-bar').remove();
    &lt;/div&gt;
   
    &lt;div class=&quot;option&quot; id=&quot;opt4&quot;&gt;
-   &lt;&lt;button &quot;W. With all her Money&quot;&gt;&gt; 
+   &lt;&lt;button &quot;&lt;span&gt;W&lt;/span&gt;. With all her Money&quot;&gt;&gt; 
       &lt;&lt;timed 0.5s&gt;&gt;
       &lt;&lt;replace &quot;#hint&quot;&gt;&gt;Incorrect. Try again&lt;&lt;/replace&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
@@ -2025,7 +1808,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;h3 id=&quot;hint&quot;&gt;&lt;/h3&gt;
     &lt;/div&gt;
   &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="portalQuiz9g" tags="purple nobr" position="475,475" size="100,100">&lt;&lt;set $prevpass to &quot;portalQuiz9f&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="portalQuiz9g" tags="purple nobr" position="100,475" size="100,100">&lt;&lt;set $prevpass to &quot;portalQuiz9f&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalQuiz9g&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalClimateScrabble&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -2048,9 +1831,10 @@ $(document.head).find('#style-ui-bar').remove();
     &lt;h3&gt;7. What was Wangari’s method for change? &lt;/h3&gt;
 &lt;div class=&quot;quiz-options&quot;&gt;
   &lt;div class=&quot;option&quot; id=&quot;opt1&quot;&gt;
-    &lt;&lt;button &quot;T. Start little and do the best you can&quot;&gt;&gt; 
+    &lt;&lt;button &quot;&lt;span&gt;T&lt;/span&gt;. Start little and do the best you can&quot;&gt;&gt; 
        &lt;&lt;timed 0.5s&gt;&gt;
       &lt;&lt;replace &quot;#hint&quot;&gt;&gt;Correct!&lt;&lt;/replace&gt;&gt;
+       &lt;&lt;audio &quot;complete&quot; play&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
        &lt;&lt;timed 3s&gt;&gt;
       &lt;&lt;goto $nextpass&gt;&gt;
@@ -2058,7 +1842,7 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;&lt;/button&gt;&gt;
   &lt;/div&gt;
    &lt;div class=&quot;option&quot; id=&quot;opt2&quot;&gt;
-  &lt;&lt;button &quot;H. You can do it&quot;&gt;&gt; 
+  &lt;&lt;button &quot;&lt;span&gt;H&lt;/span&gt;. You can do it&quot;&gt;&gt; 
    &lt;&lt;timed 0.5s&gt;&gt;
       &lt;&lt;replace &quot;#hint&quot;&gt;&gt;Incorrect. Try again&lt;&lt;/replace&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
@@ -2070,7 +1854,7 @@ $(document.head).find('#style-ui-bar').remove();
    &lt;/div&gt;
   
    &lt;div class=&quot;option&quot; id=&quot;opt4&quot;&gt;
-   &lt;&lt;button &quot;Y. Go big or go home&quot;&gt;&gt; 
+   &lt;&lt;button &quot;&lt;span&gt;Y&lt;/span&gt;. Go big or go home&quot;&gt;&gt; 
       &lt;&lt;timed 0.5s&gt;&gt;
       &lt;&lt;replace &quot;#hint&quot;&gt;&gt;Incorrect. Try again&lt;&lt;/replace&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
@@ -2085,7 +1869,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;h3 id=&quot;hint&quot;&gt;&lt;/h3&gt;
     &lt;/div&gt;
   &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="portalClimateScrabble" tags="purple nobr" position="600,475" size="100,100">&lt;&lt;set $prevpass to &quot;portalQuiz9g&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="portalClimateScrabble" tags="purple nobr" position="225,475" size="100,100">&lt;&lt;set $prevpass to &quot;portalQuiz9g&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalClimateScrabble&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalvid10&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -2159,34 +1943,67 @@ $(document.head).find('#style-ui-bar').remove();
   &lt;&lt;replace &quot;#helperText&quot;&gt;&gt;&lt;span&gt;Enter the correct word:&lt;/span&gt;&lt;&lt;/replace&gt;&gt;
 &lt;&lt;append &quot;#scrabbleWrapper&quot;&gt;&gt;
 
-  &lt;&lt;button &quot;HELP&quot;&gt;&gt;
+  &lt;div id=&quot;helpBtnMount&quot;&gt;
+    &lt;&lt;button &quot;HELP&quot;&gt;&gt;
+      &lt;&lt;timed 0.5s&gt;&gt;
+        &lt;&lt;replace &quot;#pos3&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+      &lt;&lt;timed 1s&gt;&gt;
+        &lt;&lt;replace &quot;#pos6&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+     &lt;&lt;/timed&gt;&gt;
+       &lt;&lt;timed 1.5s&gt;&gt;
+   &lt;&lt;replace &quot;#pos3&quot;&gt;&gt;&lt;div class=&quot;tile&quot; data-letter=&quot;I&quot;&gt;&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+      &lt;&lt;timed 2s&gt;&gt;
+    &lt;&lt;replace &quot;#pos5&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+       &lt;&lt;timed 2.5s&gt;&gt;
+    &lt;&lt;replace &quot;#pos5&quot;&gt;&gt;  &lt;&lt;replace &quot;#pos6&quot;&gt;&gt;&lt;div class=&quot;tile&quot; data-letter=&quot;M&quot;&gt;&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+       &lt;&lt;timed 3s&gt;&gt;
+      &lt;&lt;replace &quot;#pos4&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+      &lt;&lt;timed 3.5s&gt;&gt;
+      &lt;&lt;replace &quot;#pos4&quot;&gt;&gt;&lt;div class=&quot;tile&quot; data-letter=&quot;E&quot;&gt;&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+       &lt;&lt;timed 4s&gt;&gt;
+      &lt;&lt;replace &quot;#pos5&quot;&gt;&gt;&lt;div class=&quot;tile&quot; data-letter=&quot;A&quot;&gt;&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+      &lt;&lt;timed 7s&gt;&gt;
+        &lt;&lt;replace &quot;#helpBtnMount&quot;&gt;&gt;
+          &lt;&lt;include &quot;helpagain&quot;&gt;&gt;
+          &lt;&lt;/replace&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;/button&gt;&gt;
+  &lt;/div&gt;
+  &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="helpagain" tags="nobr" position="350,475" size="100,100">&lt;&lt;button &quot;HELP AGAIN&quot;&gt;&gt;
     &lt;&lt;timed 0.5s&gt;&gt;
-      &lt;&lt;replace &quot;#pos3&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;replace &quot;#pos4&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
     &lt;&lt;/timed&gt;&gt;
     &lt;&lt;timed 1s&gt;&gt;
       &lt;&lt;replace &quot;#pos6&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
    &lt;&lt;/timed&gt;&gt;
      &lt;&lt;timed 1.5s&gt;&gt;
- &lt;&lt;replace &quot;#pos3&quot;&gt;&gt;&lt;div class=&quot;tile&quot; data-letter=&quot;I&quot;&gt;&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
+ &lt;&lt;replace &quot;#pos4&quot;&gt;&gt;&lt;div class=&quot;tile&quot; data-letter=&quot;M&quot;&gt;&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
     &lt;&lt;/timed&gt;&gt;
-    &lt;&lt;timed 2s&gt;&gt;
-  &lt;&lt;replace &quot;#pos5&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
-    &lt;&lt;/timed&gt;&gt;
-     &lt;&lt;timed 2.5s&gt;&gt;
-  &lt;&lt;replace &quot;#pos5&quot;&gt;&gt;  &lt;&lt;replace &quot;#pos6&quot;&gt;&gt;&lt;div class=&quot;tile&quot; data-letter=&quot;M&quot;&gt;&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;timed 2s&gt;&gt;
+      &lt;&lt;replace &quot;#pos5&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+   &lt;&lt;/timed&gt;&gt;
+   &lt;&lt;timed 2.5s&gt;&gt;
+ &lt;&lt;replace &quot;#pos5&quot;&gt;&gt;&lt;div class=&quot;tile&quot; data-letter=&quot;E&quot;&gt;&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
     &lt;&lt;/timed&gt;&gt;
      &lt;&lt;timed 3s&gt;&gt;
-    &lt;&lt;replace &quot;#pos4&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;replace &quot;#pos7&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+   &lt;&lt;/timed&gt;&gt;
+      &lt;&lt;timed 3.5s&gt;&gt;
+ &lt;&lt;replace &quot;#pos7&quot;&gt;&gt;&lt;div class=&quot;tile&quot; data-letter=&quot;A&quot;&gt;&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
     &lt;&lt;/timed&gt;&gt;
-    &lt;&lt;timed 3.5s&gt;&gt;
-    &lt;&lt;replace &quot;#pos4&quot;&gt;&gt;&lt;div class=&quot;tile&quot; data-letter=&quot;E&quot;&gt;&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;timed 4s&gt;&gt;
+ &lt;&lt;replace &quot;#pos6&quot;&gt;&gt;&lt;div class=&quot;tile&quot; data-letter=&quot;T&quot;&gt;&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
     &lt;&lt;/timed&gt;&gt;
-     &lt;&lt;timed 4s&gt;&gt;
-    &lt;&lt;replace &quot;#pos5&quot;&gt;&gt;&lt;div class=&quot;tile&quot; data-letter=&quot;A&quot;&gt;&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
-    &lt;&lt;/timed&gt;&gt;
-  &lt;&lt;/button&gt;&gt;
-  &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="portalvid10" tags="purple nobr" position="725,475" size="100,100">&lt;&lt;set $prevpass to &quot;portalClimateScrabble&quot;&gt;&gt;
+    
+  &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="portalvid10" tags="purple nobr" position="475,475" size="100,100">&lt;&lt;set $prevpass to &quot;portalClimateScrabble&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalvid10&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalvid10b&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -2215,11 +2032,25 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;/div&gt;
       &lt;div class=&quot;message-container&quot; &gt;
         &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
-        &lt;p&gt; Open Part 2 in the compartment &lt;/p&gt;
+        &lt;p&gt;You can now open Part 2 in the compartment.&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="portalvid10b" tags="purple nobr" position="850,475" size="100,100">&lt;&lt;set $prevpass to &quot;portalvid10&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 5s&gt;&gt;
+  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
+    &lt;div class=&quot;message&quot;&gt;
+      &lt;div class=&quot;avatar&quot;&gt;
+        &lt;img src=&quot;assets/img/user.png&quot; alt=&quot;avatar&quot;/&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;message-container&quot; &gt;
+        &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
+        &lt;p&gt;Complete the task and get back to me when you have completed it.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="portalvid10b" tags="purple nobr" position="600,475" size="100,100">&lt;&lt;set $prevpass to &quot;portalvid10&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalvid10b&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portal11&quot;&gt;&gt;
 &lt;&lt;set $sun to &quot;[ . . . ]&quot;&gt;&gt;
@@ -2288,7 +2119,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;timed 10s&gt;&gt;
   &lt;&lt;goto $nextpass&gt;&gt;
 
-  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="portal11" tags="purple nobr" position="975,475" size="100,100">&lt;&lt;set $prevpass to &quot;portalvid10b&quot;&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="portal11" tags="purple nobr" position="725,475" size="100,100">&lt;&lt;set $prevpass to &quot;portalvid10b&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portal11&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portal12&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -2334,12 +2165,12 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="photoprogress" tags="nobr" position="1100,475" size="100,100">&lt;div class=&quot;photoprogress&quot;&gt;&lt;h3&gt;$sun + $water + $co2 = $oxygen + $sugar&lt;/h3&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="portal12" tags="purple nobr" position="1225,475" size="100,100">&lt;&lt;set $prevpass to &quot;portal11&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="photoprogress" tags="nobr" position="850,475" size="100,100">&lt;div class=&quot;photoprogress&quot;&gt;&lt;h3&gt;$sun + $water + $co2 = $oxygen + $sugar&lt;/h3&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="portal12" tags="purple nobr" position="975,475" size="100,100">&lt;&lt;set $prevpass to &quot;portal11&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portal12&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portal13&quot;&gt;&gt;
 &lt;&lt;set $photoprogress to []&gt;&gt;
 &lt;main class=&quot;main portal grid-container photo&quot;&gt;
-&lt;div id=&quot;progress-wrapper&quot;&gt;&lt;&lt;include &quot;photoprogress&quot;&gt;&gt;&lt;/div&gt;
+&lt;div id=&quot;progress-wrapper&quot;&gt;&lt;/div&gt;
 
 &lt;section class=&quot;hero photo-grid-container&quot; id=&quot;hero&quot;&gt;
 
@@ -2480,6 +2311,9 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
+  &lt;&lt;replace &quot;#progress-wrapper&quot;&gt;&gt;
+    &lt;&lt;include &quot;photoprogress&quot;&gt;&gt;
+    &lt;&lt;/replace&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 22s&gt;&gt;
@@ -2490,11 +2324,11 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;/div&gt;
       &lt;div class=&quot;message-container&quot; &gt;
         &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
-        &lt;p&gt;You’ve unlocked a formula – teacher, I imagine you know more about photosynthesis than I do – perhaps you can work with the class to put these words in the right order? And then maybe that will unlock whatever is in the compartment. &lt;/p&gt;
+        &lt;p&gt;You’ve unlocked a formula – teacher, I imagine you know more about photosynthesis than I do – perhaps you can work with the class to put these words in the right order? And then maybe that will unlock whatever is in the compartment.&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="portal13" tags="purple nobr" position="100,600" size="100,100">&lt;&lt;set $prevpass to &quot;portal12&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="portal13" tags="purple nobr" position="1100,475" size="100,100">&lt;&lt;set $prevpass to &quot;portal12&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portal13&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalVid14&quot;&gt;&gt;
 
@@ -2522,7 +2356,7 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;/div&gt;
       &lt;div class=&quot;message-container&quot; &gt;
         &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
-        &lt;p&gt;Yes – that seems to have given us a code to get into the next compartment - it is XXX. &lt;/p&gt;
+        &lt;p&gt;Yes – that seems to have given us a code to get into the next compartment - it is 021. &lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
@@ -2536,11 +2370,11 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;/div&gt;
       &lt;div class=&quot;message-container&quot; &gt;
         &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
-        &lt;p&gt;It has the resources and the exercise instructions card below.&lt;/p&gt;
+        &lt;p&gt;It should have the resources and the exercise instructions card inside.&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="42" name="portalVid14" tags="purple nobr" position="225,600" size="100,100">&lt;&lt;set $prevpass to &quot;portal13&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="portalVid14" tags="purple nobr" position="1225,475" size="100,100">&lt;&lt;set $prevpass to &quot;portal13&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalVid14&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalExercise16&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -2560,16 +2394,41 @@ $(document.head).find('#style-ui-bar').remove();
   &lt;/section&gt;
 &lt;/main&gt;
 
-&lt;&lt;timed 5s&gt;&gt;
-  &lt;&lt;replace &quot;#hero&quot;&gt;&gt;
-    &lt;&lt;include &quot;buttonProgress&quot;&gt;&gt;
-  &lt;&lt;/replace&gt;&gt;
- &lt;&lt;replace &quot;#chatInput&quot;&gt;&gt;
-     &lt;&lt;include &quot;codeword7&quot;&gt;&gt;
-  &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="43" name="portalExercise16" tags="purple nobr" position="350,600" size="100,100">&lt;&lt;set $prevpass to &quot;portalVid14&quot;&gt;&gt;
+&lt;&lt;timed 4s&gt;&gt;
+  &lt;&lt;replace &quot;#messagesContainer&quot; &gt;&gt;
+     &lt;&lt;button &quot;NEXT&quot;&gt;&gt;
+        &lt;&lt;replace &quot;#messagesContainer&quot; &gt;&gt;
+          &lt;&lt;/replace&gt;&gt;
+      &lt;&lt;timed 0.1s&gt;&gt;
+        &lt;&lt;replace &quot;#hero&quot;&gt;&gt;
+          &lt;&lt;include &quot;buttonProgress&quot;&gt;&gt;
+        &lt;&lt;/replace&gt;&gt;
+      &lt;&lt;replace &quot;#chatInput&quot;&gt;&gt;
+          &lt;&lt;include &quot;codeword7&quot;&gt;&gt;
+        &lt;&lt;/replace&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+
+      &lt;&lt;timed 3s&gt;&gt;
+        &lt;&lt;replace &quot;#messagesContainer&quot; &gt;&gt;
+          &lt;div class=&quot;message&quot;&gt;
+            &lt;div class=&quot;avatar&quot;&gt;
+              &lt;img src=&quot;assets/img/user.png&quot; alt=&quot;avatar&quot;/&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;message-container&quot; &gt;
+              &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
+              &lt;p&gt;Time to open the next compartment, the number is 090. Read the – story together and report back.&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        
+      &lt;&lt;/replace&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
+      &lt;&lt;/button&gt;&gt;
+  
+&lt;&lt;/replace&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="portalExercise16" tags="purple nobr" position="100,600" size="100,100">&lt;&lt;set $prevpass to &quot;portalVid14&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalExercise16&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalVid17&quot;&gt;&gt;
+&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
   &lt;section class=&quot;hero&quot; id=&quot;hero&quot;&gt;
 /* ANNE VIDEO 6: FELIX */
@@ -2587,7 +2446,13 @@ $(document.head).find('#style-ui-bar').remove();
   &lt;/section&gt;
 &lt;/main&gt;
 
-&lt;&lt;timed 8s&gt;&gt;
+&lt;&lt;timed 4s&gt;&gt;
+  &lt;&lt;replace &quot;#messagesContainer&quot; &gt;&gt;
+     &lt;&lt;button &quot;NEXT&quot;&gt;&gt;
+        &lt;&lt;replace &quot;#messagesContainer&quot; &gt;&gt;
+          &lt;&lt;/replace&gt;&gt;
+        
+&lt;&lt;timed 1s&gt;&gt;
   &lt;&lt;replace &quot;#hero&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
@@ -2602,7 +2467,7 @@ $(document.head).find('#style-ui-bar').remove();
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 10s&gt;&gt;
+&lt;&lt;timed 3s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;avatar&quot;&gt;
@@ -2616,7 +2481,7 @@ $(document.head).find('#style-ui-bar').remove();
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 12s&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;avatar&quot;&gt;
@@ -2630,7 +2495,7 @@ $(document.head).find('#style-ui-bar').remove();
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 14s&gt;&gt;
+&lt;&lt;timed 8s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;avatar&quot;&gt;
@@ -2644,7 +2509,7 @@ $(document.head).find('#style-ui-bar').remove();
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 16s&gt;&gt;
+&lt;&lt;timed 11s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;avatar&quot;&gt;
@@ -2658,7 +2523,7 @@ $(document.head).find('#style-ui-bar').remove();
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 18s&gt;&gt;
+&lt;&lt;timed 13s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;avatar&quot;&gt;
@@ -2672,12 +2537,8 @@ $(document.head).find('#style-ui-bar').remove();
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 20s&gt;&gt;
-  &lt;&lt;replace &quot;#messagesContainer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
-  &lt;&lt;/timed&gt;&gt;
 
-
-&lt;&lt;timed 22s&gt;&gt;
+&lt;&lt;timed 16s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;avatar&quot;&gt;
@@ -2691,14 +2552,14 @@ $(document.head).find('#style-ui-bar').remove();
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 23s&gt;&gt;
+&lt;&lt;timed 19s&gt;&gt;
   &lt;&lt;replace &quot;#hero&quot;&gt;&gt;
     &lt;&lt;include &quot;letter&quot;&gt;&gt;
   &lt;&lt;/replace&gt;&gt;
   &lt;&lt;/timed&gt;&gt;
 
 
-&lt;&lt;timed 24s&gt;&gt;
+&lt;&lt;timed 23s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;avatar&quot;&gt;
@@ -2720,7 +2581,7 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;/div&gt;
       &lt;div class=&quot;message-container&quot; &gt;
          &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
-        &lt;p&gt;Then, enter the word LETTERS into the online platform.  &lt;/p&gt;
+        &lt;p&gt;Then, enter the word LETTERS below.&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
@@ -2730,7 +2591,11 @@ $(document.head).find('#style-ui-bar').remove();
   &lt;&lt;replace &quot;#chatInput&quot;&gt;&gt;
     &lt;&lt;include &quot;codeword8&quot;&gt;&gt;
     &lt;&lt;/replace&gt;&gt;
-  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="portalVid17" tags="purple nobr" position="475,600" size="100,100">&lt;&lt;set $prevpass to &quot;portalExercise16&quot;&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+
+    &lt;&lt;/button&gt;&gt;
+  &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="42" name="portalVid17" tags="purple nobr" position="225,600" size="100,100">&lt;&lt;set $prevpass to &quot;portalExercise16&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalVid17&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;portalVid18&quot;&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
@@ -2750,41 +2615,66 @@ $(document.head).find('#style-ui-bar').remove();
   &lt;/section&gt;
 &lt;/main&gt;
 
-&lt;&lt;timed 10s&gt;&gt;
-  &lt;&lt;replace &quot;#hero&quot;&gt;&gt;
-    &lt;&lt;include &quot;buttonProgress&quot;&gt;&gt;
+&lt;&lt;timed 4s&gt;&gt;
+  &lt;&lt;replace &quot;#messagesContainer&quot; &gt;&gt;
+     &lt;&lt;button &quot;NEXT&quot;&gt;&gt;
+        &lt;&lt;replace &quot;#messagesContainer&quot; &gt;&gt;
+          &lt;&lt;/replace&gt;&gt;
+      &lt;&lt;timed 1s&gt;&gt;
+          &lt;&lt;replace &quot;#hero&quot;&gt;&gt;
+            &lt;&lt;include &quot;buttonProgress&quot;&gt;&gt;
+          &lt;&lt;/replace&gt;&gt;
+          &lt;&lt;addclass &quot;#portalButton&quot; &quot;pulse&quot;&gt;&gt;
+          &lt;&lt;addclass &quot;#portalButton&quot; &quot;rounded&quot;&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
+
+        &lt;&lt;timed 2s&gt;&gt;
+          &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
+            &lt;div class=&quot;message&quot;&gt;
+              &lt;div class=&quot;avatar&quot;&gt;
+                &lt;img src=&quot;assets/img/user.png&quot; alt=&quot;avatar&quot;/&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;message-container&quot; &gt;
+                &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
+                &lt;p&gt;Just like the secret hiding underground, there is a secret hiding under the box. &lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;&lt;/append&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
+
+        &lt;&lt;timed 4s&gt;&gt;
+          &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
+            &lt;div class=&quot;message&quot;&gt;
+              &lt;div class=&quot;avatar&quot;&gt;
+                &lt;img src=&quot;assets/img/user.png&quot; alt=&quot;avatar&quot;/&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;message-container&quot; &gt;
+                &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
+                &lt;p&gt;The code is 319&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;&lt;/append&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
+
+      &lt;&lt;timed 7s&gt;&gt;
+          &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
+            &lt;div class=&quot;message&quot;&gt;
+              &lt;div class=&quot;avatar&quot;&gt;
+                &lt;img src=&quot;assets/img/user.png&quot; alt=&quot;avatar&quot;/&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;message-container&quot; &gt;
+                &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
+                &lt;p&gt;Complete whatever is in there and then message me.&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;&lt;/append&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;/button&gt;&gt;
   &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-
-&lt;&lt;timed 12s&gt;&gt;
-  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
-    &lt;div class=&quot;message&quot;&gt;
-      &lt;div class=&quot;avatar&quot;&gt;
-        &lt;img src=&quot;assets/img/user.png&quot; alt=&quot;avatar&quot;/&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;message-container&quot; &gt;
-         &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
-        &lt;p&gt;Just like the secret hiding underground, there is a secret hiding under the box. &lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-
-&lt;&lt;timed 14s&gt;&gt;
-  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
-    &lt;div class=&quot;message&quot;&gt;
-      &lt;div class=&quot;avatar&quot;&gt;
-        &lt;img src=&quot;assets/img/user.png&quot; alt=&quot;avatar&quot;/&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;message-container&quot; &gt;
-         &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
-        &lt;p&gt;The code is XXX&lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="45" name="portalVid18" tags="purple nobr" position="600,600" size="100,100">&lt;&lt;set $prevpass to &quot;portalVid17&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="43" name="portalVid18" tags="purple nobr" position="350,600" size="100,100">&lt;&lt;set $prevpass to &quot;portalVid17&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;portalVid18&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;
+&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 &lt;main class=&quot;main portal grid-container&quot;&gt;
   &lt;section class=&quot;hero&quot; id=&quot;hero&quot;&gt;
 /* ANNE VIDEO 8: MYCORRHIZAL*/
@@ -2802,6 +2692,21 @@ $(document.head).find('#style-ui-bar').remove();
   &lt;/section&gt;
 &lt;/main&gt;
 
+&lt;&lt;timed 1s&gt;&gt;
+  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
+    &lt;div class=&quot;message&quot;&gt;
+      &lt;div class=&quot;avatar&quot;&gt;
+        &lt;img src=&quot;assets/img/user.png&quot; alt=&quot;avatar&quot;/&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;message-container&quot; &gt;
+         &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
+        &lt;p&gt;TBC THREE NEW VIDEOS&lt;/p&gt;
+
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
 &lt;&lt;timed 3s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
@@ -2810,15 +2715,44 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;/div&gt;
       &lt;div class=&quot;message-container&quot; &gt;
          &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
-        &lt;p&gt;The end&lt;/p&gt;
+        &lt;p&gt;Thank you for being with me today. I need you to tell me how today was - so I can tell the team what I have been up to. I’ll send you the information.&lt;/p&gt;
+
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="46" name="checkphotoprogress" tags="" position="725,600" size="100,100">&lt;&lt;if $photoprogress.includesAll(&quot;SUN&quot;,&quot;WATER&quot;,&quot;CARBON DIOXIDE&quot;, &quot;OXYGEN&quot;,&quot;SUGAR&quot;)&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 6s&gt;&gt;
+  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
+    &lt;div class=&quot;message&quot;&gt;
+      &lt;div class=&quot;avatar&quot;&gt;
+        &lt;img src=&quot;assets/img/user.png&quot; alt=&quot;avatar&quot;/&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;message-container&quot; &gt;
+         &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt;
+  &lt;p&gt;Until next time &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 7s&gt;&gt;
+  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
+    &lt;div class=&quot;message&quot;&gt;
+      &lt;div class=&quot;avatar&quot;&gt;
+        &lt;img src=&quot;assets/img/user.png&quot; alt=&quot;avatar&quot;/&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;message-container&quot; &gt;
+         &lt;span class=&quot;sender&quot;&gt;Anne&lt;/span&gt; 
+      &lt;p&gt;Anne&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="checkphotoprogress" tags="" position="475,600" size="100,100">&lt;&lt;if $photoprogress.includesAll(&quot;SUN&quot;,&quot;WATER&quot;,&quot;CARBON DIOXIDE&quot;, &quot;OXYGEN&quot;,&quot;SUGAR&quot;)&gt;&gt;
   &lt;&lt;timed 5s&gt;&gt;
   &lt;&lt;goto $nextpass&gt;&gt;
   &lt;&lt;/timed&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="47" name="portalVideo" tags="purple nobr" position="850,600" size="100,100">&lt;main class=&quot;main portal grid-container&quot;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="45" name="portalVideo" tags="purple nobr" position="600,600" size="100,100">&lt;main class=&quot;main portal grid-container&quot;&gt;
   &lt;section class=&quot;hero&quot;&gt;
         /* &lt;iframe allow=&quot;autoplay&quot; width=&#39;800px&#39; height=&#39;450px&#39;
       src=&#39;https://player.vimeo.com/video/531960916?autoplay=1&amp;byline=0&amp;portrait=0&#39;&gt;&lt;/iframe&gt; */
@@ -2857,7 +2791,7 @@ $(document.head).find('#style-ui-bar').remove();
   &lt;/section&gt;
 &lt;/main&gt;
 
-/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="48" name="portalText" tags="purple nobr" position="975,600" size="100,100">&lt;main class=&quot;main portal grid-container text&quot;&gt;
+/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="46" name="portalText" tags="purple nobr" position="725,600" size="100,100">&lt;main class=&quot;main portal grid-container text&quot;&gt;
   &lt;section class=&quot;chatlogo&quot;&gt;
      &lt;&lt;include &quot;rotatelogo&quot;&gt;&gt;
 
@@ -2887,7 +2821,7 @@ $(document.head).find('#style-ui-bar').remove();
  &lt;&lt;include &quot;footerchat&quot;&gt;&gt;
 &lt;/main&gt;
 
-[[rotatelogogreen]]</tw-passagedata><tw-passagedata pid="49" name="portalAnneSays" tags="purple nobr" position="1100,600" size="100,100">&lt;main class=&quot;main portal grid-container&quot;&gt;
+[[rotatelogogreen]]</tw-passagedata><tw-passagedata pid="47" name="portalAnneSays" tags="purple nobr" position="850,600" size="100,100">&lt;main class=&quot;main portal grid-container&quot;&gt;
   &lt;section class=&quot;hero&quot;&gt;
  &lt;div class=&quot;annesays&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;&lt;h1&gt;&lt;span&gt;Anne&lt;/span&gt; &lt;span&gt;Says&lt;/span&gt;&lt;/h1&gt;&lt;/div&gt;
@@ -2929,10 +2863,10 @@ $(document.head).find('#style-ui-bar').remove();
   &lt;/section&gt;
 &lt;/main&gt;
 
-/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="50" name="buttonProgress" tags="nobr" position="1225,600" size="100,100">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="48" name="buttonProgress" tags="nobr" position="975,600" size="100,100">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
   &lt;&lt;audio &quot;ticker3&quot; play&gt;&gt;
 &lt;div class=&quot;main button-grid-container&quot;&gt;
-  &lt;div class=&quot;portal-button-container&quot;&gt;
+  &lt;div class=&quot;portal-button-container&quot; id=&quot;portalButton&quot;&gt;
     &lt;img src=&quot;assets/img/logobutton.png&quot;/&gt;
     &lt;/div&gt;
   &lt;div class=&quot;portal-task-item one&quot;&gt;
@@ -2997,7 +2931,7 @@ $(document.head).find('#style-ui-bar').remove();
       &lt;h3 class=&quot;above&quot;&gt;ZAL&lt;/h3&gt;
       &lt;&lt;/replace&gt;&gt;
   &lt;&lt;/timed&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="51" name="codeword1" tags="nobr" position="100,725" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="49" name="codeword1" tags="nobr" position="1100,600" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
 &lt;div id=&quot;resultbutton&quot;&gt;
   /% CODEWORD INPUT %/
   &lt;div class=&quot;code-input entrance&quot;&gt;
@@ -3030,7 +2964,7 @@ $(document.head).find('#style-ui-bar').remove();
   &lt;&lt;/if&gt;&gt;
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="codeword1a" tags="nobr" position="225,725" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="codeword1a" tags="nobr" position="1225,600" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -3058,7 +2992,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="codeword2" tags="nobr" position="350,725" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="codeword2" tags="nobr" position="100,725" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -3086,7 +3020,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="codeword3" tags="nobr" position="475,725" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="codeword3" tags="nobr" position="225,725" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -3114,7 +3048,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="codeword4" tags="nobr" position="600,725" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="codeword4" tags="nobr" position="350,725" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -3144,7 +3078,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="codeword5" tags="nobr" position="725,725" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="codeword5" tags="nobr" position="475,725" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -3174,7 +3108,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="codeword6" tags="nobr" position="850,725" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="codeword6" tags="nobr" position="600,725" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -3204,7 +3138,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="codeword7" tags="nobr" position="975,725" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="codeword7" tags="nobr" position="725,725" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -3234,7 +3168,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="codeword8" tags="nobr" position="1100,725" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="codeword8" tags="nobr" position="850,725" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -3264,7 +3198,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="codeword9" tags="nobr" position="1225,725" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="codeword9" tags="nobr" position="975,725" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -3294,7 +3228,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="codeword" tags="nobr" position="100,850" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="codeword" tags="nobr" position="1100,725" size="100,100">&lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -3322,13 +3256,13 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="62" name="rotatelogo" tags="nobr" position="225,850" size="100,100">&lt;div class=&quot;rotate-logo-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="rotatelogo" tags="nobr" position="1225,725" size="100,100">&lt;div class=&quot;rotate-logo-wrapper&quot;&gt;
 &lt;div class=&quot;animated rotateInDownLeft overlay-image&quot;&gt;[img[https://remote.co.com/UCA/assets/img/logobutton.png]]&lt;/div&gt;
 &lt;div class=&quot;animated fadeInLeftBig overlay-image one&quot; &gt;[img[https://remote.co.com/UCA/assets/img/undercover.png]]&lt;/div&gt;&lt;div
         class=&quot;animated fadeInRightBig overlay-image two&quot;&gt;[img[https://remote.co.com/UCA/assets/img/caretaker.png]]&lt;/div&gt;&lt;div
         class=&quot;animated fadeInLeftBig overlay-image three&quot;&gt;[img[https://remote.co.com/UCA/assets/img/agency.png]]&lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="rotatelogogreen" tags="green" position="748.6666666666667,601" size="100,100">&lt;messagebox&gt;&lt;div
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="rotatelogogreen" tags="green" position="748.6666666666667,601" size="100,100">&lt;messagebox&gt;&lt;div
       class=&quot;animated
       rotateIn&quot;&gt;[img[https://remote.co.com/UCA/assets/img/logobutton.png]]&lt;/div&gt;
 &lt;/messagebox&gt;
@@ -3340,7 +3274,7 @@ $(document.head).find('#style-ui-bar').remove();
       class=&quot;animated
       fadeInLeftBig&quot;&gt;[img[https://remote.co.com/UCA/assets/img/agency.png]]&lt;/div&gt;
 &lt;/messagebox&gt;
-&lt;&lt;timed 5s&gt;&gt;&lt;&lt;goto &quot;Start&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="64" name="tree" tags="nobr" position="475,850" size="100,100">&lt;main class=&quot;main tree-grid-container&quot;&gt;
+&lt;&lt;timed 5s&gt;&gt;&lt;&lt;goto &quot;Start&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="62" name="tree" tags="nobr" position="225,850" size="100,100">&lt;main class=&quot;main tree-grid-container&quot;&gt;
 
   /* &lt;div class=&quot;full-img-container&quot;&gt;
     &lt;img src=&quot;assets/img/tree.png&quot;/&gt;
@@ -3353,7 +3287,7 @@ $(document.head).find('#style-ui-bar').remove();
 
 
 
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="65" name="treePw1" tags="nobr" position="600,850" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult1&quot;&gt;&lt;/div&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="63" name="treePw1" tags="nobr" position="350,850" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult1&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot; class=&quot;resultbutton1&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -3388,7 +3322,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="66" name="treePw2" tags="nobr" position="725,850" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult2&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="treePw2" tags="nobr" position="475,850" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult2&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot; class=&quot;resultbutton2&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -3422,7 +3356,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="treePw3" tags="nobr" position="850,850" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult3&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="treePw3" tags="nobr" position="600,850" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult3&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot;  class=&quot;resultbutton3&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -3456,7 +3390,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="68" name="treePw4" tags="nobr" position="975,850" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult4&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="66" name="treePw4" tags="nobr" position="725,850" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult4&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot; class=&quot;resultbutton4&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -3490,7 +3424,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="69" name="photoPw1" tags="nobr" position="1100,850" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult1&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="photoPw1" tags="nobr" position="850,850" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult1&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot; class=&quot;resultbutton1&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -3501,7 +3435,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;set $code to $code.toUpperCase()&gt;&gt;
 /% CODEWORD CORRECT %/
 &lt;&lt;if $code isnot &quot;&quot;&gt;&gt; 
-  &lt;&lt;if $code is &quot;SUN&quot; or $code is &quot;SUN &quot;&gt;&gt;
+  &lt;&lt;if $code is &quot;SUN&quot; or $code is &quot;SUN &quot; or $code is &quot;SUNLIGHT&quot; or $code is &quot;SUNLIGHT &quot;&gt;&gt;
     &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
     &lt;&lt;replace &quot;#coderesult1&quot;&gt;&gt;&lt;div class=&quot;confirmation&quot; id=&quot;confirmation&quot;&gt;Correct!&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
      &lt;&lt;run $photoprogress.push(&quot;SUN&quot;)&gt;&gt;
@@ -3527,7 +3461,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;/if&gt;&gt;
 /% CODEWORD INCORRECT %/
 &lt;&lt;if $code isnot &quot;&quot;&gt;&gt;
-  &lt;&lt;if $code is not &quot;SUN&quot; and $code is not &quot;SUN &quot;&gt;&gt;
+  &lt;&lt;if $code is not &quot;SUN&quot; and $code is not &quot;SUN &quot; and $code is not &quot;SUNLIGHT&quot; and $code is not &quot;SUNLIGHT &quot;&gt;&gt;
   &lt;&lt;replace &quot;#coderesult1&quot;&gt;&gt;&lt;div class=&quot;confirmation&quot; id=&quot;confirmation&quot;&gt;That&#39;s not right...&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
   &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult1&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
   &lt;&lt;/if&gt;&gt;
@@ -3535,7 +3469,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="70" name="photoPw2" tags="nobr" position="1225,850" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult2&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="68" name="photoPw2" tags="nobr" position="975,850" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult2&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot; class=&quot;resultbutton2&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -3578,7 +3512,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="71" name="photoPw3" tags="nobr" position="100,975" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult3&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="69" name="photoPw3" tags="nobr" position="1100,850" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult3&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot;  class=&quot;resultbutton3&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -3621,7 +3555,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="72" name="photoPw4" tags="nobr" position="225,975" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult4&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="70" name="photoPw4" tags="nobr" position="1225,850" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult4&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot; class=&quot;resultbutton4&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -3665,7 +3599,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="photoPw5" tags="nobr" position="350,975" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult5&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="71" name="photoPw5" tags="nobr" position="100,975" size="100,100">&lt;div class=&quot;treecoderesult&quot; id=&quot;coderesult5&quot;&gt;&lt;/div&gt;
  &lt;div id=&quot;resultbutton&quot; class=&quot;resultbutton5&quot;&gt;
 /% CODEWORD INPUT %/
 &lt;div class=&quot;code-input&quot;&gt;
@@ -3708,7 +3642,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="74" name="scrabble" tags="nobr purple" position="475,975" size="100,100">&lt;&lt;include &quot;footer&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="72" name="scrabble" tags="nobr purple" position="225,975" size="100,100">&lt;&lt;include &quot;footer&quot;&gt;&gt;
 [[Start]]
 &lt;main&gt;
 &lt;&lt;button &quot;Help&quot;&gt;&gt;
@@ -3731,7 +3665,7 @@ $(document.head).find('#style-ui-bar').remove();
           &lt;div class=&quot;tile&quot; data-letter=&quot;T&quot;&gt;&lt;/div&gt;   
   &lt;/div&gt;
 
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="75" name="loading" tags="nobr" position="600,975" size="100,100">&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="76" name="annesays" tags="nobr" position="725,975" size="100,100">&lt;main class=&quot;annesays&quot;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="73" name="loading" tags="nobr" position="350,975" size="100,100">&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="74" name="annesays" tags="nobr" position="475,975" size="100,100">&lt;main class=&quot;annesays&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;&lt;h1&gt;&lt;span&gt;Anne&lt;/span&gt; &lt;span&gt;Says&lt;/span&gt;&lt;/h1&gt;&lt;/div&gt;
 
 
@@ -3739,8 +3673,8 @@ $(document.head).find('#style-ui-bar').remove();
 
 &lt;&lt;timed 5s&gt;&gt;&lt;&lt;goto &quot;portalAnneSays1&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="77" name="funcircle" tags="" position="850,975" size="100,100">&lt;div class=&quot;play-btn-container box&quot;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="78" name="letter" tags="nobr" position="975,975" size="100,100">&lt;div class=&quot;letter-wrapper&quot;&gt;
+/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="75" name="funcircle" tags="" position="600,975" size="100,100">&lt;div class=&quot;play-btn-container box&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="76" name="letter" tags="nobr" position="725,975" size="100,100">&lt;div class=&quot;letter-wrapper&quot;&gt;
   &lt;div class=&quot;letterpaper&quot; alt=&quot;&quot;&gt;
 			&lt;div id=&quot;letterinner&quot; class=&quot;letterinner&quot;&gt;
 				&lt;p&gt;Dear [Enter Name], &lt;/p&gt;

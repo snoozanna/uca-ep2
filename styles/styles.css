@@ -433,15 +433,15 @@ section.hero.tree-grid-container {
 }
 
 .tree-grid-container {
-  background-image: url("/assets/img/tree2a.png"); /* Replace with your image file path */
+  background-image: url("/assets/img/tree4.png"); /* Replace with your image file path */
   background-size: contain; /* Cover the entire viewport */
 
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   display: grid;
   grid-template-areas:
-    "tree-two . ."
-    ". . tree-one"
+    ". . tree-two"
+    "tree-one . ."
     ". . . "
     "tree-three . tree-four"
     ". . .";
@@ -626,6 +626,10 @@ section.hero.photo-grid-container > div > #resultbutton > .code-input > input {
 
 .portal-task-item > .circle.greencorrect {
   background-color: var(--greencorrect);
+}
+
+#portalButton.rounded {
+  border-radius: 50%;
 }
 
 /* PAPER EFFECT  */
@@ -890,6 +894,14 @@ main.annesays > .titleWrapper > .title > h1 > span,
   max-width: 100px;
 }
 
+#nextMount > button {
+  font-size: 5rem;
+}
+.titleWrapper > .team-question {
+  font-size: 4rem;
+  color: white;
+}
+
 /* fun circle  */
 
 .box {
@@ -1065,6 +1077,10 @@ main.annesays > .titleWrapper > .title > h1 > span,
 
 .quiz > .quiz-options > .option > button:hover {
   background-color: var(--greeny);
+}
+
+.quiz > .quiz-options > .option > button > span {
+  font-size: 3rem;
 }
 
 /* UCALAB */

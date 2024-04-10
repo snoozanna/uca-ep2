@@ -7,7 +7,7 @@ UCA Episode 2
 	"ifid": "8a8811e5-4d1b-4c67-9f23-57d8c826f3a2",
 	"format": "SugarCube",
 	"format-version": "2.30.0",
-	"start": "login",
+	"start": "portalVid8",
 	"tag-colors": {
 		"green": "green"
 	},
@@ -136,74 +136,6 @@ $(document.head).find('#style-ui-bar').remove();
 
 
 
-:: footer2 [nobr]
-<footer>
-<<if $showBackwards is true>>
-  <div class="nav-wrapper">
-    <div class="nav-item">
-        [img[Back|assets/img/back.png][$prevpass]]
-    </div>
-  </div>
-  <</if>>
-  /* <<if $showRewind is true>>
-  <div class="nav-wrapper">
-    <div class="nav-item">
-   <<link [img[assets/img/backward.png]]>><<audio $audio time -5s>><</link>>
-    </div>
-  </div>
-  <</if>> */
-  <<if $showMap is true>>
-    <div class="nav-wrapper">
-      <div class="nav-item">
-    <<link [img[assets/img/map.png]]>>
-    <<toggleclass "#map" "hide">>
-    <</link>>
-    </div>
-  </div>
-  <</if>>
-  <<if $showAudio is true>>
-   <div class="nav-wrapper">
-    <div class="nav-item">
- <<link [img[assets/img/play.png]]>><<replace "#audio">><p>[audio playing...]</p><</replace>><</link>>
-   </div>
-  </div>
-  <</if>>
-    <<if $showReplay is true>>
-     <div class="nav-wrapper">
-    <div class="nav-item">
-    [img[Replay|assets/img/replay.png][$passage]]
-    </div>
-    </div>
-    <</if>>
-    /* <<if $showCredits is true>>
-     <div class="nav-wrapper">
-    <div class="nav-item">
-    [[Credits|credits]]
-    </div>
-    </div>
-    <</if>> */
-     <<if $showCaptionsIcon is true>>
-     <div class="nav-wrapper">
-    <div class="nav-item">
-  <<link [img[assets/img/captions.png]]>><<set $captions to !$captions>><<goto $passage>><</link>>
-    </div>
-    </div>
-    <</if>>
-    /* <<if $showFF is true>>
-    <div class="nav-wrapper">
-    <div class="nav-item">
-        <<link [img[assets/img/forward.png]]>><<audio $audio time +10s>><</link>>
-    </div>
-  </div>
-     <</if>> */
-<<if $showForwards is true>>
-    <div class="nav-wrapper" id="forIcon">
-    <div class="nav-item">
-         [img[Forward|assets/img/for.png][$nextpass]]
-    </div>
-  </div>
-     <</if>>
-</footer>
 
 :: footerannesays [nobr]
 <footer>
@@ -243,35 +175,10 @@ $(document.head).find('#style-ui-bar').remove();
 <<set $prevpass to "Start">>
 <<set $pass to "Start">>
 <<set $nextpass to "ucalab">>
-<main><messagebox2>[img[https://remote.co.com/UCA/assets/img/intercom2.png][staticbuzz1]]</messagebox2>
+<main><messagebox2>[img[https://remote.co.com/UCA/assets/img/intercom2.png][ucalab]]</messagebox2>
 
 </main>
 
-
-
-
-:: staticbuzz1 {"position":"47.999999999999964,2141.333333333333","size":"100,100"}
-
-<main>
-<div id="mount"></div>
-
-<static>
- <img src="https://remote.co.com/UCA/assets/img/static5.gif" class="staticgif center staticFade" id="staticgif">
-      </static>
-</main>
-      <<timed 0.5s>>
-      /* <iframe src="https://remote.co.com/UCA/assets/audio/crispy-static.mp3"  style="display:none" allow="autoplay" ></iframe> */
-      <audio src="https://remote.co.com/UCA/assets/audio/crispy-static.mp3" autoplay style="display:none">Audio is not supported on your device</audio> 
-      <</timed>>
-
-       <<timed 3s>>
-    <<replace "#mount">><<type 40ms>><h2>Diverting...</h2><</type>><</replace>>
-     <</timed>>
-
-
-  <<timed 8s>>
-    <<goto "ucalab">>
-     <</timed>>
 
 
 
@@ -405,7 +312,7 @@ $(document.head).find('#style-ui-bar').remove();
       </div>
       <div class="message-container" >
         <span class="sender">Anne</span>
-        <p>Open the box when you are ready – the first compartment’s code is XXXX. If you find anything in the compartment send it through to me and I will run it through the UCA Computer here at the UCA Lab. </p>
+        <p>Open the box when you are ready – the first compartment’s code is 762. If you find anything in the compartment send it through to me and I will run it through the UCA Computer here at the UCA Lab. </p>
       </div>
     </div>
   <</append>>
@@ -641,7 +548,7 @@ $(document.head).find('#style-ui-bar').remove();
       </div>
       <div class="message-container" >
         <span class="sender">Anne</span>
-        <p>When ready click play.</p>
+        <p>Learn the 4 moves from the resource cards and when ready click play.</p>
       </div>
     </div>
   <</append>>
@@ -690,7 +597,12 @@ $(document.head).find('#style-ui-bar').remove();
       <</timed>>
       <<replace "#nextMount">>
       <<button "NEXT">>
-  <<if $currentIndex + 1 >= $list.length>> // Check if it's at the end of the array
+  <<if $currentIndex + 1 >= $list.length>> 
+   <<replace "#titleWrapper">>
+      <div class="title" id="title">
+        <h1><span id="randomitem">ROUND COMPLETE!</span></h1>
+      </div>
+    <</replace>>
     <<audio ":all" stop>>
   <<audio "complete" play>>
     <<timed 3s>>
@@ -828,7 +740,12 @@ $(document.head).find('#style-ui-bar').remove();
       <</timed>>
       <<replace "#nextMount">>
       <<button "NEXT">>
-  <<if $currentIndex + 1 >= $list.length>> // Check if it's at the end of the array
+  <<if $currentIndex + 1 >= $list.length>> 
+    <<replace "#titleWrapper">>
+      <div class="title" id="title">
+        <h1><span id="randomitem">ROUND COMPLETE!</span></h1>
+      </div>
+    <</replace>>
     <<audio ":all" stop>>
   <<audio "complete" play>>
     <<timed 4s>>
@@ -959,7 +876,12 @@ $(document.head).find('#style-ui-bar').remove();
       <</timed>>
       <<replace "#nextMount">>
       <<button "NEXT">>
-  <<if $currentIndex + 1 >= $list.length>> // Check if it's at the end of the array
+  <<if $currentIndex + 1 >= $list.length>> 
+  <<replace "#titleWrapper">>
+      <div class="title" id="title">
+        <h1><span id="randomitem">ROUND COMPLETE!</span></h1>
+      </div>
+    <</replace>>
     <<audio ":all" stop>>
   <<audio "complete" play>>
     <<timed 4s>>
@@ -1084,7 +1006,7 @@ $(document.head).find('#style-ui-bar').remove();
       </div>
       <div class="message-container" >
         <span class="sender">Anne</span>
-        <p>On the screen are going to be 4 moves </p>
+        <p>On the screen we are going to do 4 moves to do together.</p>
       </div>
     </div>
   <</append>>
@@ -1098,7 +1020,7 @@ $(document.head).find('#style-ui-bar').remove();
       </div>
       <div class="message-container" >
         <span class="sender">Anne</span>
-        <p>You need to put to learn all 4 moves in the sequence </p>
+        <p>All 4 in a sequence - ROOTS - TRUNK - BRANCHES - LEAVES.</p>
       </div>
     </div>
   <</append>>
@@ -1112,7 +1034,7 @@ $(document.head).find('#style-ui-bar').remove();
       </div>
       <div class="message-container" >
         <span class="sender">Anne</span>
-        <p>You’ll only have 45 seconds to learn the moves. </p>
+        <p>We need to do them in that order - all together as one whole class - to win.</p>
       </div>
     </div>
   <</append>>
@@ -1126,47 +1048,32 @@ $(document.head).find('#style-ui-bar').remove();
       </div>
       <div class="message-container" >
         <span class="sender">Anne</span>
-        <p>Then Anne will come on the screen and you’ll have to do it with her. </p>
+        <p>A team game! </p>
       </div>
     </div>
   <</append>>
 <</timed>>
+
+
+
 
 <<timed 10s>>
-<<replace "#messagesContainer">><</replace>>
-<</timed>>
-
-
-<<timed 12s>>
-  <<append "#messagesContainer">>
+  <<replace "#messagesContainer">>
     <div class="message">
       <div class="avatar">
         <img src="assets/img/user.png" alt="avatar"/>
       </div>
       <div class="message-container" >
         <span class="sender">Anne</span>
-        <p>Oh - a team game - ok we all need to learn the moves together to win.</p>
+        <p>Click BEGIN when you are ready to run through with me.</p>
       </div>
     </div>
-  <</append>>
+  <</replace>>
 <</timed>>
+
+
 
 <<timed 14s>>
-  <<append "#messagesContainer">>
-    <div class="message">
-      <div class="avatar">
-        <img src="assets/img/user.png" alt="avatar"/>
-      </div>
-      <div class="message-container" >
-        <span class="sender">Anne</span>
-        <p>Click BEGIN when you are ready to start learning. </p>
-      </div>
-    </div>
-  <</append>>
-
-<</timed>>
-
-<<timed 15s>>
  <<append "#messagesContainer">>
      <<button "BEGIN">>
       <<timed 1s>>
@@ -1199,150 +1106,34 @@ $(document.head).find('#style-ui-bar').remove();
   </section>
 </main>
 
-<<timed 2s>>
-  <<append "#messagesContainer">>
-    <div class="message">
-      <div class="avatar">
-        <img src="assets/img/user.png" alt="avatar"/>
-      </div>
-      <div class="message-container" >
-        <span class="sender">Anne</span>
-        <p>Ok - here we go.  </p>
-      </div>
-    </div>
-  <</append>>
-<</timed>>
-
-<<timed 4s>>
-  <<append "#messagesContainer">>
-    <div class="message">
-      <div class="avatar">
-        <img src="assets/img/user.png" alt="avatar"/>
-      </div>
-      <div class="message-container" >
-        <span class="sender">Anne</span>
-        <p>Everyone ready. We’ll do it 3 times together.  </p>
-      </div>
-    </div>
-  <</append>>
-<</timed>>
-
-<<timed 6s>>
-  <<append "#messagesContainer">>
-    <div class="message">
-      <div class="avatar">
-        <img src="assets/img/user.png" alt="avatar"/>
-      </div>
-      <div class="message-container" >
-        <span class="sender">Anne</span>
-        <p>3-2-1 </p>
-      </div>
-    </div>
-  <</append>>
-<</timed>>
-
 <<timed 8s>>
-
-  <<replace "#hero">>
-<<audio ":all" stop>>
-  <<audio "uploading" play>>
-     <div class="annesays" id="annesays">
-          <div class="titleWrapper" id="titleWrapper">
-            <div class="title">
-            <h1><span>Anne</span> <span>Says</span></h1>
-            </div>
-          </div>
-      </div>
-    <</replace>>
-  <</timed>>
-
-
-<<timed 10s>>
-<<replace "#messagesContainer">><</replace>>
-<</timed>>
-
-
-<<timed 12s>>
-  <<replace "#titleWrapper">>
-      <div class="title">
-        <h1><span>ROOTS</span></h1>
-     </div>
-  <</replace>>
-<</timed>>
-
-<<timed 14s>>
-  <<replace "#titleWrapper">>
-      <div class="title">
-        <h1><span>TRUNK</span></h1>
-     </div>
-  <</replace>>
-<</timed>>
-
-<<timed 16s>>
-  <<replace "#titleWrapper">>
-      <div class="title">
-        <h1><span>BRANCHES</span></h1>
-     </div>
-  <</replace>>
-<</timed>>
-
-<<timed 18s>>
-  <<replace "#titleWrapper">>
-      <div class="title">
-        <h1><span>LEAVES</span></h1>
-     </div>
-  <</replace>>
-<</timed>>
-
-<<timed 20s>>
-<<audio ":all" stop>>
-  <<append "#messagesContainer">>
-    <div class="message">
-      <div class="avatar">
-        <img src="assets/img/user.png" alt="avatar"/>
-      </div>
-      <div class="message-container" >
-        <span class="sender">Anne</span>
-        <p>Odd - there’s a question coming through. </p>
-      </div>
-    </div>
-  <</append>>
-<</timed>>
-
-<<timed 22s>>
-
-  <<replace "#titleWrapper">>
-      <div class="title">
+   <<append "#messagesContainer">>
+     <<button "NEXT">>
+      <<timed 1s>>
+        <<replace "#hero">>
+        
+   <div id="titleWrapper" class="titleWrapper">
+    <div class="team-question">
         <h2><span>How does it feel to win together compared to winning individually? </span></h2>
      </div>
+  </div>
+     
   <</replace>>
-<</timed>>
-
-<<timed 24s>>
-
-  <<append "#messagesContainer">>
-    <div class="message">
-      <div class="avatar">
-        <img src="assets/img/user.png" alt="avatar"/>
-      </div>
-      <div class="message-container" >
-        <span class="sender">Anne</span>
-        <p>You discuss with the teacher and I’ll load the next part. </p>
-      </div>
-    </div>
-  <</append>>
+        <</timed>>
+      <</button>>
+    <</append>>
 <</timed>>
 
 
 
-<<timed 26s>>
- <<append "#messagesContainer">>
-     <<button "NEXT">>
+<<timed 15s>>
+ <<replace "#messagesContainer">>
+     <<button "MOVE ON">>
       <<timed 1s>>
       <<goto $nextpass>>
         <</timed>>
       <</button>>
-    <</append>>
+    <</replace>>
 <</timed>>
 
 /* <<include "footer">> */
@@ -1357,8 +1148,8 @@ $(document.head).find('#style-ui-bar').remove();
 
   <section class="hero tree-grid-container" id="hero">
 
-     <div class="tree-one"><<include "treePw1">></div>
-    <div class="tree-two"><<include "treePw2">></div>
+     <div class="tree-one"><<include "treePw2">></div>
+    <div class="tree-two"><<include "treePw1">></div>
     <div class="tree-three"><<include "treePw3">></div>
     <div class="tree-four"><<include "treePw4">></div>
   </section>
@@ -1451,7 +1242,7 @@ $(document.head).find('#style-ui-bar').remove();
       </div>
       <div class="message-container" >
         <span class="sender">Anne</span>
-        <p>Open the compartment using XXXX and take out part A.   </p>
+        <p>Open the compartment using 184 and take out part A.</p>
       </div>
     </div>
   <</append>>
@@ -1500,13 +1291,7 @@ $(document.head).find('#style-ui-bar').remove();
 <</timed>>
 
 
-<<timed 19s>>
-  <<replace "#messagesContainer">>
- 
-  <</replace>>
-<</timed>>
-
-<<timed 21s>>
+<<timed 20s>>
  <<audio ":all" stop>>
    <<append "#messagesContainer">>
     <div class="message">
@@ -1552,8 +1337,7 @@ $(document.head).find('#style-ui-bar').remove();
 <main class="main portal grid-container">
   <section class="hero" id="hero">
 
-       <iframe width='800px' height='450px'
-      src='https://player.vimeo.com/video/531960916?autoplay=1&byline=0&portrait=0'></iframe>
+       <iframe width="560" height="315" src="https://www.youtube.com/embed/MJtC-3DKwfM?si=GLCcwwuVcImtDZOT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   </section>
   <section class="chat">
   <div class="messages-container" id="messagesContainer"></div>
@@ -1566,7 +1350,7 @@ $(document.head).find('#style-ui-bar').remove();
   </section>
 </main>
 
-<<timed 7s>>
+<<timed 2s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -1580,7 +1364,7 @@ $(document.head).find('#style-ui-bar').remove();
   <</append>>
 <</timed>>
 
-<<timed 9s>>
+<<timed 7s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -1588,20 +1372,20 @@ $(document.head).find('#style-ui-bar').remove();
       </div>
       <div class="message-container" >
         <span class="sender">Anne</span>
-        <p>Get your quizzes ready. When you are ready for the video to begin click begin.   </p>
+        <p>Get your quizzes ready. When you are ready for the video to begin click the play icon.   </p>
       </div>
     </div>
   <</append>>
 <</timed>>
 
 
-<<timed 12s>>
+<<timed 25s>>
   <<replace "#messagesContainer">>
  
   <</replace>>
 <</timed>>
 
-<<timed 15s>>
+<<timed 26s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -1616,7 +1400,7 @@ $(document.head).find('#style-ui-bar').remove();
 <</timed>>
 
 
-<<timed 17s>>
+<<timed 27s>>
  <<append "#messagesContainer">>
      <<button "ANSWERS">>
       <<timed 1s>>
@@ -1685,7 +1469,7 @@ $(document.head).find('#style-ui-bar').remove();
     <h3>1. Wangari Maathai was the first woman to become a professor in which country? </h3>
 <div class="quiz-options">
   <div class="option" id="opt1">
-    <<button "P. Japan">> 
+    <<button "<span>P</span>. Japan">> 
       <<timed 0.5s>>
       <<replace "#hint">>Incorrect. Try again<</replace>>
       <</timed>>
@@ -1696,7 +1480,7 @@ $(document.head).find('#style-ui-bar').remove();
       <</button>>
   </div>
    <div class="option" id="opt2">
-  <<button "A. US">> 
+  <<button "<span>A</span>. US">> 
       <<timed 0.5s>>
       <<replace "#hint">>Incorrect. Try again<</replace>>
       <</timed>>
@@ -1707,7 +1491,7 @@ $(document.head).find('#style-ui-bar').remove();
    <</button>>
    </div>
     <div class="option" id="opt3">
-  <<button "L. India">> 
+  <<button "<span>L</span>. India">> 
      <<timed 0.5s>>
       <<replace "#hint">>Incorrect. Try again<</replace>>
       <</timed>>
@@ -1718,9 +1502,10 @@ $(document.head).find('#style-ui-bar').remove();
   <</button>>
   </div>
    <div class="option" id="opt4">
-   <<button "C. Kenya">> 
+   <<button "<span>C</span>. Kenya">> 
      <<timed 0.5s>>
       <<replace "#hint">>Correct!<</replace>>
+       <<audio "complete" play>>
       <</timed>>
        <<timed 3s>>
       <<goto $nextpass>>
@@ -1762,7 +1547,7 @@ $(document.head).find('#style-ui-bar').remove();
     <h3>2. When the trees were being cut down for commercial planting, what was being affected?</h3>
 <div class="quiz-options">
   <div class="option" id="opt1">
-    <<button "P. Loss of Biodiversity">> 
+    <<button "<span>P</span>. Loss of Biodiversity">> 
       <<timed 0.5s>>
       <<replace "#hint">>Incorrect. Try again<</replace>>
       <</timed>>
@@ -1773,7 +1558,7 @@ $(document.head).find('#style-ui-bar').remove();
       <</button>>
   </div>
    <div class="option" id="opt2">
-  <<button "G. Poverty">> 
+  <<button "<span>G</span>. Poverty">> 
       <<timed 0.5s>>
       <<replace "#hint">>Incorrect. Try again<</replace>>
       <</timed>>
@@ -1784,7 +1569,7 @@ $(document.head).find('#style-ui-bar').remove();
    <</button>>
    </div>
     <div class="option" id="opt3">
-  <<button "E. Drought">> 
+  <<button "<span>E</span>. Drought">> 
      <<timed 0.5s>>
       <<replace "#hint">>Incorrect. Try again<</replace>>
       <</timed>>
@@ -1795,9 +1580,10 @@ $(document.head).find('#style-ui-bar').remove();
   <</button>>
   </div>
    <div class="option" id="opt4">
-   <<button "L. All of them">> 
+   <<button "<span>L</span>. All of them">> 
      <<timed 0.5s>>
       <<replace "#hint">>Correct!<</replace>>
+       <<audio "complete" play>>
       <</timed>>
        <<timed 3s>>
       <<goto $nextpass>>
@@ -1838,7 +1624,7 @@ $(document.head).find('#style-ui-bar').remove();
     <h3>3. In 1977 she started what movement?</h3>
 <div class="quiz-options">
   <div class="option" id="opt1">
-    <<button "N. The Blue Belt Movement">> 
+    <<button "<span>N</span>. The Blue Belt Movement">> 
       <<timed 0.5s>>
       <<replace "#hint">>Incorrect. Try again<</replace>>
       <</timed>>
@@ -1849,7 +1635,7 @@ $(document.head).find('#style-ui-bar').remove();
       <</button>>
   </div>
    <div class="option" id="opt2">
-  <<button " B. The Red Belt Movement">> 
+  <<button " <span>B</span>. The Red Belt Movement">> 
       <<timed 0.5s>>
       <<replace "#hint">>Incorrect. Try again<</replace>>
       <</timed>>
@@ -1861,9 +1647,10 @@ $(document.head).find('#style-ui-bar').remove();
    </div>
   
    <div class="option" id="opt4">
-   <<button "E. The Green Belt Movement">> 
+   <<button "<span>E</span>. The Green Belt Movement">> 
      <<timed 0.5s>>
       <<replace "#hint">>Correct!<</replace>>
+       <<audio "complete" play>>
       <</timed>>
        <<timed 3s>>
       <<goto $nextpass>>
@@ -1903,10 +1690,11 @@ $(document.head).find('#style-ui-bar').remove();
     <h3>4. By 2004, how many trees had the Green Belt Movement planted? </h3>
 <div class="quiz-options">
   <div class="option" id="opt1">
-    <<button "30,000,000 trees">> 
+    <<button "<span>A</span>. 30,000,000 trees">> 
 
       <<timed 0.5s>>
       <<replace "#hint">>Correct!<</replace>>
+       <<audio "complete" play>>
       <</timed>>
        <<timed 3s>>
       <<goto $nextpass>>
@@ -1915,7 +1703,7 @@ $(document.head).find('#style-ui-bar').remove();
       <</button>>
   </div>
    <div class="option" id="opt2">
-  <<button "B. 30,000 trees">> 
+  <<button "<span>B</span>. 30,000 trees">> 
       <<timed 0.5s>>
       <<replace "#hint">>Incorrect. Try again<</replace>>
       <</timed>>
@@ -1927,7 +1715,7 @@ $(document.head).find('#style-ui-bar').remove();
    </div>
   
    <div class="option" id="opt4">
-   <<button "C. 3,000 trees">> 
+   <<button "<span>C</span>. 3,000 trees">> 
       <<timed 0.5s>>
       <<replace "#hint">>Incorrect. Try again<</replace>>
       <</timed>>
@@ -1969,9 +1757,10 @@ $(document.head).find('#style-ui-bar').remove();
     <h3>5. What was being sold to private companies that prompted Wangari Maathai to oppose the government? </h3>
 <div class="quiz-options">
   <div class="option" id="opt1">
-    <<button "M. Forests">> 
+    <<button "<span>M</span>. Forests">> 
       <<timed 0.5s>>
       <<replace "#hint">>Correct!<</replace>>
+       <<audio "complete" play>>
       <</timed>>
        <<timed 3s>>
       <<goto $nextpass>>
@@ -1980,7 +1769,7 @@ $(document.head).find('#style-ui-bar').remove();
       <</button>>
   </div>
    <div class="option" id="opt2">
-  <<button "B. Water">> 
+  <<button "<span>B</span>. Water">> 
       <<timed 0.5s>>
       <<replace "#hint">>Incorrect. Try again<</replace>>
       <</timed>>
@@ -1992,7 +1781,7 @@ $(document.head).find('#style-ui-bar').remove();
    </div>
   
    <div class="option" id="opt4">
-   <<button "K. Pickles">> 
+   <<button "<span>K</span>. Pickles">> 
       <<timed 0.5s>>
       <<replace "#hint">>Incorrect. Try again<</replace>>
       <</timed>>
@@ -2033,7 +1822,7 @@ $(document.head).find('#style-ui-bar').remove();
     <h3>6. How did her peace work start?</h3>
 <div class="quiz-options">
   <div class="option" id="opt1">
-    <<button "O. On Tik Tok">> 
+    <<button "<span>O</span>. On Tik Tok">> 
      <<timed 0.5s>>
       <<replace "#hint">>Incorrect. Try again<</replace>>
       <</timed>>
@@ -2044,9 +1833,10 @@ $(document.head).find('#style-ui-bar').remove();
       <</button>>
   </div>
    <div class="option" id="opt2">
-  <<button "I. Planting One Tree">> 
+  <<button "<span>I</span>. Planting One Tree">> 
     <<timed 0.5s>>
       <<replace "#hint">>Correct!<</replace>>
+       <<audio "complete" play>>
       <</timed>>
        <<timed 3s>>
       <<goto $nextpass>>
@@ -2056,7 +1846,7 @@ $(document.head).find('#style-ui-bar').remove();
    </div>
   
    <div class="option" id="opt4">
-   <<button "W. With all her Money">> 
+   <<button "<span>W</span>. With all her Money">> 
       <<timed 0.5s>>
       <<replace "#hint">>Incorrect. Try again<</replace>>
       <</timed>>
@@ -2098,9 +1888,10 @@ $(document.head).find('#style-ui-bar').remove();
     <h3>7. What was Wangari’s method for change? </h3>
 <div class="quiz-options">
   <div class="option" id="opt1">
-    <<button "T. Start little and do the best you can">> 
+    <<button "<span>T</span>. Start little and do the best you can">> 
        <<timed 0.5s>>
       <<replace "#hint">>Correct!<</replace>>
+       <<audio "complete" play>>
       <</timed>>
        <<timed 3s>>
       <<goto $nextpass>>
@@ -2108,7 +1899,7 @@ $(document.head).find('#style-ui-bar').remove();
       <</button>>
   </div>
    <div class="option" id="opt2">
-  <<button "H. You can do it">> 
+  <<button "<span>H</span>. You can do it">> 
    <<timed 0.5s>>
       <<replace "#hint">>Incorrect. Try again<</replace>>
       <</timed>>
@@ -2120,7 +1911,7 @@ $(document.head).find('#style-ui-bar').remove();
    </div>
   
    <div class="option" id="opt4">
-   <<button "Y. Go big or go home">> 
+   <<button "<span>Y</span>. Go big or go home">> 
       <<timed 0.5s>>
       <<replace "#hint">>Incorrect. Try again<</replace>>
       <</timed>>
@@ -2212,34 +2003,71 @@ $(document.head).find('#style-ui-bar').remove();
   <<replace "#helperText">><span>Enter the correct word:</span><</replace>>
 <<append "#scrabbleWrapper">>
 
-  <<button "HELP">>
+  <div id="helpBtnMount">
+    <<button "HELP">>
+      <<timed 0.5s>>
+        <<replace "#pos3">><</replace>>
+      <</timed>>
+      <<timed 1s>>
+        <<replace "#pos6">><</replace>>
+     <</timed>>
+       <<timed 1.5s>>
+   <<replace "#pos3">><div class="tile" data-letter="I"></div><</replace>>
+      <</timed>>
+      <<timed 2s>>
+    <<replace "#pos5">><</replace>>
+      <</timed>>
+       <<timed 2.5s>>
+    <<replace "#pos5">>  <<replace "#pos6">><div class="tile" data-letter="M"></div><</replace>><</replace>>
+      <</timed>>
+       <<timed 3s>>
+      <<replace "#pos4">><</replace>>
+      <</timed>>
+      <<timed 3.5s>>
+      <<replace "#pos4">><div class="tile" data-letter="E"></div><</replace>>
+      <</timed>>
+       <<timed 4s>>
+      <<replace "#pos5">><div class="tile" data-letter="A"></div><</replace>>
+      <</timed>>
+      <<timed 7s>>
+        <<replace "#helpBtnMount">>
+          <<include "helpagain">>
+          <</replace>>
+        <</timed>>
+    <</button>>
+  </div>
+  <</append>>
+<</timed>>
+
+:: helpagain [nobr]
+<<button "HELP AGAIN">>
     <<timed 0.5s>>
-      <<replace "#pos3">><</replace>>
+      <<replace "#pos4">><</replace>>
     <</timed>>
     <<timed 1s>>
       <<replace "#pos6">><</replace>>
    <</timed>>
      <<timed 1.5s>>
- <<replace "#pos3">><div class="tile" data-letter="I"></div><</replace>>
+ <<replace "#pos4">><div class="tile" data-letter="M"></div><</replace>>
     <</timed>>
-    <<timed 2s>>
-  <<replace "#pos5">><</replace>>
-    <</timed>>
-     <<timed 2.5s>>
-  <<replace "#pos5">>  <<replace "#pos6">><div class="tile" data-letter="M"></div><</replace>><</replace>>
+      <<timed 2s>>
+      <<replace "#pos5">><</replace>>
+   <</timed>>
+   <<timed 2.5s>>
+ <<replace "#pos5">><div class="tile" data-letter="E"></div><</replace>>
     <</timed>>
      <<timed 3s>>
-    <<replace "#pos4">><</replace>>
+      <<replace "#pos7">><</replace>>
+   <</timed>>
+      <<timed 3.5s>>
+ <<replace "#pos7">><div class="tile" data-letter="A"></div><</replace>>
     <</timed>>
-    <<timed 3.5s>>
-    <<replace "#pos4">><div class="tile" data-letter="E"></div><</replace>>
+    <<timed 4s>>
+ <<replace "#pos6">><div class="tile" data-letter="T"></div><</replace>>
     <</timed>>
-     <<timed 4s>>
-    <<replace "#pos5">><div class="tile" data-letter="A"></div><</replace>>
-    <</timed>>
+    
   <</button>>
-  <</append>>
-<</timed>>
+
 
 
 :: portalvid10 [purple nobr]
@@ -2272,7 +2100,21 @@ $(document.head).find('#style-ui-bar').remove();
       </div>
       <div class="message-container" >
         <span class="sender">Anne</span>
-        <p> Open Part 2 in the compartment </p>
+        <p>You can now open Part 2 in the compartment.</p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 5s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">Anne</span>
+        <p>Complete the task and get back to me when you have completed it.</p>
       </div>
     </div>
   <</append>>
@@ -2412,7 +2254,7 @@ $(document.head).find('#style-ui-bar').remove();
 <<set $nextpass to "portal13">>
 <<set $photoprogress to []>>
 <main class="main portal grid-container photo">
-<div id="progress-wrapper"><<include "photoprogress">></div>
+<div id="progress-wrapper"></div>
 
 <section class="hero photo-grid-container" id="hero">
 
@@ -2553,6 +2395,9 @@ $(document.head).find('#style-ui-bar').remove();
       </div>
     </div>
   <</append>>
+  <<replace "#progress-wrapper">>
+    <<include "photoprogress">>
+    <</replace>>
 <</timed>>
 
 <<timed 22s>>
@@ -2563,7 +2408,7 @@ $(document.head).find('#style-ui-bar').remove();
       </div>
       <div class="message-container" >
         <span class="sender">Anne</span>
-        <p>You’ve unlocked a formula – teacher, I imagine you know more about photosynthesis than I do – perhaps you can work with the class to put these words in the right order? And then maybe that will unlock whatever is in the compartment. </p>
+        <p>You’ve unlocked a formula – teacher, I imagine you know more about photosynthesis than I do – perhaps you can work with the class to put these words in the right order? And then maybe that will unlock whatever is in the compartment.</p>
       </div>
     </div>
   <</append>>
@@ -2599,7 +2444,7 @@ $(document.head).find('#style-ui-bar').remove();
       </div>
       <div class="message-container" >
         <span class="sender">Anne</span>
-        <p>Yes – that seems to have given us a code to get into the next compartment - it is XXX. </p>
+        <p>Yes – that seems to have given us a code to get into the next compartment - it is 021. </p>
       </div>
     </div>
   <</append>>
@@ -2613,7 +2458,7 @@ $(document.head).find('#style-ui-bar').remove();
       </div>
       <div class="message-container" >
         <span class="sender">Anne</span>
-        <p>It has the resources and the exercise instructions card below.</p>
+        <p>It should have the resources and the exercise instructions card inside.</p>
       </div>
     </div>
   <</append>>
@@ -2640,14 +2485,40 @@ $(document.head).find('#style-ui-bar').remove();
   </section>
 </main>
 
-<<timed 5s>>
-  <<replace "#hero">>
-    <<include "buttonProgress">>
-  <</replace>>
- <<replace "#chatInput">>
-     <<include "codeword7">>
-  <</replace>>
-<</timed>>
+<<timed 4s>>
+  <<replace "#messagesContainer" >>
+     <<button "NEXT">>
+        <<replace "#messagesContainer" >>
+          <</replace>>
+      <<timed 0.1s>>
+        <<replace "#hero">>
+          <<include "buttonProgress">>
+        <</replace>>
+      <<replace "#chatInput">>
+          <<include "codeword7">>
+        <</replace>>
+      <</timed>>
+
+      <<timed 3s>>
+        <<replace "#messagesContainer" >>
+          <div class="message">
+            <div class="avatar">
+              <img src="assets/img/user.png" alt="avatar"/>
+            </div>
+            <div class="message-container" >
+              <span class="sender">Anne</span>
+              <p>Time to open the next compartment, the number is 090. Read the – story together and report back.</p>
+            </div>
+          </div>
+        
+      <</replace>>
+        <</timed>>
+      <</button>>
+  
+<</replace>>
+  <</timed>>
+
+
 
 
 :: portalExercise16 [purple nobr]
@@ -2672,7 +2543,13 @@ $(document.head).find('#style-ui-bar').remove();
   </section>
 </main>
 
-<<timed 8s>>
+<<timed 4s>>
+  <<replace "#messagesContainer" >>
+     <<button "NEXT">>
+        <<replace "#messagesContainer" >>
+          <</replace>>
+        
+<<timed 1s>>
   <<replace "#hero">><</replace>>
   <<append "#messagesContainer">>
     <div class="message">
@@ -2687,7 +2564,7 @@ $(document.head).find('#style-ui-bar').remove();
   <</append>>
 <</timed>>
 
-<<timed 10s>>
+<<timed 3s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -2701,7 +2578,7 @@ $(document.head).find('#style-ui-bar').remove();
   <</append>>
 <</timed>>
 
-<<timed 12s>>
+<<timed 6s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -2715,7 +2592,7 @@ $(document.head).find('#style-ui-bar').remove();
   <</append>>
 <</timed>>
 
-<<timed 14s>>
+<<timed 8s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -2729,7 +2606,7 @@ $(document.head).find('#style-ui-bar').remove();
   <</append>>
 <</timed>>
 
-<<timed 16s>>
+<<timed 11s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -2743,7 +2620,7 @@ $(document.head).find('#style-ui-bar').remove();
   <</append>>
 <</timed>>
 
-<<timed 18s>>
+<<timed 13s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -2757,12 +2634,8 @@ $(document.head).find('#style-ui-bar').remove();
   <</append>>
 <</timed>>
 
-<<timed 20s>>
-  <<replace "#messagesContainer">><</replace>>
-  <</timed>>
 
-
-<<timed 22s>>
+<<timed 16s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -2776,14 +2649,14 @@ $(document.head).find('#style-ui-bar').remove();
   <</append>>
 <</timed>>
 
-<<timed 23s>>
+<<timed 19s>>
   <<replace "#hero">>
     <<include "letter">>
   <</replace>>
   <</timed>>
 
 
-<<timed 24s>>
+<<timed 23s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -2805,7 +2678,7 @@ $(document.head).find('#style-ui-bar').remove();
       </div>
       <div class="message-container" >
          <span class="sender">Anne</span>
-        <p>Then, enter the word LETTERS into the online platform.  </p>
+        <p>Then, enter the word LETTERS below.</p>
       </div>
     </div>
   <</append>>
@@ -2816,6 +2689,11 @@ $(document.head).find('#style-ui-bar').remove();
     <<include "codeword8">>
     <</replace>>
   <</timed>>
+
+    <</button>>
+  <</replace>>
+<</timed>>
+
 
 :: portalVid17 [purple nobr]
 <<set $prevpass to "portalExercise16">>
@@ -2838,39 +2716,65 @@ $(document.head).find('#style-ui-bar').remove();
   </section>
 </main>
 
-<<timed 10s>>
-  <<replace "#hero">>
-    <<include "buttonProgress">>
+<<timed 4s>>
+  <<replace "#messagesContainer" >>
+     <<button "NEXT">>
+        <<replace "#messagesContainer" >>
+          <</replace>>
+      <<timed 1s>>
+          <<replace "#hero">>
+            <<include "buttonProgress">>
+          <</replace>>
+          <<addclass "#portalButton" "pulse">>
+          <<addclass "#portalButton" "rounded">>
+        <</timed>>
+
+        <<timed 2s>>
+          <<append "#messagesContainer">>
+            <div class="message">
+              <div class="avatar">
+                <img src="assets/img/user.png" alt="avatar"/>
+              </div>
+              <div class="message-container" >
+                <span class="sender">Anne</span>
+                <p>Just like the secret hiding underground, there is a secret hiding under the box. </p>
+              </div>
+            </div>
+          <</append>>
+        <</timed>>
+
+        <<timed 4s>>
+          <<append "#messagesContainer">>
+            <div class="message">
+              <div class="avatar">
+                <img src="assets/img/user.png" alt="avatar"/>
+              </div>
+              <div class="message-container" >
+                <span class="sender">Anne</span>
+                <p>The code is 319</p>
+              </div>
+            </div>
+          <</append>>
+        <</timed>>
+
+      <<timed 7s>>
+          <<append "#messagesContainer">>
+            <div class="message">
+              <div class="avatar">
+                <img src="assets/img/user.png" alt="avatar"/>
+              </div>
+              <div class="message-container" >
+                <span class="sender">Anne</span>
+                <p>Complete whatever is in there and then message me.</p>
+              </div>
+            </div>
+          <</append>>
+        <</timed>>
+    <</button>>
   <</replace>>
 <</timed>>
 
-<<timed 12s>>
-  <<append "#messagesContainer">>
-    <div class="message">
-      <div class="avatar">
-        <img src="assets/img/user.png" alt="avatar"/>
-      </div>
-      <div class="message-container" >
-         <span class="sender">Anne</span>
-        <p>Just like the secret hiding underground, there is a secret hiding under the box. </p>
-      </div>
-    </div>
-  <</append>>
-<</timed>>
 
-<<timed 14s>>
-  <<append "#messagesContainer">>
-    <div class="message">
-      <div class="avatar">
-        <img src="assets/img/user.png" alt="avatar"/>
-      </div>
-      <div class="message-container" >
-         <span class="sender">Anne</span>
-        <p>The code is XXX</p>
-      </div>
-    </div>
-  <</append>>
-<</timed>>
 
 
 
@@ -2897,6 +2801,21 @@ $(document.head).find('#style-ui-bar').remove();
   </section>
 </main>
 
+<<timed 1s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+         <span class="sender">Anne</span>
+        <p>TBC THREE NEW VIDEOS</p>
+
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
 <<timed 3s>>
   <<append "#messagesContainer">>
     <div class="message">
@@ -2905,12 +2824,40 @@ $(document.head).find('#style-ui-bar').remove();
       </div>
       <div class="message-container" >
          <span class="sender">Anne</span>
-        <p>The end</p>
+        <p>Thank you for being with me today. I need you to tell me how today was - so I can tell the team what I have been up to. I’ll send you the information.</p>
+
       </div>
     </div>
   <</append>>
 <</timed>>
 
+<<timed 6s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+         <span class="sender">Anne</span>
+  <p>Until next time </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 7s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+         <span class="sender">Anne</span> 
+      <p>Anne</p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
 
 
 
@@ -3050,7 +2997,7 @@ $(document.head).find('#style-ui-bar').remove();
 <<audio ":all" stop>>
   <<audio "ticker3" play>>
 <div class="main button-grid-container">
-  <div class="portal-button-container">
+  <div class="portal-button-container" id="portalButton">
     <img src="assets/img/logobutton.png"/>
     </div>
   <div class="portal-task-item one">
@@ -3697,7 +3644,7 @@ $(document.head).find('#style-ui-bar').remove();
 <<set $code to $code.toUpperCase()>>
 /% CODEWORD CORRECT %/
 <<if $code isnot "">> 
-  <<if $code is "SUN" or $code is "SUN ">>
+  <<if $code is "SUN" or $code is "SUN " or $code is "SUNLIGHT" or $code is "SUNLIGHT ">>
     <<audio "correct" play>>
     <<replace "#coderesult1">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
      <<run $photoprogress.push("SUN")>>
@@ -3723,7 +3670,7 @@ $(document.head).find('#style-ui-bar').remove();
 <</if>>
 /% CODEWORD INCORRECT %/
 <<if $code isnot "">>
-  <<if $code is not "SUN" and $code is not "SUN ">>
+  <<if $code is not "SUN" and $code is not "SUN " and $code is not "SUNLIGHT" and $code is not "SUNLIGHT ">>
   <<replace "#coderesult1">><div class="confirmation" id="confirmation">That's not right...</div><</replace>>
   <<timed 1.5s>><<replace "#coderesult1">><</replace>><</timed>>
   <</if>>
