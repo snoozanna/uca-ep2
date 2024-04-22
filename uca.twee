@@ -94,11 +94,13 @@ $(document.head).find('#style-ui-bar').remove();
 
 
 :: StoryInit
-<<cacheaudio "ping1" "assets/audio/ping1.mp3">>
+<<cacheaudio "ping1" "assets/sound/ping1.mp3">>
 <<cacheaudio "ticker3" "assets/sound/ticker3.mp3">>
 <<cacheaudio "correct" "assets/sound/keep2.mp3">>
 <<cacheaudio "uploading" "assets/sound/uploading.mp3">>
 <<cacheaudio "complete" "assets/sound/uploadcomplete.mp3">>
+<<cacheaudio "game" "assets/sound/Game.mp3">>
+<<cacheaudio "signal" "assets/sound/signal.mp3">>
 
 <<waitforaudio>>
 
@@ -209,8 +211,8 @@ $(document.head).find('#style-ui-bar').remove();
 <main class="main portal grid-container">
   <section class="hero" id="hero">
 /* ANNE VIDEO 1: UCA Introduction */
-       <iframe width='800px' height='450px'
-      src='https://player.vimeo.com/video/531960916?autoplay=1&byline=0&portrait=0'></iframe>
+
+      <iframe src="https://drive.google.com/file/d/1D-WmnTEdMTfWlPRrMVo1fAihUxiWzSY2/preview" width='800px' height='450px' allow="autoplay"></iframe>
   </section>
   <section class="chat">
   <div class="messages-container" id="messagesContainer"></div>
@@ -224,7 +226,7 @@ $(document.head).find('#style-ui-bar').remove();
 </main>
 
 
-<<timed 2s>>
+<<timed 150s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -247,8 +249,7 @@ $(document.head).find('#style-ui-bar').remove();
 <main class="main portal grid-container">
   <section class="hero" id="hero">
 /* ANNE VIDEO 2 */
-       <iframe width='800px' height='450px'
-      src='https://player.vimeo.com/video/531960916?autoplay=1&byline=0&portrait=0'></iframe>
+<iframe src="https://drive.google.com/file/d/1uGn33OpbiFQsv9CCJhoIjkeAp3YJu2oR/preview" width="640" height="480" allow="autoplay"></iframe>
   </section>
   <section class="chat">
   <div class="messages-container" id="messagesContainer"></div>
@@ -262,7 +263,7 @@ $(document.head).find('#style-ui-bar').remove();
 </main>
 
 
-<<timed 2s>>
+<<timed 199s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -276,7 +277,7 @@ $(document.head).find('#style-ui-bar').remove();
   <</append>>
 <</timed>>
 
-<<timed 5s>>
+<<timed 204s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -290,7 +291,7 @@ $(document.head).find('#style-ui-bar').remove();
   <</append>>
 <</timed>>
 
-<<timed 7s>>
+<<timed 207s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -304,7 +305,7 @@ $(document.head).find('#style-ui-bar').remove();
   <</append>>
 <</timed>>
 
-<<timed 10s>>
+<<timed 210s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -319,7 +320,7 @@ $(document.head).find('#style-ui-bar').remove();
 <</timed>>
 
 
-<<timed 12s>>
+<<timed 210s>>
   <<replace "#hero">>
     <<include "buttonProgress">>
   <</replace>>
@@ -330,6 +331,7 @@ $(document.head).find('#style-ui-bar').remove();
 <<set $pass to "portalAnneSays1">>
 <<set $nextpass to "portalAnneSays2">>
 <<audio ":all" stop>>
+  <<audio "game" play>>
 <main class="main portal grid-container">
   <section class="hero">
  <div class="annesays" id="annesays">
@@ -478,7 +480,7 @@ $(document.head).find('#style-ui-bar').remove();
       </div>
       <div class="message-container" >
         <span class="sender">Anne</span>
-        <p>You need to follow my instructions - but only when I saw Anne Says. </p>
+        <p>You need to follow my instructions - but only when you see Anne Says. </p>
       </div>
     </div>
   <</append>>
@@ -570,7 +572,7 @@ $(document.head).find('#style-ui-bar').remove();
 <<set $list to ["Anne says Roots", "Anne says Trunk", "Anne says Branches", "Anne says Leaves", "Roots", "Leaves", "Anne says Branches", "Leaves", "Anne says Branches", "Roots", "Anne says Roots", "Anne says Leaves"]>>
 <<set $currentIndex to 0>>
 <<audio ":all" stop>>
-  <<audio "uploading" play>>
+  <<audio "game" loop play>>
 <main class="annesays t8n" id="annesays">
   <div id="titleWrapper" class="titleWrapper">
     <div class="title" id="title">
@@ -712,7 +714,7 @@ $(document.head).find('#style-ui-bar').remove();
 ]>>
 <<set $currentIndex to 0>>
 <<audio ":all" stop>>
-  <<audio "uploading" play>>
+  <<audio "game" loop play>>
 
 <main class="annesays t8n" id="annesays">
   <div id="titleWrapper" class="titleWrapper">
@@ -848,7 +850,7 @@ $(document.head).find('#style-ui-bar').remove();
 ]>>
 <<set $currentIndex to 0>>
 <<audio ":all" stop>>
-  <<audio "uploading" play>>
+  <<audio "game" loop play>>
 
 <main class="annesays t8n" id="annesays">
   <div id="titleWrapper" class="titleWrapper">
@@ -1092,8 +1094,7 @@ $(document.head).find('#style-ui-bar').remove();
 <<set $nextpass to "portalTree6">>
 <main class="main portal grid-container">
   <section class="hero" id="hero">
-      <iframe width='800px' height='450px'
-      src='https://player.vimeo.com/video/531960916?autoplay=1&byline=0&portrait=0'></iframe>
+     <iframe  src="https://drive.google.com/file/d/1wDRlQRDQCxjk5GN4qC-2AFlASEfsurpG/preview" width="640" height="480" allow="autoplay"></iframe>
   </section>
   <section class="chat">
   <div class="messages-container" id="messagesContainer"> </div>
@@ -1106,7 +1107,7 @@ $(document.head).find('#style-ui-bar').remove();
   </section>
 </main>
 
-<<timed 8s>>
+<<timed 34s>>
    <<append "#messagesContainer">>
      <<button "NEXT">>
       <<timed 1s>>
@@ -1117,6 +1118,14 @@ $(document.head).find('#style-ui-bar').remove();
         <h2><span>How does it feel to win together compared to winning individually? </span></h2>
      </div>
   </div>
+
+  <<replace "#messagesContainer">>
+     <<button "MOVE ON">>
+      <<timed 1s>>
+      <<goto $nextpass>>
+        <</timed>>
+      <</button>>
+    <</replace>>
      
   <</replace>>
         <</timed>>
@@ -1125,16 +1134,6 @@ $(document.head).find('#style-ui-bar').remove();
 <</timed>>
 
 
-
-<<timed 15s>>
- <<replace "#messagesContainer">>
-     <<button "MOVE ON">>
-      <<timed 1s>>
-      <<goto $nextpass>>
-        <</timed>>
-      <</button>>
-    <</replace>>
-<</timed>>
 
 /* <<include "footer">> */
 
@@ -1199,8 +1198,7 @@ $(document.head).find('#style-ui-bar').remove();
   <section class="hero" id="hero">
 /* ANNE VIDEO 3: REFLECTING ON TREES */
 
-       <iframe width='800px' height='450px'
-      src='https://player.vimeo.com/video/531960916?autoplay=1&byline=0&portrait=0'></iframe>
+<iframe src="https://drive.google.com/file/d/142dxofYEief0UPBFLtdqz6HkvDDCey_G/preview" width="640" height="480" allow="autoplay" autoplay></iframe>
   </section>
   <section class="chat">
   <div class="messages-container" id="messagesContainer"></div>
@@ -1213,14 +1211,14 @@ $(document.head).find('#style-ui-bar').remove();
   </section>
 </main>
 
-<<timed 5s>>
+<<timed 148s>>
   <<replace "#hero">>
     <<include "buttonProgress">>
   <</replace>>
 <</timed>>
 
 
-<<timed 7s>>
+<<timed 146s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -1234,7 +1232,7 @@ $(document.head).find('#style-ui-bar').remove();
   <</append>>
 <</timed>>
 
-<<timed 9s>>
+<<timed 149s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -1248,7 +1246,7 @@ $(document.head).find('#style-ui-bar').remove();
   <</append>>
 <</timed>>
 
-<<timed 12s>>
+<<timed 152s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -1262,7 +1260,7 @@ $(document.head).find('#style-ui-bar').remove();
   <</append>>
 <</timed>>
 
-<<timed 15s>>
+<<timed 154s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -1276,7 +1274,7 @@ $(document.head).find('#style-ui-bar').remove();
   <</append>>
 <</timed>>
 
-<<timed 17s>>
+<<timed 157s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -1291,7 +1289,7 @@ $(document.head).find('#style-ui-bar').remove();
 <</timed>>
 
 
-<<timed 20s>>
+<<timed 160s>>
  <<audio ":all" stop>>
    <<append "#messagesContainer">>
     <div class="message">
@@ -1306,7 +1304,7 @@ $(document.head).find('#style-ui-bar').remove();
   <</append>>
 <</timed>>
 
-<<timed 23s>>
+<<timed 163s>>
    <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -1320,7 +1318,7 @@ $(document.head).find('#style-ui-bar').remove();
   <</append>>
 <</timed>>
 
-<<timed 25s>>
+<<timed 165s>>
  <<append "#messagesContainer">>
      <<button "NEXT">>
       <<timed 1s>>
@@ -1420,6 +1418,7 @@ $(document.head).find('#style-ui-bar').remove();
 <<set $prevpass to "portalVid8">>
 <<set $pass to "portalQuiz9">>
 <<set $nextpass to "portalQuiz9b">>
+<<audio ":all" stop>>
 <main class="main portal grid-container">
   <section class="hero" id="hero">
 
@@ -1525,6 +1524,7 @@ $(document.head).find('#style-ui-bar').remove();
 <<set $prevpass to "portalQuiz9">>
 <<set $pass to "portalQuiz9b">>
 <<set $nextpass to "portalQuiz9c">>
+<<audio ":all" stop>>
 <main class="main portal grid-container">
   <section class="hero" id="hero">
 
@@ -1602,6 +1602,7 @@ $(document.head).find('#style-ui-bar').remove();
 <<set $prevpass to "portalQuiz9b">>
 <<set $pass to "portalQuiz9c">>
 <<set $nextpass to "portalQuiz9d">>
+<<audio ":all" stop>>
 <main class="main portal grid-container">
   <section class="hero" id="hero">
 
@@ -1668,6 +1669,7 @@ $(document.head).find('#style-ui-bar').remove();
 <<set $prevpass to "portalQuiz9c">>
 <<set $pass to "portalQuiz9d">>
 <<set $nextpass to "portalQuiz9e">>
+<<audio ":all" stop>>
 <main class="main portal grid-container">
   <section class="hero" id="hero">
 
@@ -1737,6 +1739,7 @@ $(document.head).find('#style-ui-bar').remove();
 <<set $prevpass to "portalQuiz9d">>
 <<set $pass to "portalQuiz9e">>
 <<set $nextpass to "portalQuiz9f">>
+<<audio ":all" stop>>
 <main class="main portal grid-container">
   <section class="hero" id="hero">
   </section>
@@ -1802,6 +1805,7 @@ $(document.head).find('#style-ui-bar').remove();
 <<set $prevpass to "portalQuiz9e">>
 <<set $pass to "portalQuiz9f">>
 <<set $nextpass to "portalQuiz9g">>
+<<audio ":all" stop>>
 <main class="main portal grid-container">
   <section class="hero" id="hero">
   </section>
@@ -2077,8 +2081,7 @@ $(document.head).find('#style-ui-bar').remove();
 <main class="main portal grid-container">
   <section class="hero" id="hero">
 /* ANNE VIDEO 4: WANGARI */
-       <iframe width='800px' height='450px'
-      src='https://player.vimeo.com/video/531960916?autoplay=1&byline=0&portrait=0'></iframe>
+<iframe src="https://drive.google.com/file/d/1X6kkGsq7AO1grpaUWnmDK5IQuf4mMJ9N/preview" width="640" height="480" allow="autoplay"></iframe>
   </section>
   <section class="chat">
   <div class="messages-container" id="messagesContainer"></div>
@@ -2092,7 +2095,7 @@ $(document.head).find('#style-ui-bar').remove();
 </main>
 
 
-<<timed 2s>>
+<<timed 165s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -2106,7 +2109,7 @@ $(document.head).find('#style-ui-bar').remove();
   <</append>>
 <</timed>>
 
-<<timed 5s>>
+<<timed 167s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -2471,8 +2474,7 @@ $(document.head).find('#style-ui-bar').remove();
 <main class="main portal grid-container">
   <section class="hero" id="hero">
 /* ANNE VIDEO 5: PHOTOSYNTHESIS */
-       <iframe width='800px' height='450px'
-      src='https://player.vimeo.com/video/531960916?autoplay=1&byline=0&portrait=0'></iframe>
+  <iframe src="https://drive.google.com/file/d/1I18Ottm1dWNy83zR75n9BiiP4egpE0Q8/preview" width="640" height="480" allow="autoplay"></iframe>
   </section>
   <section class="chat">
   <div class="messages-container" id="messagesContainer"></div>
@@ -2485,7 +2487,7 @@ $(document.head).find('#style-ui-bar').remove();
   </section>
 </main>
 
-<<timed 4s>>
+<<timed 167s>>
   <<replace "#messagesContainer" >>
      <<button "NEXT">>
         <<replace "#messagesContainer" >>
@@ -2529,8 +2531,7 @@ $(document.head).find('#style-ui-bar').remove();
 <main class="main portal grid-container">
   <section class="hero" id="hero">
 /* ANNE VIDEO 6: FELIX */
-       <iframe width='800px' height='450px'
-      src='https://player.vimeo.com/video/531960916?autoplay=1&byline=0&portrait=0'></iframe>
+<iframe src="https://drive.google.com/file/d/1rflZl8MBSn9vogzLQucmGamwbm7HTsc4/preview" width="640" height="480" allow="autoplay"></iframe>
   </section>
   <section class="chat">
   <div class="messages-container" id="messagesContainer"></div>
@@ -2543,7 +2544,7 @@ $(document.head).find('#style-ui-bar').remove();
   </section>
 </main>
 
-<<timed 4s>>
+<<timed 120s>>
   <<replace "#messagesContainer" >>
      <<button "NEXT">>
         <<replace "#messagesContainer" >>
@@ -2702,8 +2703,7 @@ $(document.head).find('#style-ui-bar').remove();
 <main class="main portal grid-container">
   <section class="hero" id="hero">
 /* ANNE VIDEO 7*/
-       <iframe width='800px' height='450px'
-      src='https://player.vimeo.com/video/531960916?autoplay=1&byline=0&portrait=0'></iframe>
+<iframe src="https://drive.google.com/file/d/1Z3ne01qyYTBt4olvC4XiFyvxyXRv4W2n/preview" width="640" height="480" allow="autoplay"></iframe>
   </section>
   <section class="chat">
   <div class="messages-container" id="messagesContainer"></div>
@@ -2716,7 +2716,7 @@ $(document.head).find('#style-ui-bar').remove();
   </section>
 </main>
 
-<<timed 4s>>
+<<timed 105s>>
   <<replace "#messagesContainer" >>
      <<button "NEXT">>
         <<replace "#messagesContainer" >>
@@ -2782,13 +2782,12 @@ $(document.head).find('#style-ui-bar').remove();
 :: portalVid18 [purple nobr]
 <<set $prevpass to "portalVid17">>
 <<set $pass to "portalVid18">>
-<<set $nextpass to "">>
+<<set $nextpass to "portalVid18b">>
 <<audio ":all" stop>>
 <main class="main portal grid-container">
   <section class="hero" id="hero">
 /* ANNE VIDEO 8: MYCORRHIZAL*/
-       <iframe width='800px' height='450px'
-      src='https://player.vimeo.com/video/531960916?autoplay=1&byline=0&portrait=0'></iframe>
+<iframe src="https://drive.google.com/file/d/1lIOwNjKr5jbhEgkjJSvgJ72SXwtszMZo/preview" width="640" height="480" allow="autoplay"></iframe>
   </section>
   <section class="chat">
   <div class="messages-container" id="messagesContainer"></div>
@@ -2801,63 +2800,81 @@ $(document.head).find('#style-ui-bar').remove();
   </section>
 </main>
 
-<<timed 1s>>
+<<timed 30s>>
   <<append "#messagesContainer">>
-    <div class="message">
-      <div class="avatar">
-        <img src="assets/img/user.png" alt="avatar"/>
-      </div>
-      <div class="message-container" >
-         <span class="sender">Anne</span>
-        <p>TBC THREE NEW VIDEOS</p>
-
-      </div>
-    </div>
+    <<button "NEXT">>
+      <<goto $nextpass>>
+      <</button>>
   <</append>>
 <</timed>>
 
-<<timed 3s>>
-  <<append "#messagesContainer">>
-    <div class="message">
-      <div class="avatar">
-        <img src="assets/img/user.png" alt="avatar"/>
-      </div>
-      <div class="message-container" >
-         <span class="sender">Anne</span>
-        <p>Thank you for being with me today. I need you to tell me how today was - so I can tell the team what I have been up to. I’ll send you the information.</p>
 
-      </div>
-    </div>
+
+:: portalVid18b [purple nobr]
+<<set $prevpass to "portalVid18">>
+<<set $pass to "portalVid18b">>
+<<set $nextpass to "portalVid18c">>
+<<audio ":all" stop>>
+<main class="main portal grid-container">
+  <section class="hero" id="hero">
+/* ANNE VIDEO 8b: MYCORRHIZAL*/
+<iframe src="https://drive.google.com/file/d/1zo-okr4Q6EWUHPiHucdJki6O7buARn3t/preview" width="640" height="480" allow="autoplay"></iframe>
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"></div>
+  <div class="chat-input" id="chatInput">
+
+  </div>
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+<<timed 30s>>
+  <<append "#messagesContainer">>
+    <<button "NEXT">>
+      <<goto $nextpass>>
+      <</button>>
   <</append>>
 <</timed>>
 
-<<timed 6s>>
-  <<append "#messagesContainer">>
-    <div class="message">
-      <div class="avatar">
-        <img src="assets/img/user.png" alt="avatar"/>
-      </div>
-      <div class="message-container" >
-         <span class="sender">Anne</span>
-  <p>Until next time </p>
-      </div>
-    </div>
-  <</append>>
-<</timed>>
+:: portalVid18c [purple nobr]
+<<set $prevpass to "portalVid18b">>
+<<set $pass to "portalVid18c">>
+<<set $nextpass to "">>
+<<audio ":all" stop>>
+<main class="main portal grid-container">
+  <section class="hero" id="hero">
+/* ANNE VIDEO 8c: MYCORRHIZAL*/
+<iframe src="https://drive.google.com/file/d/1NnYxeyyIdot0KzPOdC0kI3SeitKL_UCZ/preview" width="640" height="480" allow="autoplay"></iframe>
+  </section>
+  <section class="chat">
+  <div class="messages-container" id="messagesContainer"></div>
+  <div class="chat-input" id="chatInput">
 
-<<timed 7s>>
-  <<append "#messagesContainer">>
-    <div class="message">
-      <div class="avatar">
-        <img src="assets/img/user.png" alt="avatar"/>
-      </div>
-      <div class="message-container" >
-         <span class="sender">Anne</span> 
-      <p>Anne</p>
-      </div>
-    </div>
-  <</append>>
-<</timed>>
+  </div>
+  </section>
+  <section class="portal-footer video">
+    <<include "portalfooter">>
+  </section>
+</main>
+
+ <<timed 111s>>
+          <<append "#messagesContainer">>
+            <div class="message">
+              <div class="avatar">
+                <img src="assets/img/user.png" alt="avatar"/>
+              </div>
+              <div class="message-container" >
+                <span class="sender">Anne</span>
+                <p>Goodbye!</p>
+              </div>
+            </div>
+          <</append>>
+        <</timed>>
+
+
 
 
 
