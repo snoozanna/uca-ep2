@@ -105,7 +105,7 @@ p {
 
 .purple {
   color: black;
-  background-image: url("https://remote.co.com/UCA/assets/img/purplebackground.jpg");
+  background-image: url("../old-assets/img/purplebackground.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -114,7 +114,7 @@ p {
 
 .green {
   color: black;
-  background-image: url("https://remote.co.com/UCA/assets/img/greenbackground.jpg");
+  background-image: url("../old-assets/img/greenbackground.jpg");
   text-align: center;
   background-repeat: no-repeat;
   background-size: cover;

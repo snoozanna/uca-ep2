@@ -165,7 +165,7 @@ $(document.head).find('#style-ui-bar').remove();
        [img[Forward|assets/img/nextbutton.png][$nextpass]]
     </div>
       <div class="nav-item">
-       [img[Forward|astssets/img/nextbutton.png][$nextpass]]
+       [img[Forward|assets/img/nextbutton.png][$nextpass]]
     </div>
       <div class="nav-item">
        [img[Forward|assets/img/nextbutton.png][$nextpass]]
@@ -178,7 +178,7 @@ $(document.head).find('#style-ui-bar').remove();
 <<set $prevpass to "Start">>
 <<set $pass to "Start">>
 <<set $nextpass to "ucalab">>
-<main><messagebox2>[img[https://remote.co.com/UCA/assets/img/intercom2.png][ucalab]]</messagebox2>
+<main><messagebox2>[img[old-assets/img/intercom2.png][ucalab]]</messagebox2>
 
 </main>
 
@@ -3160,7 +3160,7 @@ $(document.head).find('#style-ui-bar').remove();
   <<if $code1 isnot "" and $code2 isnot "" and $code3 isnot "" and $code4 isnot "">>
     <<if ($code1 + $code2 + $code3 + $code4) is "ANNE">>
       <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
-      <<audio "correct" play>>
+  
       <<timed 3s>><<goto $nextpass>><</timed>>
     <</if>>
   <</if>>
@@ -3523,25 +3523,25 @@ $(document.head).find('#style-ui-bar').remove();
 :: rotatelogo[nobr]
 
 <div class="rotate-logo-wrapper">
-<div class="animated rotateInDownLeft overlay-image">[img[https://remote.co.com/UCA/assets/img/logobutton.png]]</div>
-<div class="animated fadeInLeftBig overlay-image one" >[img[https://remote.co.com/UCA/assets/img/undercover.png]]</div><div
-        class="animated fadeInRightBig overlay-image two">[img[https://remote.co.com/UCA/assets/img/caretaker.png]]</div><div
-        class="animated fadeInLeftBig overlay-image three">[img[https://remote.co.com/UCA/assets/img/agency.png]]</div>
+<div class="animated rotateInDownLeft overlay-image">[img[old-assets/img/logobutton.png]]</div>
+<div class="animated fadeInLeftBig overlay-image one" >[img[old-assets/img/undercover.png]]</div><div
+        class="animated fadeInRightBig overlay-image two">[img[old-assets/img/caretaker.png]]</div><div
+        class="animated fadeInLeftBig overlay-image three">[img[old-assets/img/agency.png]]</div>
 
 </div>
 
 :: rotatelogogreen [green] {"position":"748.6666666666667,601","size":"100,100"}
 <messagebox><div
       class="animated
-      rotateIn">[img[https://remote.co.com/UCA/assets/img/logobutton.png]]</div>
+      rotateIn">[img[old-assets/img/logobutton.png]]</div>
 </messagebox>
 <messagebox>
       <div class="animated
-      fadeInLeftBig">[img[https://remote.co.com/UCA/assets/img/undercover.png]]</div><div
+      fadeInLeftBig">[img[old-assets/img/undercover.png]]</div><div
       class="animated
-      fadeInRightBig">[img[https://remote.co.com/UCA/assets/img/caretaker.png]]</div><div
+      fadeInRightBig">[img[old-assets/img/caretaker.png]]</div><div
       class="animated
-      fadeInLeftBig">[img[https://remote.co.com/UCA/assets/img/agency.png]]</div>
+      fadeInLeftBig">[img[old-assets/img/agency.png]]</div>
 </messagebox>
 <<timed 5s>><<goto "Start">><</timed>>
 
